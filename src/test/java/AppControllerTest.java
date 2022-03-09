@@ -15,6 +15,16 @@ public class AppControllerTest {
 
     @Test
     public void filterListTest(){
+        Article a01 = new Article("Margarete Stokowski","Finger weg von den Frauen!");
+        Article a02 = new Article("Melisa Erkurt","Reiche Eltern für alle!");
+        Article a03 = new Article("Melina Borcak","Keine Strafe hoch genug");
+        Article a04 = new Article("Melina Borcak","Das weiße Band der Schande");
+        //Article a05 = new Article();
+        //Article a06 = new Article();
+        //Article a07 = new Article();
+        //Article a08 = new Article();
+        //Article a09 = new Article();
+        //Article a10 = new Article();
 
     }
     public void getTopHeadlinesAustriaTest(){
