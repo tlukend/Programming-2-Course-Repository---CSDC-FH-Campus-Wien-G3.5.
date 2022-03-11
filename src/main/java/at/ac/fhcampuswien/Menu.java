@@ -2,7 +2,7 @@ package at.ac.fhcampuswien;
 
 import java.util.Scanner;
 import java.sql.SQLOutput;
-
+//WIRD NICHT GEBRAUCHT AM ENDE DA JAVA-FX implementiert
 public class Menu {
         //AppController soll hier nach der Validation aufgerufen werden
 
