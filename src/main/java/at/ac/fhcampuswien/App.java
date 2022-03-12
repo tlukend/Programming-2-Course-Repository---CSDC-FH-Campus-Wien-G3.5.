@@ -1,12 +1,7 @@
 package at.ac.fhcampuswien;
 
 import javafx.application.Application;
-import javafx.geometry.Insets;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.geometry.Pos;
-import javafx.geometry.Rectangle2D;
-import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -16,14 +11,9 @@ import javafx.scene.layout.*;
 import javafx.scene.layout.StackPane;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
-import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
-import javax.swing.*;
-import java.util.Stack;
-
 import static javafx.scene.paint.Color.*;
-import static javax.swing.BorderFactory.*;
 
 public class App extends Application {
     //Variables
@@ -33,7 +23,7 @@ public class App extends Application {
     public static void main(String[] args) { launch(args); }
 
        @Override
-       public void start(Stage primaryStage) throws Exception {
+       public void start(Stage primaryStage) {
 
         primaryStage.setTitle("N E W S A P P");
         primaryStage.getIcons().add(new Image(getClass().getResource("/NewsAppLogo.png").toExternalForm()));
