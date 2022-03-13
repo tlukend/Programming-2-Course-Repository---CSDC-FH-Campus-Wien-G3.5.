@@ -30,7 +30,7 @@ public class AppController <E> {
     }*/
 
 
-
+//
         //der AppController beinhaltet eine Liste aus Artikeln, welche durch die statische Methode
         // generateMockList() erstmals mit Dummy-Werten befüllt wird.
         // Weiters sollen folgende Methoden implementiert werden:
