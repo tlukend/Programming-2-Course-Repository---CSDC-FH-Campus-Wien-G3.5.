@@ -1,7 +1,15 @@
+import at.ac.fhcampuswien.AppController;
 import at.ac.fhcampuswien.Article;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+
+import java.lang.reflect.Constructor;
+import java.lang.reflect.Method;
+import java.util.List;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.fail;
 
 public class AppControllerTest {
     @BeforeAll
@@ -31,16 +39,31 @@ public class AppControllerTest {
     public void getTopHeadlinesAustriaTest(){
 
     }
+    @Test
     public void setArticlesTest(){
+
+
 
     }
     public void getAllNewsBitcoinTest(){
 
     }
+    @Test
     public void getArticleCountTest(){
-        // try {} catch {}
-    }
-}
+        try {
+            AppController controller = new AppController();
+
+            Article a1 = new Article("title", "author");
+            Article a2 = new Article("title", "author");
+            assertEquals(2, controller.getArticleCount(), "Test failed");
+
+    }catch (Exception e) {
+        e.printStackTrace();
+        fail();
+    }}}
+
+
+
 
 //Unittests die geschrieben werden müssen
 //    //+setArticles(List<Article>articles): void

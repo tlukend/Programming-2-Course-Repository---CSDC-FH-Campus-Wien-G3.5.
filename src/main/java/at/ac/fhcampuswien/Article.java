@@ -3,10 +3,12 @@ package at.ac.fhcampuswien;
 public class Article {
     String author;
     String title;
+    static int count;
 
     public Article(String author, String title) {
         this.author = author;
         this.title = title;
+        count++;
     }
 
     public String getAuthor() {

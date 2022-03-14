@@ -8,6 +8,7 @@ public class AppController <E> {
         List<E> TopHeadlinesAustria = new ArrayList<>();
 
         public static void generateMocklist(){
+
         }
 
         public void setArticles(List<E> articles) {
@@ -15,8 +16,8 @@ public class AppController <E> {
         }
 
         public int getArticleCount(){
-            if (Articles.size() >= 1)
-                return Articles.size();
+            if (Article.count >= 1)
+                return Article.count;
             else return 0;
         }
 
