@@ -4,12 +4,10 @@ import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
-import java.lang.reflect.Constructor;
-import java.lang.reflect.Method;
+import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.fail;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class AppControllerTest {
     @BeforeAll
@@ -23,11 +21,11 @@ public class AppControllerTest {
     }
 
     @Test
-    public void filterListTest(){
-        Article a01 = new Article("Margarete Stokowski","Finger weg von den Frauen!");
-        Article a02 = new Article("Melisa Erkurt","Reiche Eltern für alle!");
-        Article a03 = new Article("Melina Borcak","Keine Strafe hoch genug");
-        Article a04 = new Article("Melina Borcak","Das weiße Band der Schande");
+    public void filterListTest() {
+        Article a01 = new Article("Margarete Stokowski", "Finger weg von den Frauen!");
+        Article a02 = new Article("Melisa Erkurt", "Reiche Eltern für alle!");
+        Article a03 = new Article("Melina Borcak", "Keine Strafe hoch genug");
+        Article a04 = new Article("Melina Borcak", "Das weiße Band der Schande");
         //Article a05 = new Article();
         //Article a06 = new Article();
         //Article a07 = new Article();
@@ -36,33 +34,51 @@ public class AppControllerTest {
         //Article a10 = new Article();
 
     }
-    public void getTopHeadlinesAustriaTest(){
 
-    }
     @Test
-    public void setArticlesTest(){
-
-
-
+    public void getTopHeadlinesAustriaTest() {
+        AppController controller = new AppController();
+        assertNotNull(controller.getTopHeadlinesAustria());
+        assertTrue(controller.getTopHeadlinesAustria() instanceof List);
     }
-    public void getAllNewsBitcoinTest(){
 
-    }
     @Test
-    public void getArticleCountTest(){
+    public void setArticlesTest() {
+
+        AppController controller = new AppController();
+        List<Article> Articles = new ArrayList<>();
+        Article Article1 = new Article("Jack", "Article");
+        Article Article2 = new Article("Khaled Hosseini", "Article");
+        Articles.add(Article1);
+        Articles.add(Article2);
         try {
+            controller.setArticles(Articles);
+        } catch (Exception e) {
+            e.printStackTrace();
+            fail();
+        }
+    }
+
+    public void getAllNewsBitcoinTest() {
+
+    }
+
+    @Test
+    public void getArticleCountTest() {
+        try {
+            Article.count = 0;
             AppController controller = new AppController();
 
             Article a1 = new Article("title", "author");
             Article a2 = new Article("title", "author");
             assertEquals(2, controller.getArticleCount(), "Test failed");
 
-    }catch (Exception e) {
-        e.printStackTrace();
-        fail();
-    }}}
-
-
+        } catch (Exception e) {
+            e.printStackTrace();
+            fail();
+        }
+    }
+}
 
 
 //Unittests die geschrieben werden müssen
