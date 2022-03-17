@@ -22,10 +22,7 @@ public class AppControllerTest {
 
     @Test
     public void filterListTest() {
-        Article a01 = new Article("Margarete Stokowski", "Finger weg von den Frauen!");
-        Article a02 = new Article("Melisa Erkurt", "Reiche Eltern für alle!");
-        Article a03 = new Article("Melina Borcak", "Keine Strafe hoch genug");
-        Article a04 = new Article("Melina Borcak", "Das weiße Band der Schande");
+
         //Article a05 = new Article();
         //Article a06 = new Article();
         //Article a07 = new Article();
@@ -59,11 +56,11 @@ public class AppControllerTest {
         }
     }
     @Test
-    public void findBitcoinTest(){
+    public void getAllNewsBitcoinTest(){
         try {
             AppController c1 = new AppController();
             c1.Articles.add(0, "Bitcoin");
-            assertEquals(true, c1.findBitcoin(), "Should be true");
+            assertEquals(true, c1.getAllNewsBitcoin(), "Should be true");
         }catch (Exception e) {
             e.printStackTrace();
             fail();
@@ -73,12 +70,12 @@ public class AppControllerTest {
     @Test
     public void getArticleCountTest() {
         try {
-            Article.count = 0;
+            //Article.count = 0;
             AppController controller = new AppController();
 
             Article a1 = new Article("title", "author");
             Article a2 = new Article("title", "author");
-            assertEquals(3, controller.getArticleCount(), "Test failed");
+            assertEquals(2, controller.getArticleCount(), "Test failed");
 
         } catch (Exception e) {
             e.printStackTrace();

@@ -11,6 +11,7 @@ public class Article {
         this.author = author;
         this.title = title;
         count++;
+
     }
 
     public String getAuthor() {

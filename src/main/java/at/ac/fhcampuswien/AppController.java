@@ -1,21 +1,33 @@
 package at.ac.fhcampuswien;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class AppController <E> {
-        public List<E> Articles = new ArrayList<E>();
+        public List<Article> Articles = new ArrayList<Article>();
         List<E> TopHeadlinesAustria = new ArrayList<>();
         List<E> filterList = new ArrayList<>();
         String query = "Bitcoin";
 
-        public static void generateMocklist(){
+        public static void generateMocklist(List<Article> art){
+
+           Article a01 = new Article("Margarete Stokowski", "Finger weg von den Frauen!");
+           Article a02 = new Article("Melisa Erkurt", "Reiche Eltern für alle!");
+           Article a03 = new Article("Melina Borcak", "Keine Strafe hoch genug");
+           Article a04 = new Article("Melina Borcak", "Das weiße Band der Schande");
+
+            art.add(a01);
+            art.add(a02);
+            art.add(a03);
+            art.add(a04);
 
         }
 
-        public void setArticles(List<E> articles) {
+
+        public void setArticles(List<Article> articles) {
             Articles = articles;
-        }
+       }
 
         public int getArticleCount(){
             if (Article.count >= 1)
@@ -23,7 +35,7 @@ public class AppController <E> {
             else return 0;
         }
 
-        public boolean findBitcoin(){
+        public boolean getAllNewsBitcoin(){
             boolean bitcoinfound = Articles.contains(query);
             if (bitcoinfound==true) {
                 return bitcoinfound;
@@ -36,7 +48,7 @@ public class AppController <E> {
         }
 
         public List<E> filterList(String query, List<Article> articles){
-        articles.stream().filter((b) -> articles.contains(query));
+        articles.stream().filter((b) -> articles..contains(query));
                 return filterList;
         }
 
