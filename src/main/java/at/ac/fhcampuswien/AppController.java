@@ -4,8 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class AppController <E> {
-        List<E> Articles = new ArrayList<E>();
+        public List<E> Articles = new ArrayList<E>();
         List<E> TopHeadlinesAustria = new ArrayList<>();
+        List<E> filterList = new ArrayList<>();
+        String query = "Bitcoin";
 
         public static void generateMocklist(){
 
@@ -21,14 +23,22 @@ public class AppController <E> {
             else return 0;
         }
 
+        public boolean findBitcoin(){
+            boolean bitcoinfound = Articles.contains(query);
+            if (bitcoinfound==true) {
+                return bitcoinfound;
+            }
+            return false;
+        }
+
         public List<E> getTopHeadlinesAustria() {
             return TopHeadlinesAustria;
         }
 
-    /*public List<E> filterList(String query, List<Article> articles){
-        articles.stream().filter((b) -> articles.contains(query);
-                return
-    }*/
+        public List<E> filterList(String query, List<Article> articles){
+        articles.stream().filter((b) -> articles.contains(query));
+                return filterList;
+        }
 
 
 //

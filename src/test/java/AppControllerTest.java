@@ -1,9 +1,12 @@
+import at.ac.fhcampuswien.App;
 import at.ac.fhcampuswien.AppController;
 import at.ac.fhcampuswien.Article;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
+import java.lang.reflect.Constructor;
+import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -58,9 +61,16 @@ public class AppControllerTest {
             fail();
         }
     }
-
-    public void getAllNewsBitcoinTest() {
-
+    @Test
+    public void findBitcoinTest(){
+        try {
+            AppController c1 = new AppController();
+            c1.Articles.add(0, "Bitcoin");
+            assertEquals(true, c1.findBitcoin(), "Should be true");
+        }catch (Exception e) {
+            e.printStackTrace();
+            fail();
+        }
     }
 
     @Test
