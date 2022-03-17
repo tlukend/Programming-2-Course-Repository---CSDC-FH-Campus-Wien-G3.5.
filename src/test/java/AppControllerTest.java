@@ -1,12 +1,9 @@
-import at.ac.fhcampuswien.App;
 import at.ac.fhcampuswien.AppController;
 import at.ac.fhcampuswien.Article;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
-import java.lang.reflect.Constructor;
-import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -81,7 +78,7 @@ public class AppControllerTest {
 
             Article a1 = new Article("title", "author");
             Article a2 = new Article("title", "author");
-            assertEquals(2, controller.getArticleCount(), "Test failed");
+            assertEquals(3, controller.getArticleCount(), "Test failed");
 
         } catch (Exception e) {
             e.printStackTrace();

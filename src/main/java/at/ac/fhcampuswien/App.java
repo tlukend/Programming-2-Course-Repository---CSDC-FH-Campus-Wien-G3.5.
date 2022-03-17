@@ -11,6 +11,7 @@ import javafx.scene.layout.*;
 import javafx.scene.layout.StackPane;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import static javafx.scene.paint.Color.*;
@@ -19,20 +20,24 @@ public class App extends Application {
     //Variables
     protected final static int APP_HEIGHT = 750;
     protected final static int APP_WIDTH = 1000;
+    protected static StackPane mainMenu;
 
-    public static void main(String[] args) { launch(args); }
+    public static void main(String[] args) {
+        launch(args);
+    }
 
-       @Override
-       public void start(Stage primaryStage) {
+    @Override
+    public void start(Stage primaryStage) {
 
         primaryStage.setTitle("N E W S A P P");
         primaryStage.getIcons().add(new Image(getClass().getResource("/NewsAppLogo.png").toExternalForm()));
 
-        Font labelFont = Font.font("Times New Roman", FontWeight.EXTRA_BOLD,44);
-        Label label = new Label("Welcome to NewsApp");
-        label.setTextFill(DARKRED);
-        label.setAlignment(Pos.TOP_CENTER);
-        label.setFont(labelFont);
+        Font labelFont = Font.font("Times New Roman", FontWeight.EXTRA_BOLD, 44);
+        Label welcomeText = new Label("Welcome to NewsApp");
+        Label countText = new Label("23"); //muss noch auf die variable Article.count abgestimmt werden
+        welcomeText.setTextFill(DARKRED);
+        welcomeText.setAlignment(Pos.TOP_CENTER);
+        welcomeText.setFont(labelFont);
 
         //Buttons
         Font buttonFont = Font.font("Times New Roman", FontWeight.NORMAL, 22);
@@ -54,7 +59,7 @@ public class App extends Application {
         quitButton.setFont(buttonFont);
 
         VBox menuBox = new VBox();
-        menuBox.getChildren().addAll(label,newsButton,bitcoinButton,numberOfArticlesButton,quitButton);
+        menuBox.getChildren().addAll(welcomeText, newsButton, bitcoinButton, numberOfArticlesButton, quitButton);
         menuBox.setSpacing(30);
         menuBox.setAlignment(Pos.CENTER);
         menuBox.setFillWidth(true);
@@ -79,22 +84,27 @@ public class App extends Application {
         imgView3.setPreserveRatio(true);
 
         //Background-Style
-        StackPane layout = new StackPane();
-        StackPane.setAlignment(imgView,Pos.TOP_RIGHT);
-        StackPane.setAlignment(imgView1,Pos.TOP_LEFT);
-        StackPane.setAlignment(imgView2,Pos.BOTTOM_RIGHT);
-        StackPane.setAlignment(imgView3,Pos.BOTTOM_LEFT);
-        Scene menuScene = new Scene(layout, APP_WIDTH, APP_HEIGHT);
-        layout.setBackground(new Background(new BackgroundFill(LIGHTGRAY, null, null)));
-        layout.getChildren().addAll(imgView, imgView1, imgView2, imgView3, menuBox);
+        mainMenu = new StackPane();
+        StackPane.setAlignment(imgView, Pos.TOP_RIGHT);
+        StackPane.setAlignment(imgView1, Pos.TOP_LEFT);
+        StackPane.setAlignment(imgView2, Pos.BOTTOM_RIGHT);
+        StackPane.setAlignment(imgView3, Pos.BOTTOM_LEFT);
+        Scene menuScene = new Scene(mainMenu, APP_WIDTH, APP_HEIGHT);
+        mainMenu.setBackground(new Background(new BackgroundFill(LIGHTGRAY, null, null)));
+        mainMenu.getChildren().addAll(imgView, imgView1, imgView2, imgView3, menuBox);
+
+        numberOfArticlesButton.setOnAction(event -> {
+            mainMenu.getChildren().remove(menuBox);
+            countText.setTextFill(DARKRED);
+            countText.setAlignment(Pos.TOP_CENTER);
+            countText.setFont(labelFont);
+            mainMenu.getChildren().add(countText);
+        });
 
         primaryStage.setScene(menuScene);
-        primaryStage.setResizable(false);
+        primaryStage.setResizable(true);
 
         //Show Application
         primaryStage.show();
     }
 }
-        //die App Klasse enthält die main() Funktion und
-        // erstellt eine Instanz von Menu.
-        // Die Funktion Menu.start() wird aufgerufen.

@@ -1,5 +1,7 @@
 package at.ac.fhcampuswien;
 
+import javafx.scene.Node;
+
 public class Article {
     String author;
     String title;
@@ -24,3 +26,4 @@ public class Article {
         return "Author: " + this.author + ", Title: " + this.title;
     }
 }
+
