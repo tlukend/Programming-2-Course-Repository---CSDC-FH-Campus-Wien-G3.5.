@@ -50,11 +50,13 @@ public class AppControllerTest {
         Articles.add(Article2);
         try {
             controller.setArticles(Articles);
+
         } catch (Exception e) {
             e.printStackTrace();
             fail();
         }
     }
+
     @Test
     public void getAllNewsBitcoinTest(){
         try {
@@ -70,7 +72,7 @@ public class AppControllerTest {
     @Test
     public void getArticleCountTest() {
         try {
-            //Article.count = 0;
+            Article.count = 0;
             AppController controller = new AppController();
 
             Article a1 = new Article("title", "author");
@@ -87,6 +89,7 @@ public class AppControllerTest {
 
 //Unittests die geschrieben werden müssen
 //    //+setArticles(List<Article>articles): void
+//   //  eine List Article wird an das probarty Atrribute übergeben und zwar an Articles
 //    //+getArticleCount(): int
 //    //+getTopHeadlinesAustria(): List<Article>
 //    //+getAllNewsBitcoin(): List<Article>

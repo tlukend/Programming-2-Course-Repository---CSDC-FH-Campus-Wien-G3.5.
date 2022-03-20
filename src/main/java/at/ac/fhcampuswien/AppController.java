@@ -48,7 +48,7 @@ public class AppController <E> {
         }
 
         public List<E> filterList(String query, List<Article> articles){
-        articles.stream().filter((b) -> articles..contains(query));
+        articles.stream().filter((b) -> articles.contains(query));
                 return filterList;
         }
 
