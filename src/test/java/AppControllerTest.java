@@ -27,16 +27,21 @@ public class AppControllerTest {
             Article a2 = new Article("Melina Borcak", "Das weiße Band der Schande");
             List<Article> expectedList = new ArrayList<>();
             expectedList.add(a2);
-            List<Article> actualList = c.filterList("Band", c.Articles);
+            List<Article> actualList = c.filterList("band", expectedList); //Glühbirne schlägt change filterlist to public vor aber das ist falsch.
             assertEquals(expectedList, actualList);
         }catch (Exception e) {
                 e.printStackTrace();
                 fail();}
 
+        //es müssen alle gefilterten Artikel "query" enthalten;
+        //List <Article> expected = new List<Article>() {
+        //}
+        //assertEquals(, controller.getArticleCount(), "Test failed");
+        //if (fList.filterList().contains()
 
     }
 
-        @Test
+    @Test
     public void getTopHeadlinesAustriaTest() {
         AppController controller = new AppController();
         assertNotNull(controller.getTopHeadlinesAustria());
@@ -66,7 +71,7 @@ public class AppControllerTest {
         try {
             AppController c1 = new AppController();
             Article bla = new Article("author","bitcoin");
-            c1.Articles.add(0, bla);
+            c1.getAllNewsBitcoin().add(0, bla);
             assertEquals(bla, c1.getAllNewsBitcoin(), "Should be true");
         }catch (Exception e) {
             e.printStackTrace();

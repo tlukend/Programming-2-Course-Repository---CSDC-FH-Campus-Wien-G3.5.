@@ -3,8 +3,8 @@ package at.ac.fhcampuswien;
 import javafx.scene.Node;
 
 public class Article {
-    String author;
-    String title;
+    private String author;
+    private String title;
     public static int count;
 
     public Article(String author, String title) {
@@ -24,7 +24,7 @@ public class Article {
 
     @Override
     public String toString() {
-        return "Author: " + this.author + ", Title: " + this.title;
+        return "Author: " + getAuthor() + ", Title: " + getTitle();
     }
 }
 
