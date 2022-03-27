@@ -5,6 +5,10 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -22,23 +26,17 @@ public class AppControllerTest {
 
     @Test
     public void filterListTest() {
-            AppController c = new AppController();
-            try {
+        AppController aC = new AppController();
+        try {
             Article a2 = new Article("Melina Borcak", "Das weiße Band der Schande");
             List<Article> expectedList = new ArrayList<>();
             expectedList.add(a2);
-            List<Article> actualList = c.filterList("band", expectedList); //Glühbirne schlägt change filterlist to public vor aber das ist falsch.
+            List<Article> actualList = aC.filterList("band", expectedList); //Glühbirne schlägt change filterlist to public vor aber das ist falsch.
             assertEquals(expectedList, actualList);
-        }catch (Exception e) {
-                e.printStackTrace();
-                fail();}
-
-        //es müssen alle gefilterten Artikel "query" enthalten;
-        //List <Article> expected = new List<Article>() {
-        //}
-        //assertEquals(, controller.getArticleCount(), "Test failed");
-        //if (fList.filterList().contains()
-
+        } catch (Exception e) {
+            e.printStackTrace();
+            fail();
+        }
     }
 
     @Test
