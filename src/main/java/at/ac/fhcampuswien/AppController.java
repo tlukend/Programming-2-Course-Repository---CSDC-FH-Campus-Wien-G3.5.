@@ -35,20 +35,10 @@ public class AppController <E> {
             else return 0;
         }
 
-        public boolean getAllNewsBitcoin(){
-            boolean bitcoinfound = Articles.contains(query);
-            if (bitcoinfound==true) {
-                return bitcoinfound;
-            }
-            return false;
-            //return filteredArticle; // arbeiten
+        public List<E> getAllNewsBitcoin(){
+            return filterList("bitcoin",Articles);
+            //arbeiten
         }
-        //filterList("Bitcoin", Articles) = filteredArticle;
-        //return filteredArticle; // arbeiten
-        //public List<E> getAllNewsBitcoin(List <E> filteredArticle){
-            //filterList("Bitcoin", Articles) = filteredArticle;
-            //return filteredArticle;
-        //}
 
         public List<E> getTopHeadlinesAustria() {
             if (getTopHeadlinesAustria().isEmpty()) {

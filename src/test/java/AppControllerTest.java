@@ -69,8 +69,9 @@ public class AppControllerTest {
     public void getAllNewsBitcoinTest(){
         try {
             AppController c1 = new AppController();
-            c1.Articles.add(0, "BitCoIn");
-            assertEquals(true, c1.getAllNewsBitcoin(), "Should be true");
+            Article bla = new Article("author","bitcoin");
+            c1.Articles.add(0, bla);
+            assertEquals(bla, c1.getAllNewsBitcoin(), "Should be true");
         }catch (Exception e) {
             e.printStackTrace();
             fail();
