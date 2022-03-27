@@ -4,23 +4,29 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class AppController <E> {
-        public List<Article> Articles = new ArrayList<Article>();
-        List<E> TopHeadlinesAustria = new ArrayList<>();
-        List<E> filterList = new ArrayList<>();
+public class AppController{
+        public List<Article> Articles;
+        List<Article> TopHeadlinesAustria = new ArrayList<>();
+        List<Article> filterList = new ArrayList<>();
         String query = "Bitcoin";
 
-        public static void generateMocklist(List<Article> art){
+    public AppController(){
+
+        List<Article> Articles = new ArrayList<Article>();
+    }
+
+        public static void generateMocklist(List<Article> Articles){
 
            Article a01 = new Article("Margarete Stokowski", "Finger weg von den Frauen!");
            Article a02 = new Article("Melisa Erkurt", "Reiche Eltern für alle!");
            Article a03 = new Article("Melina Borcak", "Keine Strafe hoch genug");
            Article a04 = new Article("Melina Borcak", "Das weiße Band der Schande");
 
-            art.add(a01);
-            art.add(a02);
-            art.add(a03);
-            art.add(a04);
+
+            Articles.add(a01);
+            Articles.add(a02);
+            Articles.add(a03);
+            Articles.add(a04);
 
         }
 
@@ -35,19 +41,20 @@ public class AppController <E> {
             else return 0;
         }
 
-        public List<E> getAllNewsBitcoin(){
+        public List<Article> getAllNewsBitcoin(){
             return filterList("bitcoin",Articles);
             //arbeiten
         }
 
-        public List<E> getTopHeadlinesAustria() {
+        public List<Article> getTopHeadlinesAustria() {
             if (getTopHeadlinesAustria().isEmpty()) {
                 Collections.emptyList();
             }
+
             return TopHeadlinesAustria;
         }
 
-        public List<E> filterList(String query, List<Article> articles){
+        public List<Article> filterList(String query, List<Article> articles){
         articles.stream().filter((b) -> articles.contains(query));
                 return filterList;
                 //arbeiten

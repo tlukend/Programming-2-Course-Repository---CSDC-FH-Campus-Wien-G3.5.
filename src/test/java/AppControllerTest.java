@@ -22,25 +22,21 @@ public class AppControllerTest {
 
     @Test
     public void filterListTest() {
+            AppController c = new AppController();
+            try {
+            Article a2 = new Article("Melina Borcak", "Das weiße Band der Schande");
+            List<Article> expectedList = new ArrayList<>();
+            expectedList.add(a2);
+            List<Article> actualList = c.filterList("Band", c.Articles);
+            assertEquals(expectedList, actualList);
+        }catch (Exception e) {
+                e.printStackTrace();
+                fail();}
 
-        //Article a05 = new Article();
-        //Article a06 = new Article();
-        //Article a07 = new Article();
-        AppController fList = new AppController();
-        //es müssen alle gefilterten Artikel "query" enthalten
-        Article a1 = new Article("title", "author");
-        Article a2 = new Article("title", "author");
-        //assertEquals(2, controller.getArticleCount(), "Test failed");
-        //AppController.generateMocklist();
-        //List <Article> expected = new List<Article>() {
-        //}
-        //assertEquals(, controller.getArticleCount(), "Test failed");
-        //List <E> actual = asse
-        //if (fList.filterList().contains()
 
     }
 
-    @Test
+        @Test
     public void getTopHeadlinesAustriaTest() {
         AppController controller = new AppController();
         assertNotNull(controller.getTopHeadlinesAustria());
