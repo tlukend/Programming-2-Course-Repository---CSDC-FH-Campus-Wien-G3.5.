@@ -13,6 +13,9 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 
+import java.util.List;
+import java.util.Scanner;
+
 import static javafx.scene.paint.Color.*;
 
 public class App extends Application {
@@ -21,9 +24,7 @@ public class App extends Application {
     protected final static int APP_WIDTH = 1000;
     protected static StackPane mainMenu;
 
-    public static void main(String[] args) {
-        launch(args);
-    }
+    public static void main(String[] args) {launch(args);}
 
     @Override
     public void start(Stage primaryStage) {

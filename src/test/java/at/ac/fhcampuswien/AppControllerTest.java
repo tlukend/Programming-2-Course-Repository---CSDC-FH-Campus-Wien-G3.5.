@@ -1,3 +1,5 @@
+package at.ac.fhcampuswien;
+
 import at.ac.fhcampuswien.AppController;
 import at.ac.fhcampuswien.Article;
 import org.junit.jupiter.api.AfterAll;
@@ -24,14 +26,13 @@ public class AppControllerTest {
         System.out.println("Finished Testing");
     }
 
-    @Test
+    @Test //funktioniert falsch
     public void filterListTest() {
-        AppController aC = new AppController();
         try {
             Article a2 = new Article("Melina Borcak", "Das weiße Band der Schande");
             List<Article> expectedList = new ArrayList<>();
             expectedList.add(a2);
-            List<Article> actualList = aC.filterList("band", expectedList); //Glühbirne schlägt change filterlist to public vor aber das ist falsch.
+            List<Article> actualList = AppController.filterList("qargfjhgk", expectedList); //Glühbirne schlägt change filterlist to public vor aber das ist falsch.
             assertEquals(expectedList, actualList);
         } catch (Exception e) {
             e.printStackTrace();
@@ -46,7 +47,7 @@ public class AppControllerTest {
         assertTrue(controller.getTopHeadlinesAustria() instanceof List);
     }
 
-    @Test
+    @Test // dieser Test überprüft garnichts, er fügt nur artikel hinzu
     public void setArticlesTest() {
 
         AppController controller = new AppController();
@@ -64,13 +65,13 @@ public class AppControllerTest {
         }
     }
 
-    @Test
+    @Test //nicht fertig
     public void getAllNewsBitcoinTest() {
         try {
             AppController c1 = new AppController();
             Article bla = new Article("author", "bitcoin");
-            c1.getAllNewsBitcoin().add(0, bla);
-            assertEquals(bla, c1.getAllNewsBitcoin(), "Should be true");
+            //c1.getAllNewsBitcoin().add(0, bla);
+            assertEquals(bla, c1.getAllNewsBitcoin(), "Expected and Actual not correct");
         } catch (Exception e) {
             e.printStackTrace();
             fail();
@@ -85,6 +86,7 @@ public class AppControllerTest {
 
             Article a1 = new Article("title", "author");
             Article a2 = new Article("title", "author");
+
             assertEquals(2, controller.getArticleCount(), "Test failed");
 
         } catch (Exception e) {
