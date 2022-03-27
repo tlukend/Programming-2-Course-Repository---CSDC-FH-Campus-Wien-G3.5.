@@ -11,7 +11,6 @@ import javafx.scene.layout.*;
 import javafx.scene.layout.StackPane;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
-import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import static javafx.scene.paint.Color.*;
@@ -29,6 +28,9 @@ public class App extends Application {
     @Override
     public void start(Stage primaryStage) {
 
+        //Objects
+        //AppController<Object> www = new AppController<>();
+
         //main menu
         primaryStage.setTitle("N E W S A P P");
         primaryStage.getIcons().add(new Image(getClass().getResource("/NewsAppLogo.png").toExternalForm()));
@@ -36,6 +38,7 @@ public class App extends Application {
         Font labelFont = Font.font("Times New Roman", FontWeight.EXTRA_BOLD, 44);
         Label welcomeText = new Label("Welcome to NewsApp");
         Label countText = new Label("23"); //muss noch auf die variable Article.count abgestimmt werden
+        Label bitcoinNews = new Label("Bitcoin News"); //bitcoin news muss noch programmiert werden
         welcomeText.setTextFill(DARKRED);
         welcomeText.setAlignment(Pos.TOP_CENTER);
         welcomeText.setFont(labelFont);
@@ -102,6 +105,14 @@ public class App extends Application {
             countText.setAlignment(Pos.TOP_CENTER);
             countText.setFont(labelFont);
             mainMenu.getChildren().add(countText);
+        });
+        //when clicking the getAllNewsBitcoin button
+        bitcoinButton.setOnAction(event -> {
+            mainMenu.getChildren().remove(menuBox);
+            bitcoinNews.setTextFill(DARKRED);
+            bitcoinNews.setAlignment(Pos.TOP_CENTER);
+            bitcoinNews.setFont(labelFont);
+            mainMenu.getChildren().add(bitcoinNews);
         });
 
         primaryStage.setScene(menuScene);

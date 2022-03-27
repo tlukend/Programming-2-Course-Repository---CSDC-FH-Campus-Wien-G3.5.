@@ -41,15 +41,26 @@ public class AppController <E> {
                 return bitcoinfound;
             }
             return false;
+            //return filteredArticle; // arbeiten
         }
+        //filterList("Bitcoin", Articles) = filteredArticle;
+        //return filteredArticle; // arbeiten
+        //public List<E> getAllNewsBitcoin(List <E> filteredArticle){
+            //filterList("Bitcoin", Articles) = filteredArticle;
+            //return filteredArticle;
+        //}
 
         public List<E> getTopHeadlinesAustria() {
+            if (getTopHeadlinesAustria().isEmpty()) {
+                Collections.emptyList();
+            }
             return TopHeadlinesAustria;
         }
 
         public List<E> filterList(String query, List<Article> articles){
         articles.stream().filter((b) -> articles.contains(query));
                 return filterList;
+                //arbeiten
         }
 
 
