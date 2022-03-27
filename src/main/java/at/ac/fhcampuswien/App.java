@@ -29,6 +29,7 @@ public class App extends Application {
     @Override
     public void start(Stage primaryStage) {
 
+        //main menu
         primaryStage.setTitle("N E W S A P P");
         primaryStage.getIcons().add(new Image(getClass().getResource("/NewsAppLogo.png").toExternalForm()));
 
@@ -58,6 +59,7 @@ public class App extends Application {
         quitButton.setTextFill(WHITE);
         quitButton.setFont(buttonFont);
 
+        //design main menu
         VBox menuBox = new VBox();
         menuBox.getChildren().addAll(welcomeText, newsButton, bitcoinButton, numberOfArticlesButton, quitButton);
         menuBox.setSpacing(30);
@@ -93,6 +95,7 @@ public class App extends Application {
         mainMenu.setBackground(new Background(new BackgroundFill(LIGHTGRAY, null, null)));
         mainMenu.getChildren().addAll(imgView, imgView1, imgView2, imgView3, menuBox);
 
+        //when clicking the numberOfArticles button
         numberOfArticlesButton.setOnAction(event -> {
             mainMenu.getChildren().remove(menuBox);
             countText.setTextFill(DARKRED);
