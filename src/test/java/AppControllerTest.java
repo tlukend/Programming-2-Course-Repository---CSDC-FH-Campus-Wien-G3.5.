@@ -65,13 +65,13 @@ public class AppControllerTest {
     }
 
     @Test
-    public void getAllNewsBitcoinTest(){
+    public void getAllNewsBitcoinTest() {
         try {
             AppController c1 = new AppController();
-            Article bla = new Article("author","bitcoin");
+            Article bla = new Article("author", "bitcoin");
             c1.getAllNewsBitcoin().add(0, bla);
             assertEquals(bla, c1.getAllNewsBitcoin(), "Should be true");
-        }catch (Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
             fail();
         }

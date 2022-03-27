@@ -5,75 +5,75 @@ import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class AppController{
-        private List<Article> Articles;
-        List<Article> TopHeadlinesAustria = new ArrayList<>();
-        List<Article> filterList = new ArrayList<>();
-        String query = "Bitcoin";
+public class AppController {
+    private List<Article> Articles;
+    List<Article> TopHeadlinesAustria = new ArrayList<>();
+    List<Article> filterList = new ArrayList<>();
+    String query = "Bitcoin";
 
-        private static List<Article> generateMocklist(){
-            ArrayList <Article> mock = new ArrayList<>();
-            Article a01 = new Article("Margarete Stokowski", "Finger weg von den Frauen!");
-            Article a02 = new Article("Melisa Erkurt", "Reiche Eltern für alle!");
-            Article a03 = new Article("Melina Borcak", "Keine Strafe hoch genug");
-            Article a04 = new Article("Melina Borcak", "Das weiße Band der Schande");
-            mock.add(a01);
-            mock.add(a02);
-            mock.add(a03);
-            mock.add(a04);
+    private static List<Article> generateMocklist() {
+        ArrayList<Article> mock = new ArrayList<>();
+        Article a01 = new Article("Margarete Stokowski", "Finger weg von den Frauen!");
+        Article a02 = new Article("Melisa Erkurt", "Reiche Eltern für alle!");
+        Article a03 = new Article("Melina Borcak", "Keine Strafe hoch genug");
+        Article a04 = new Article("Melina Borcak", "Das weiße Band der Schande");
+        mock.add(a01);
+        mock.add(a02);
+        mock.add(a03);
+        mock.add(a04);
 
-            return mock;
+        return mock;
+    }
+
+
+    public void setArticles(List<Article> articles) {
+        Articles = articles;
+    }
+
+    public int getArticleCount() {
+        if (Article.count >= 1)
+            return Article.count;
+        else return 0;
+    }
+
+    public List<Article> getTopHeadlinesAustria() {
+        if (getTopHeadlinesAustria().isEmpty()) {
+            Collections.emptyList();
         }
+        return TopHeadlinesAustria;
+    }
+
+    public List<Article> getAllNewsBitcoin() {
+        return filterList("bitcoin", generateMocklist());
+        //arbeiten
+    }
 
 
-        public void setArticles(List<Article> articles) {
-            Articles = articles;
-       }
+    protected static List<Article> filterList(String query, List<Article> articles) {
+        query.toLowerCase();
+        articles.stream().filter(c -> c.getTitle().toLowerCase().contains(query)).collect(Collectors.toList());
+        return articles;
 
-        public int getArticleCount(){
-            if (Article.count >= 1)
-                return Article.count;
-            else return 0;
-        }
-
-        public List<Article> getTopHeadlinesAustria() {
-            if (getTopHeadlinesAustria().isEmpty()) {
-                Collections.emptyList();
-            }
-            return TopHeadlinesAustria;
-        }
-
-        public List<Article> getAllNewsBitcoin(){
-            return filterList("bitcoin",generateMocklist());
-            //arbeiten
-        }
-
-
-        protected static List<Article> filterList(String query, List<Article> articles){
-            query.toLowerCase();
-            articles.stream().filter(c -> c.getTitle().toLowerCase().contains(query)).collect(Collectors.toList());
-            return articles;
-
-            //articles.stream().filter((b) -> articles.contains(query));
-            }
+        //articles.stream().filter((b) -> articles.contains(query));
+    }
 
 
 //
-        //der AppController beinhaltet eine Liste aus Artikeln, welche durch die statische Methode
-        // generateMockList() erstmals mit Dummy-Werten befüllt wird.
-        // Weiters sollen folgende Methoden implementiert werden:
-        //- setArticles(): Setter für die Artikel Liste
-        //- getArticleCount(): gibt die Anzahl der Artikel der Liste zurück.
-        //Ist die Liste null, soll 0 zurückgegeben werden
-        //- getTopHeadlinesAustria(): wird noch nicht konkret implementiert.
-        // Soll nur die Liste der Artikel zurückgeben. Ist die Liste null soll eine leere Liste
-        // zurückgegeben werden
-        //- filterList(String query, List<Article> articles): der Funktion wird ein Suchstring (query)
-        // und eine Liste übergeben. Es wird eine Liste von jenen Artikeln zurückgegeben, in denen das Query
-        // im Title vorkommt. Groß- und Kleinschreibung soll nicht beachtet werden.
-        //- getAllNewsBitcoin(): die Funktion ruft die filterList() Funktion mit dem query „bitcoin“ auf
-        //
-        //Der AppController wird in zukünftigen Exercises das Herzstück der Applikation bilden.
-        // .In dieser Exercise geht es darum, einige Unittests für die Funktionen zu schreiben.
+    //der AppController beinhaltet eine Liste aus Artikeln, welche durch die statische Methode
+    // generateMockList() erstmals mit Dummy-Werten befüllt wird.
+    // Weiters sollen folgende Methoden implementiert werden:
+    //- setArticles(): Setter für die Artikel Liste
+    //- getArticleCount(): gibt die Anzahl der Artikel der Liste zurück.
+    //Ist die Liste null, soll 0 zurückgegeben werden
+    //- getTopHeadlinesAustria(): wird noch nicht konkret implementiert.
+    // Soll nur die Liste der Artikel zurückgeben. Ist die Liste null soll eine leere Liste
+    // zurückgegeben werden
+    //- filterList(String query, List<Article> articles): der Funktion wird ein Suchstring (query)
+    // und eine Liste übergeben. Es wird eine Liste von jenen Artikeln zurückgegeben, in denen das Query
+    // im Title vorkommt. Groß- und Kleinschreibung soll nicht beachtet werden.
+    //- getAllNewsBitcoin(): die Funktion ruft die filterList() Funktion mit dem query „bitcoin“ auf
+    //
+    //Der AppController wird in zukünftigen Exercises das Herzstück der Applikation bilden.
+    // .In dieser Exercise geht es darum, einige Unittests für die Funktionen zu schreiben.
 
-    }
+}
