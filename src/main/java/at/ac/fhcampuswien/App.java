@@ -1,20 +1,20 @@
 package at.ac.fhcampuswien;
 
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.*;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.StackPane;
+import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
-
-import java.util.List;
-import java.util.Scanner;
 
 import static javafx.scene.paint.Color.*;
 
@@ -24,7 +24,9 @@ public class App extends Application {
     protected final static int APP_WIDTH = 1000;
     protected static StackPane mainMenu;
 
-    public static void main(String[] args) {launch(args);}
+    public static void main(String[] args) {
+        launch(args);
+    }
 
     @Override
     public void start(Stage primaryStage) {
@@ -62,6 +64,7 @@ public class App extends Application {
         quitButton.setStyle("-fx-background-color:#3A3B3C");
         quitButton.setTextFill(WHITE);
         quitButton.setFont(buttonFont);
+        quitButton.setOnAction(actionEvent -> Platform.exit());
 
         //design main menu
         VBox menuBox = new VBox();
@@ -95,10 +98,19 @@ public class App extends Application {
         StackPane.setAlignment(imgView1, Pos.TOP_LEFT);
         StackPane.setAlignment(imgView2, Pos.BOTTOM_RIGHT);
         StackPane.setAlignment(imgView3, Pos.BOTTOM_LEFT);
+        Button menue = new Button("Menü");  //Menü Button wurde hinzugefügt
+        menue.setStyle("-fx-background-color:#3A3B3C");
+        menue.setTextFill(WHITE);
+        menue.setFont(buttonFont);
+        StackPane.setAlignment(menue, Pos.BOTTOM_CENTER);
+
         Scene menuScene = new Scene(mainMenu, APP_WIDTH, APP_HEIGHT);
         mainMenu.setBackground(new Background(new BackgroundFill(LIGHTGRAY, null, null)));
-        mainMenu.getChildren().addAll(imgView, imgView1, imgView2, imgView3, menuBox);
-
+        mainMenu.getChildren().addAll(imgView, imgView1, imgView2, imgView3, menuBox, menue);
+        menue.setOnAction(actionEvent -> {
+            mainMenu.getChildren().removeAll();
+            mainMenu.getChildren().add(menuBox);   //habe versucht, wenn ich auf einen Button rauf drücke und zurück ins Menü komme, alles wieder zu ist und nicht noch offen!
+        });
         //when clicking the numberOfArticles button
         numberOfArticlesButton.setOnAction(event -> {
             mainMenu.getChildren().remove(menuBox);
