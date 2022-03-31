@@ -4,8 +4,10 @@ import at.ac.fhcampuswien.AppController;
 import at.ac.fhcampuswien.Article;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -27,6 +29,7 @@ public class AppControllerTest {
     }
 
     @Test
+    @DisplayName("Tests if filterList filters lowercase querys.")
     public void filterListTest() {
         List<Article> random = new ArrayList<>();
         List<Article> actual = new ArrayList<>();
@@ -49,6 +52,7 @@ public class AppControllerTest {
     }
 
     @Test
+    @DisplayName("Tests if filterList filters uppercase querys.")
     public void filterListTestUppercase() {
         List<Article> random = new ArrayList<>();
         List<Article> actual = new ArrayList<>();
@@ -71,13 +75,16 @@ public class AppControllerTest {
     }
 
     @Test
+    @DisplayName("Tests if getTopHeadlinesAustria returns ArrayList.")
     public void getTopHeadlinesAustriaTest() {
         AppController controller = new AppController();
         assertNotNull(controller.getTopHeadlinesAustria());
         assertTrue(controller.getTopHeadlinesAustria() instanceof List);
+
     }
 
-    @Test // dieser Test überprüft garnichts, er fügt nur artikel hinzu
+    @Test
+    @DisplayName("Tests setArticles. Crashes if setArticles does not work or exist, which is a failed Test.")
     public void setArticlesTest() {
 
         AppController controller = new AppController();
@@ -96,6 +103,7 @@ public class AppControllerTest {
     }
 
     @Test
+    @DisplayName("Tests if getAllNewsBitcoin filters for bitcoin query by comparison.")
     public void getAllNewsBitcoinTest() {
         AppController controller = new AppController();
         List<Article> random = new ArrayList<>();
@@ -120,6 +128,7 @@ public class AppControllerTest {
     }
 
     @Test
+    @DisplayName("Tests getArticleCount by setting two articles and comparing to expected value.")
     public void getArticleCountTest() {
         try {
             AppController controller = new AppController();
@@ -139,6 +148,7 @@ public class AppControllerTest {
     }
 
     @Test
+    @DisplayName("Tests if getArticleCount returns default value of articles.")
     public void getArticleCountTestDefault() {
         try {
             AppController controller = new AppController();
