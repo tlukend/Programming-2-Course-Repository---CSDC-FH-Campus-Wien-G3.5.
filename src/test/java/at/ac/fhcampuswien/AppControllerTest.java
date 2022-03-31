@@ -28,13 +28,26 @@ public class AppControllerTest {
 
     @Test //funktioniert falsch
     public void filterListTest() {
-        //List<Article> actual =
-        //List<Article> expected = new ArrayList<>();
+        List<Article> random = new ArrayList<>();
+        List<Article> actual = new ArrayList<>();
+        Article r1 = new Article("Tina", "Das Auto");
+        Article r2 = new Article("Toni", "Der die das");
+        Article r3 = new Article("Tini", "Auf den Bermudas");
+        Article r4 = new Article("Lola", "Planet der Affen");
+        random.add(r1);
+        random.add(r2);
+        random.add(r3);
+        random.add(r4);
 
+        actual.add(r1);
+        actual.add(r2);
+        actual.add(r3);
+        List<Article> randomFiltered = AppController.filterList("das", random);
 
+        assertEquals(actual,randomFiltered);
 
-
-      /*  try {
+        /*List<Article> expected = new ArrayList<>();
+        try {
             Article a2 = new Article("Melina Borcak", "Das weiße Band der Schande");
             List<Article> expectedList = new ArrayList<>();
             expectedList.add(a2);
