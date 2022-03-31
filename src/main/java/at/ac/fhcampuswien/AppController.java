@@ -8,8 +8,10 @@ import java.util.stream.Collectors;
 public class AppController {
     private List<Article> Articles;
     List<Article> TopHeadlinesAustria = new ArrayList<>();
-    List<Article> filterList = new ArrayList<>();
-    String query = "Bitcoin";
+    List<Article> randomList = generateMocklist();
+    public List<Article> randomFiltered = filterList("Borcak", randomList);
+
+
 
     private static List<Article> generateMocklist() {
         ArrayList<Article> mock = new ArrayList<>();
@@ -24,7 +26,13 @@ public class AppController {
 
         return mock;
     }
+    protected static List<Article> filterList(String query, List<Article> articles) {
 
+        query.toLowerCase();
+        return articles.stream().filter(e -> e.getTitle().toLowerCase().contains(query)).collect(Collectors.toList());
+    }
+    // relativ neue Methode - filtert in eine liste, die gleichzeitig die Rückgabeliste ist
+    // toLowerCase, damit Groß- und Kleinschreibung egal ist - deshalb alles in klein zum Vergleichen
 
     public void setArticles(List<Article> articles) {
         Articles = articles;
@@ -45,15 +53,9 @@ public class AppController {
 
     public List<Article> getAllNewsBitcoin() {
         return filterList("bitcoin", generateMocklist());
-        //arbeiten
+
     }
 
-//Hier stimmt was nicht
-    protected static List<Article> filterList(String query, List<Article> articles) {
-        query.toLowerCase();
-        articles.stream().filter(c -> c.getTitle().toLowerCase().contains(query)).collect(Collectors.toList());
-        return articles;
 
-        //articles.stream().filter((b) -> articles.contains(query));
-    }
+
 }
