@@ -44,19 +44,8 @@ public class AppControllerTest {
         actual.add(r3);
         List<Article> randomFiltered = AppController.filterList("das", random);
 
-        assertEquals(actual,randomFiltered);
+        assertEquals(randomFiltered, actual, "Your method didn't filter the expected articles containing the query!");
 
-        /*List<Article> expected = new ArrayList<>();
-        try {
-            Article a2 = new Article("Melina Borcak", "Das weiße Band der Schande");
-            List<Article> expectedList = new ArrayList<>();
-            expectedList.add(a2);
-            List<Article> actualList = AppController.filterList("qargfjhgk", expectedList); //Glühbirne schlägt change filterlist to public vor aber das ist falsch.
-            assertEquals(expectedList, actualList);
-        } catch (Exception e) {
-            e.printStackTrace();
-            fail();
-        }*/
     }
 
     @Test
@@ -84,17 +73,27 @@ public class AppControllerTest {
         }
     }
 
-    @Test //nicht fertig
+    @Test
     public void getAllNewsBitcoinTest() {
-        try {
-            AppController c1 = new AppController();
-            Article bla = new Article("author", "bitcoin");
-            //c1.getAllNewsBitcoin().add(0, bla);
-            assertEquals(bla, c1.getAllNewsBitcoin(), "Expected and Actual not correct");
-        } catch (Exception e) {
-            e.printStackTrace();
-            fail();
-        }
+        AppController controller = new AppController();
+        List<Article> random = new ArrayList<>();
+        List<Article> actual = new ArrayList<>();
+        Article r1 = new Article("Tina", "Das Bitcoin-Auto");
+        Article r2 = new Article("Toni", "Der die das bitcoin");
+        Article r3 = new Article("Tini", "Auf den Bermudas");
+        Article r4 = new Article("Lola", "Planet der Affen");
+        random.add(r1);
+        random.add(r2);
+        random.add(r3);
+        random.add(r4);
+
+        List<Article> randomBitcoin = controller.getAllNewsBitcoin(random);
+
+        actual.add(r1);
+        actual.add(r2);
+
+        assertEquals(randomBitcoin, actual, "Your method didn't filter the expected articles containing the word \"bitcoin\" !");
+
     }
 
     @Test
@@ -110,7 +109,7 @@ public class AppControllerTest {
 
         } catch (Exception e) {
             e.printStackTrace();
-            fail();
+           fail();
         }
     }
 }

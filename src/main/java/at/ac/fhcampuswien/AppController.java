@@ -51,9 +51,8 @@ public class AppController {
         return TopHeadlinesAustria;
     }
 
-    public List<Article> getAllNewsBitcoin() {
-        return filterList("bitcoin", generateMocklist());
-
+    public List<Article> getAllNewsBitcoin(List<Article> someList) {
+        return filterList("bitcoin", someList );
     }
 
 
