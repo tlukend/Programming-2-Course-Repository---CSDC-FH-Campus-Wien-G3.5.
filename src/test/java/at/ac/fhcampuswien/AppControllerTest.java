@@ -26,7 +26,7 @@ public class AppControllerTest {
         System.out.println("Finished Testing");
     }
 
-    @Test //funktioniert falsch
+    @Test
     public void filterListTest() {
         List<Article> random = new ArrayList<>();
         List<Article> actual = new ArrayList<>();
@@ -43,6 +43,28 @@ public class AppControllerTest {
         actual.add(r2);
         actual.add(r3);
         List<Article> randomFiltered = AppController.filterList("das", random);
+
+        assertEquals(randomFiltered, actual, "Your method didn't filter the expected articles containing the query!");
+
+    }
+
+    @Test
+    public void filterListTestUppercase() {
+        List<Article> random = new ArrayList<>();
+        List<Article> actual = new ArrayList<>();
+        Article r1 = new Article("Tina", "Das Auto");
+        Article r2 = new Article("Toni", "Der die das");
+        Article r3 = new Article("Tini", "Auf den Bermudas");
+        Article r4 = new Article("Lola", "Planet der Affen");
+        random.add(r1);
+        random.add(r2);
+        random.add(r3);
+        random.add(r4);
+
+        actual.add(r1);
+        actual.add(r2);
+        actual.add(r3);
+        List<Article> randomFiltered = AppController.filterList("DAS", random);
 
         assertEquals(randomFiltered, actual, "Your method didn't filter the expected articles containing the query!");
 
@@ -86,30 +108,45 @@ public class AppControllerTest {
         random.add(r2);
         random.add(r3);
         random.add(r4);
+        controller.setArticles(random);
 
-        List<Article> randomBitcoin = controller.getAllNewsBitcoin(random);
+        List<Article> randomBitcoin = controller.getAllNewsBitcoin();
 
-        actual.add(r1);
-        actual.add(r2);
+       actual.add(r1);
+       actual.add(r2);
 
-        assertEquals(randomBitcoin, actual, "Your method didn't filter the expected articles containing the word \"bitcoin\" !");
+       assertEquals(randomBitcoin, actual, "Your method didn't filter the expected articles containing the word \"bitcoin\" !");
 
     }
 
     @Test
     public void getArticleCountTest() {
         try {
-            Article.count = 0;
             AppController controller = new AppController();
-
+            List <Article> list = new ArrayList<>();
             Article a1 = new Article("title", "author");
             Article a2 = new Article("title", "author");
+            list.add(a1);
+            list.add(a2);
+            controller.setArticles(list);
 
             assertEquals(2, controller.getArticleCount(), "Test failed");
 
         } catch (Exception e) {
             e.printStackTrace();
            fail();
+        }
+    }
+
+    @Test
+    public void getArticleCountTestDefault() {
+        try {
+            AppController controller = new AppController();
+            assertEquals(4, controller.getArticleCount(), "Test failed"); //4 ist der erwartete wert, weil beim erstellen in der Mocklist 4 Einträge sind
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            fail();
         }
     }
 }
