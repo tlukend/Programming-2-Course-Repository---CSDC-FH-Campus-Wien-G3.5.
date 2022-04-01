@@ -16,6 +16,10 @@ public class AppController {
         this.articles = articles;
     }
 
+    public List<Article> getArticles() {
+        return articles;
+    }
+
     public int getArticleCount() {
         if (articles == null)
             return 0;
@@ -38,7 +42,7 @@ public class AppController {
         String finalQuery = query;
         return articles.stream().filter(e -> e.getTitle().toLowerCase().contains(finalQuery)).collect(Collectors.toList());
     }
-    // relativ neue Methode - filtert in eine liste, die gleichzeitig die Rückgabeliste ist
+    // stream = relativ neue Methode - filtert in eine liste, die gleichzeitig die Rückgabeliste ist
     // toLowerCase, damit Groß- und Kleinschreibung egal ist - deshalb alles in klein zum Vergleichen
 
     private static List<Article> generateMocklist() {

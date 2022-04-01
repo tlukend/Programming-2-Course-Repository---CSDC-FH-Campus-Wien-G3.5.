@@ -86,20 +86,28 @@ public class AppControllerTest {
     @Test
     @DisplayName("Tests setArticles. Crashes if setArticles does not work or exist, which is a failed Test.")
     public void setArticlesTest() {
-
         AppController controller = new AppController();
-        List<Article> Articles = new ArrayList<>();
-        Article Article1 = new Article("Jack", "Article");
-        Article Article2 = new Article("Khaled Hosseini", "Article");
-        Articles.add(Article1);
-        Articles.add(Article2);
-        try {
-            controller.setArticles(Articles);
 
-        } catch (Exception e) {
-            e.printStackTrace();
-            fail();
-        }
+        ArrayList<Article> random = new ArrayList<>();
+        ArrayList<Article> actual = new ArrayList<>();
+        Article r1 = new Article("Tina", "Das Auto");
+        Article r2 = new Article("Toni", "Der die das");
+        Article r3 = new Article("Tini", "Auf den Bermudas");
+        Article r4 = new Article("Lola", "Planet der Affen");
+        random.add(r1);
+        random.add(r2);
+        random.add(r3);
+        random.add(r4);
+
+        actual.add(r1);
+        actual.add(r2);
+        actual.add(r3);
+        actual.add(r4);
+
+        controller.setArticles(random);
+
+        assertEquals(controller.getArticles(), actual, "Setter doesn't work! :(");
+
     }
 
     @Test
