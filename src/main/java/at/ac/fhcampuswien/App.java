@@ -131,8 +131,10 @@ public class App extends Application {
             bitcoinNews.setTextFill(DARKRED);
             bitcoinNews.setAlignment(Pos.TOP_CENTER);
             bitcoinNews.setFont(labelFont);
+            bitcoinNews.setText(getAllNewsBitcoin(ctrl));
             mainMenu.getChildren().add(bitcoinNews);
         });
+
 
         primaryStage.setScene(menuScene);
         primaryStage.setResizable(true);
@@ -140,4 +142,14 @@ public class App extends Application {
         //Show Application
         primaryStage.show();
     }
+
+    private String getAllNewsBitcoin(AppController ctrl) {
+            String output = "";
+        for (int i = 0; i <= ctrl.getAllNewsBitcoin().size(); i++) {
+            output += ctrl.getAllNewsBitcoin().get(i).toString()+System.lineSeparator();
+        }
+        return output;
+    }
+
+
 }
