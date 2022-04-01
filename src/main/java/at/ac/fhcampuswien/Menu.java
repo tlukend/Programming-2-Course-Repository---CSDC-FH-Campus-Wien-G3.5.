@@ -9,8 +9,8 @@ public class Menu {
 
     static Scanner scan = new Scanner(System.in);
     private static String input;
-    private static String INVALID_USER_INPUT_MESSAGE = "Incorrect! Please write a,b,y or q!";
-    private static String EXIT_MESSAGE = "Bye bye!";
+    private final static String INVALID_USER_INPUT_MESSAGE = "Incorrect! Please write a,b,y or q!";
+    private final static String EXIT_MESSAGE = "Bye bye!";
 
     //„a“ soll eine statisch generierte Liste von Artikeln,
     // Bei „b“ alle Artikel, in denen das Keyword „bitcoin“ im Titel
