@@ -8,6 +8,7 @@ public class Menu {
     //AppController soll hier nach der Validation aufgerufen werden
 
     static Scanner scan = new Scanner(System.in);
+    AppController controller = new AppController();
     private static String input;
     private final static String INVALID_USER_INPUT_MESSAGE = "Incorrect! Please write a,b,y or q!";
     private final static String EXIT_MESSAGE = "Bye bye!";
@@ -39,11 +40,20 @@ public class Menu {
         }
     }
 
-
-    public boolean inputValidation() {
-        //userInput = userInput.nextString();
-        return true;
+    public static String getInput() {
+        return input;
     }
+
+    private void handleInput(String input) {
+        //userInput = userInput.nextString();
+        //input = getInput();
+        //if (input = "a" || input == "b" || getInput() == "y" || getInput() == "q")){
+
+        }
+    public String articleCount (){
+        return Integer.toString(controller.getArticleCount());
+    }
+
 
 
     //die Menu Klasse ist für die Ausgabe des Konsolenmenüs, sowie die Usereingaben zuständig.

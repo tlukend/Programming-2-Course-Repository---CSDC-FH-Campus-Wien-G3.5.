@@ -35,6 +35,7 @@ public class App extends Application {
 
         //Objects
         //AppController<Object> www = new AppController<>();
+        AppController ctrl = new AppController();
 
         //main menu
         primaryStage.setTitle("N E W S A P P");
@@ -42,7 +43,7 @@ public class App extends Application {
 
         Font labelFont = Font.font("Times New Roman", FontWeight.EXTRA_BOLD, 44);
         Label welcomeText = new Label("Welcome to NewsApp");
-        Label countText = new Label("23"); //muss noch auf die variable Article.count abgestimmt werden
+        Label countText = new Label("Number of Articles: " + ctrl.getArticleCount()); //muss noch auf die variable Article.count abgestimmt werden
         Label bitcoinNews = new Label("Bitcoin News"); //bitcoin news muss noch programmiert werden
         welcomeText.setTextFill(DARKRED);
         welcomeText.setAlignment(Pos.TOP_CENTER);
