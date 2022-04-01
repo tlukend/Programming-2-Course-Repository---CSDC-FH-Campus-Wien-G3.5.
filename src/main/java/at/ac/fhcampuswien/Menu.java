@@ -13,6 +13,8 @@ public class Menu {
     private final static String INVALID_USER_INPUT_MESSAGE = "Incorrect! Please write a,b,y or q!";
     private final static String EXIT_MESSAGE = "Bye bye!";
 
+
+    public void start(){}
     //„a“ soll eine statisch generierte Liste von Artikeln,
     // Bei „b“ alle Artikel, in denen das Keyword „bitcoin“ im Titel
     // „y“ gibt die Anzahl der Artikel der statischen Liste aus
@@ -53,6 +55,8 @@ public class Menu {
     public String articleCount (){
         return Integer.toString(controller.getArticleCount());
     }
+
+
 
 
 

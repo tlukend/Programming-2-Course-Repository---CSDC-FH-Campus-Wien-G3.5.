@@ -24,6 +24,7 @@ public class App extends Application {
     protected final static int APP_WIDTH = 1000;
     protected static StackPane mainMenu;
 
+
     public static void main(String[] args) {
         launch(args);
         Menu menu = new Menu();
@@ -111,7 +112,7 @@ public class App extends Application {
         mainMenu.setBackground(new Background(new BackgroundFill(LIGHTGRAY, null, null)));
         mainMenu.getChildren().addAll(imgView, imgView1, imgView2, imgView3, menuBox, menue);
         menue.setOnAction(actionEvent -> {
-            mainMenu.getChildren().removeAll();
+            mainMenu.getChildren().removeAll(countText, bitcoinNews);
             mainMenu.getChildren().add(menuBox);   //habe versucht, wenn ich auf einen Button rauf drücke und zurück ins Menü komme, alles wieder zu ist und nicht noch offen!
         });
         //when clicking the numberOfArticles button
@@ -120,7 +121,9 @@ public class App extends Application {
             countText.setTextFill(DARKRED);
             countText.setAlignment(Pos.TOP_CENTER);
             countText.setFont(labelFont);
+            countText.setText("Number of Articles: " + ctrl.getArticleCount());
             mainMenu.getChildren().add(countText);
+
         });
         //when clicking the getAllNewsBitcoin button
         bitcoinButton.setOnAction(event -> {
