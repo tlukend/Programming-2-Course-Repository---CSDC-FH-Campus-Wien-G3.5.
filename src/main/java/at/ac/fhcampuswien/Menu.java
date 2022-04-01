@@ -3,7 +3,7 @@ package at.ac.fhcampuswien;
 import java.util.Scanner;
 import java.sql.SQLOutput;
 
-//WIRD NICHT GEBRAUCHT AM ENDE DA JAVA-FX implementiert
+//WIRD NICHT GEBRAUCHT AM ENDE DA JAVA-FX implementiert: Diese ganze Klasse ist somit obsolet aber wir haben es zu Beginn so gemacht
 public class Menu {
     //AppController soll hier nach der Validation aufgerufen werden
 

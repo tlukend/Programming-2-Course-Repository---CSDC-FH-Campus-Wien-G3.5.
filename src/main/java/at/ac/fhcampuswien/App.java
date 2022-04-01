@@ -27,23 +27,23 @@ public class App extends Application {
 
     public static void main(String[] args) {
         launch(args);
-        Menu menu = new Menu();
-        //hier soll menu.start rein
+       /* Menu menu = new Menu();
+        menu.start(); wird nicht mehr gebraucht wegen GUI */
     }
 
     @Override
     public void start(Stage primaryStage) {
 
-        //Objects
-        //AppController<Object> www = new AppController<>();
         AppController ctrl = new AppController();
 
         //main menu
         primaryStage.setTitle("N E W S A P P");
         primaryStage.getIcons().add(new Image(getClass().getResource("/NewsAppLogo.png").toExternalForm()));
 
-        Font labelFont = Font.font("Times New Roman", FontWeight.EXTRA_BOLD, 44);
+        Font labelFont = Font.font("Times New Roman", FontWeight.EXTRA_BOLD, 35);
         Label welcomeText = new Label("Welcome to NewsApp");
+
+        Label topHeadlinesAustriaText = new Label("Top Headlines Austria");
         Label countText = new Label("Number of Articles: " + ctrl.getArticleCount()); //muss noch auf die variable Article.count abgestimmt werden
         Label bitcoinNews = new Label("Bitcoin News"); //bitcoin news muss noch programmiert werden
         welcomeText.setTextFill(DARKRED);
@@ -52,10 +52,10 @@ public class App extends Application {
 
         //Buttons
         Font buttonFont = Font.font("Times New Roman", FontWeight.NORMAL, 22);
-        Button newsButton = new Button("News");
-        newsButton.setStyle("-fx-background-color:#3A3B3C");
-        newsButton.setTextFill(WHITE);
-        newsButton.setFont(buttonFont);
+        Button topHeadlinesAustriaButton = new Button("Top Headlines Austria");
+        topHeadlinesAustriaButton.setStyle("-fx-background-color:#3A3B3C");
+        topHeadlinesAustriaButton.setTextFill(WHITE);
+        topHeadlinesAustriaButton.setFont(buttonFont);
         Button bitcoinButton = new Button("Bitcoin-News");
         bitcoinButton.setStyle("-fx-background-color:#3A3B3C");
         bitcoinButton.setTextFill(WHITE);
@@ -72,7 +72,7 @@ public class App extends Application {
 
         //design main menu
         VBox menuBox = new VBox();
-        menuBox.getChildren().addAll(welcomeText, newsButton, bitcoinButton, numberOfArticlesButton, quitButton);
+        menuBox.getChildren().addAll(welcomeText, topHeadlinesAustriaButton, bitcoinButton, numberOfArticlesButton, quitButton);
         menuBox.setSpacing(30);
         menuBox.setAlignment(Pos.CENTER);
         menuBox.setFillWidth(true);
@@ -135,6 +135,16 @@ public class App extends Application {
             mainMenu.getChildren().add(bitcoinNews);
         });
 
+        //when clicking the getAllNewsBitcoin button
+        topHeadlinesAustriaButton.setOnAction(event -> {
+            mainMenu.getChildren().remove(menuBox);
+            topHeadlinesAustriaText.setTextFill(DARKRED);
+            topHeadlinesAustriaText.setAlignment(Pos.TOP_CENTER);
+            topHeadlinesAustriaText.setFont(labelFont);
+            topHeadlinesAustriaText.setText(getTopHeadlinesAustria(ctrl));
+            mainMenu.getChildren().add(topHeadlinesAustriaText);
+        });
+
 
         primaryStage.setScene(menuScene);
         primaryStage.setResizable(true);
@@ -145,9 +155,18 @@ public class App extends Application {
 
     private String getAllNewsBitcoin(AppController ctrl) {
             String output = "";
-        for (int i = 0; i <= ctrl.getAllNewsBitcoin().size(); i++) {
+        for (int i = 0; i < ctrl.getAllNewsBitcoin().size(); i++) {
             output += ctrl.getAllNewsBitcoin().get(i).toString()+System.lineSeparator();
         }
+        return output;
+    }
+
+    private String getTopHeadlinesAustria(AppController ctrl) {
+            String output = "";
+        for (int i = 0; i < ctrl.getTopHeadlinesAustria().size(); i++) {
+            output += ctrl.getTopHeadlinesAustria().get(i).toString()+System.lineSeparator();
+        }
+
         return output;
     }
 

@@ -46,7 +46,7 @@ public class AppController {
         Article a01 = new Article("Margarete Stokowski", "Finger weg von den Frauen!");
         Article a02 = new Article("Melisa Erkurt", "Reiche Eltern für alle!");
         Article a03 = new Article("Melina Borcak", "Keine Strafe hoch genug");
-        Article a04 = new Article("Melina Borcak", "Das weiße Band der Schande");
+        Article a04 = new Article("Melina Borcak", "Das weiße Band der Bitcoin");
         mock.add(a01);
         mock.add(a02);
         mock.add(a03);
