@@ -112,7 +112,7 @@ public class App extends Application {
         mainMenu.setBackground(new Background(new BackgroundFill(LIGHTGRAY, null, null)));
         mainMenu.getChildren().addAll(imgView, imgView1, imgView2, imgView3, menuBox, menue);
         menue.setOnAction(actionEvent -> {
-            mainMenu.getChildren().removeAll(countText, bitcoinNews);
+            mainMenu.getChildren().removeAll(countText, bitcoinNews, topHeadlinesAustriaText);
             mainMenu.getChildren().add(menuBox);   //habe versucht, wenn ich auf einen Button rauf drücke und zurück ins Menü komme, alles wieder zu ist und nicht noch offen!
         });
         //when clicking the numberOfArticles button
@@ -135,7 +135,7 @@ public class App extends Application {
             mainMenu.getChildren().add(bitcoinNews);
         });
 
-        //when clicking the getAllNewsBitcoin button
+        //when clicking the topHeadlinesAustria button
         topHeadlinesAustriaButton.setOnAction(event -> {
             mainMenu.getChildren().remove(menuBox);
             topHeadlinesAustriaText.setTextFill(DARKRED);
@@ -145,7 +145,6 @@ public class App extends Application {
             mainMenu.getChildren().add(topHeadlinesAustriaText);
         });
 
-
         primaryStage.setScene(menuScene);
         primaryStage.setResizable(true);
 
@@ -154,6 +153,9 @@ public class App extends Application {
     }
 
     private String getAllNewsBitcoin(AppController ctrl) {
+        if (ctrl.getAllNewsBitcoin().size() == 0){
+            return "There are no news about Bitcoin.";
+        }
             String output = "";
         for (int i = 0; i < ctrl.getAllNewsBitcoin().size(); i++) {
             output += ctrl.getAllNewsBitcoin().get(i).toString()+System.lineSeparator();
@@ -162,6 +164,9 @@ public class App extends Application {
     }
 
     private String getTopHeadlinesAustria(AppController ctrl) {
+        if (ctrl.getTopHeadlinesAustria().size() == 0){
+            return "There are no news about Austria.";
+        }
             String output = "";
         for (int i = 0; i < ctrl.getTopHeadlinesAustria().size(); i++) {
             output += ctrl.getTopHeadlinesAustria().get(i).toString()+System.lineSeparator();
