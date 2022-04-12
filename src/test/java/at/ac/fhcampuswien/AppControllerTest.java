@@ -98,6 +98,7 @@ public class AppControllerTest {
         random.add(r2);
         random.add(r3);
         random.add(r4);
+        controller.setArticles(random);
 
         actual.add(r1);
         actual.add(r2);
@@ -164,9 +165,10 @@ public class AppControllerTest {
 
         } catch (Exception e) {
             e.printStackTrace();
-            fail();
+           fail();
         }
     }
+
 }
 
 
