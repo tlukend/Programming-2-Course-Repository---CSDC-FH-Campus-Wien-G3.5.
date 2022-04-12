@@ -24,23 +24,27 @@ public class App extends Application {
     protected final static int APP_WIDTH = 1000;
     protected static StackPane mainMenu;
 
+
     public static void main(String[] args) {
         launch(args);
+       /* Menu menu = new Menu();
+        menu.start(); wird nicht mehr gebraucht wegen GUI */
     }
 
     @Override
     public void start(Stage primaryStage) {
 
-        //Objects
-        //AppController<Object> www = new AppController<>();
+        AppController ctrl = new AppController();
 
         //main menu
         primaryStage.setTitle("N E W S A P P");
         primaryStage.getIcons().add(new Image(getClass().getResource("/NewsAppLogo.png").toExternalForm()));
 
-        Font labelFont = Font.font("Times New Roman", FontWeight.EXTRA_BOLD, 44);
+        Font labelFont = Font.font("Times New Roman", FontWeight.EXTRA_BOLD, 35);
         Label welcomeText = new Label("Welcome to NewsApp");
-        Label countText = new Label("23"); //muss noch auf die variable Article.count abgestimmt werden
+
+        Label topHeadlinesAustriaText = new Label("Top Headlines Austria");
+        Label countText = new Label("Number of Articles: " + ctrl.getArticleCount()); //muss noch auf die variable Article.count abgestimmt werden
         Label bitcoinNews = new Label("Bitcoin News"); //bitcoin news muss noch programmiert werden
         welcomeText.setTextFill(DARKRED);
         welcomeText.setAlignment(Pos.TOP_CENTER);
@@ -48,10 +52,10 @@ public class App extends Application {
 
         //Buttons
         Font buttonFont = Font.font("Times New Roman", FontWeight.NORMAL, 22);
-        Button newsButton = new Button("News");
-        newsButton.setStyle("-fx-background-color:#3A3B3C");
-        newsButton.setTextFill(WHITE);
-        newsButton.setFont(buttonFont);
+        Button topHeadlinesAustriaButton = new Button("Top Headlines Austria");
+        topHeadlinesAustriaButton.setStyle("-fx-background-color:#3A3B3C");
+        topHeadlinesAustriaButton.setTextFill(WHITE);
+        topHeadlinesAustriaButton.setFont(buttonFont);
         Button bitcoinButton = new Button("Bitcoin-News");
         bitcoinButton.setStyle("-fx-background-color:#3A3B3C");
         bitcoinButton.setTextFill(WHITE);
@@ -68,7 +72,7 @@ public class App extends Application {
 
         //design main menu
         VBox menuBox = new VBox();
-        menuBox.getChildren().addAll(welcomeText, newsButton, bitcoinButton, numberOfArticlesButton, quitButton);
+        menuBox.getChildren().addAll(welcomeText, topHeadlinesAustriaButton, bitcoinButton, numberOfArticlesButton, quitButton);
         menuBox.setSpacing(30);
         menuBox.setAlignment(Pos.CENTER);
         menuBox.setFillWidth(true);
@@ -108,7 +112,7 @@ public class App extends Application {
         mainMenu.setBackground(new Background(new BackgroundFill(LIGHTGRAY, null, null)));
         mainMenu.getChildren().addAll(imgView, imgView1, imgView2, imgView3, menuBox, menue);
         menue.setOnAction(actionEvent -> {
-            mainMenu.getChildren().removeAll();
+            mainMenu.getChildren().removeAll(countText, bitcoinNews, topHeadlinesAustriaText);
             mainMenu.getChildren().add(menuBox);   //habe versucht, wenn ich auf einen Button rauf drücke und zurück ins Menü komme, alles wieder zu ist und nicht noch offen!
         });
         //when clicking the numberOfArticles button
@@ -117,7 +121,9 @@ public class App extends Application {
             countText.setTextFill(DARKRED);
             countText.setAlignment(Pos.TOP_CENTER);
             countText.setFont(labelFont);
+            countText.setText("Number of Articles: " + ctrl.getArticleCount());
             mainMenu.getChildren().add(countText);
+
         });
         //when clicking the getAllNewsBitcoin button
         bitcoinButton.setOnAction(event -> {
@@ -125,7 +131,18 @@ public class App extends Application {
             bitcoinNews.setTextFill(DARKRED);
             bitcoinNews.setAlignment(Pos.TOP_CENTER);
             bitcoinNews.setFont(labelFont);
+            bitcoinNews.setText(getAllNewsBitcoin(ctrl));
             mainMenu.getChildren().add(bitcoinNews);
+        });
+
+        //when clicking the topHeadlinesAustria button
+        topHeadlinesAustriaButton.setOnAction(event -> {
+            mainMenu.getChildren().remove(menuBox);
+            topHeadlinesAustriaText.setTextFill(DARKRED);
+            topHeadlinesAustriaText.setAlignment(Pos.TOP_CENTER);
+            topHeadlinesAustriaText.setFont(labelFont);
+            topHeadlinesAustriaText.setText(getTopHeadlinesAustria(ctrl));
+            mainMenu.getChildren().add(topHeadlinesAustriaText);
         });
 
         primaryStage.setScene(menuScene);
@@ -134,4 +151,29 @@ public class App extends Application {
         //Show Application
         primaryStage.show();
     }
+
+    private String getAllNewsBitcoin(AppController ctrl) {
+        if (ctrl.getAllNewsBitcoin().size() == 0){
+            return "There are no news about Bitcoin.";
+        }
+            String output = "";
+        for (int i = 0; i < ctrl.getAllNewsBitcoin().size(); i++) {
+            output += ctrl.getAllNewsBitcoin().get(i).toString()+System.lineSeparator();
+        }
+        return output;
+    }
+
+    private String getTopHeadlinesAustria(AppController ctrl) {
+        if (ctrl.getTopHeadlinesAustria().size() == 0){
+            return "There are no news about Austria.";
+        }
+            String output = "";
+        for (int i = 0; i < ctrl.getTopHeadlinesAustria().size(); i++) {
+            output += ctrl.getTopHeadlinesAustria().get(i).toString()+System.lineSeparator();
+        }
+
+        return output;
+    }
+
+
 }

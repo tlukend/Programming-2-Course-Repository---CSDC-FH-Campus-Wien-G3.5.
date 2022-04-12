@@ -3,15 +3,18 @@ package at.ac.fhcampuswien;
 import java.util.Scanner;
 import java.sql.SQLOutput;
 
-//WIRD NICHT GEBRAUCHT AM ENDE DA JAVA-FX implementiert
+//WIRD NICHT GEBRAUCHT AM ENDE DA JAVA-FX implementiert: Diese ganze Klasse ist somit obsolet aber wir haben es zu Beginn so gemacht
 public class Menu {
     //AppController soll hier nach der Validation aufgerufen werden
 
     static Scanner scan = new Scanner(System.in);
+    AppController controller = new AppController();
     private static String input;
-    private static String INVALID_USER_INPUT_MESSAGE = "Incorrect! Please write a,b,y or q!";
-    private static String EXIT_MESSAGE = "Bye bye!";
+    private final static String INVALID_USER_INPUT_MESSAGE = "Incorrect! Please write a,b,y or q!";
+    private final static String EXIT_MESSAGE = "Bye bye!";
 
+
+    public void start(){}
     //„a“ soll eine statisch generierte Liste von Artikeln,
     // Bei „b“ alle Artikel, in denen das Keyword „bitcoin“ im Titel
     // „y“ gibt die Anzahl der Artikel der statischen Liste aus
@@ -39,11 +42,22 @@ public class Menu {
         }
     }
 
-
-    public boolean inputValidation() {
-        //userInput = userInput.nextString();
-        return true;
+    public static String getInput() {
+        return input;
     }
+
+    private void handleInput(String input) {
+        //userInput = userInput.nextString();
+        //input = getInput();
+        //if (input = "a" || input == "b" || getInput() == "y" || getInput() == "q")){
+
+        }
+    public String articleCount (){
+        return Integer.toString(controller.getArticleCount());
+    }
+
+
+
 
 
     //die Menu Klasse ist für die Ausgabe des Konsolenmenüs, sowie die Usereingaben zuständig.
