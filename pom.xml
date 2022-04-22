@@ -20,13 +20,14 @@
 
     <dependencies>
 
-            <dependency>
-                <groupId>com.squareup.okio</groupId>
-                <artifactId>okio</artifactId>
-                <version>3.0.0</version>
-                <scope>runtime</scope>
-            </dependency>
-            <dependency>
+        <!-- https://mvnrepository.com/artifact/com.squareup.okio/okio -->
+        <dependency>
+            <groupId>com.squareup.okio</groupId>
+            <artifactId>okio</artifactId>
+            <version>2.1.0</version>
+        </dependency>
+
+        <dependency>
                 <groupId>org.jetbrains.kotlin</groupId>
                 <artifactId>kotlin-stdlib-common</artifactId>
                 <version>1.6.10</version>
@@ -114,7 +115,7 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <mainClass>at.ac.fhcampuswien.App</mainClass>
+                    <mainClass>at.ac.fhcampuswien.NewsApi</mainClass>
                 </configuration>
             </plugin>
         </plugins>
