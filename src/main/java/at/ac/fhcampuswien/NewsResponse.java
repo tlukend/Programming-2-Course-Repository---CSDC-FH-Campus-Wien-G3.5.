@@ -2,7 +2,7 @@ package at.ac.fhcampuswien;
 
 import java.util.List;
 
-public class NewsRespone {
+public class NewsResponse {
     String status;
     int totalResults;
     List<Article> articles;
