@@ -124,7 +124,7 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <mainClass>at.ac.fhcampuswien.NewsApi</mainClass>
+                    <mainClass>at.ac.fhcampuswien.App</mainClass>
                 </configuration>
             </plugin>
         </plugins>
