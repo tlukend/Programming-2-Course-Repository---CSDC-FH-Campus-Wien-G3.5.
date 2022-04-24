@@ -46,7 +46,7 @@ public class NewsApi {
         NewsApi newsApi = new NewsApi();
         newsApi.everything("Ukraine");
 
-        System.out.println(newsApi.getNewsResponse().totalResults);
+        System.out.println(newsApi.getNewsResponse().getTotalResults());
 
 
             /*

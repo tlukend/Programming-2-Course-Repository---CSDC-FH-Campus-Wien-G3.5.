@@ -3,9 +3,9 @@ package at.ac.fhcampuswien;
 import java.util.List;
 
 public class NewsResponse {
-    String status;
-    int totalResults;
-    List<Article> articles;
+    private String status;
+    private int totalResults;
+    private List<Article> articles;
 
 
     public String getStatus() {
