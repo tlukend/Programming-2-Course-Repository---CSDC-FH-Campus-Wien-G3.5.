@@ -11,7 +11,10 @@ public class Article {
     private String publishedAt;
     private String content;
 
-    //sorce? soll es drinnen sein oder nicht?
+
+
+
+    //sorce? soll es drinnen sein oder nicht? - siehe unten als inner class
 
     public Article(String author, String title) {
         this.author = author;
@@ -77,6 +80,29 @@ public class Article {
 
     public void setContent(String content) {
         this.content = content;
+    }
+
+    private class Source{
+        private String id;
+        private String name;
+
+        public Source(String id, String name) {
+            this.id = id;
+            this.name = name;
+        }
+
+        public String getId() {
+            return id;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        @Override
+        public String toString() {
+            return "source: " + System.lineSeparator() + "id: " + getId() + ", name: " + getName();
+        }
     }
 }
 
