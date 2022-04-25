@@ -9,37 +9,44 @@ import java.io.IOException;
 
 public class NewsApi {
 
-    private final String apiKey = "f970a93f427c449d8a61d53e717fc78c";
-    private final String urlEverything = "https://newsapi.org/v2/everything?q=";
-    private final String urlTopHeadlines = "https://newsapi.org/v2/top-headlines?country="; //url von newsApi hinzugefuegt, weil es zwei gibt als eigene Variable hinzugefügt
+    private final String apiKey;
+    private static final String URL_EVERYTHING = "https://newsapi.org/v2/everything?q=";
+    private static final String URL_TOPHEADLINES = "https://newsapi.org/v2/top-headlines?country="; //url von newsApi hinzugefuegt, weil es zwei gibt als eigene Variable hinzugefügt
     private NewsResponse newsResponse;
 
+    public NewsApi(String key)
+    {
+        this.apiKey = key;
+    }
 
-    public void everything(String keyword) {
-        String target = urlEverything + keyword + "&apiKey=" + apiKey;
+    public NewsResponse everything(String keyword) {
+        String target = URL_EVERYTHING + keyword + "&apiKey=" + apiKey;
         try {
             String json = run(target);
-            transform(json);
+            newsResponse = transform(json);
         } catch (IOException ioe) {
 
         }
+        return newsResponse;
     }
     // wir wandeln den gson string in ein Objekt um.
-    public void transform(String json) {
+    public NewsResponse transform(String json) {
         Gson gson = new Gson();
-        newsResponse = gson.fromJson(json, NewsResponse.class);
+        return gson.fromJson(json, NewsResponse.class);
     }
 
-    public void topHeadlines() { //man klickt die url und man muss daraus senden.
+    public NewsResponse topHeadlines() { //man klickt die url und man muss daraus senden.
         String country = "at";
         // category ...
-        String target = urlTopHeadlines + country + "&apiKey=" + apiKey;
+        String target = URL_TOPHEADLINES + country + "&apiKey=" + apiKey;
         try {
             String json = run(target);
-            transform(json);
+            newsResponse = transform(json);
+
         } catch (IOException ioe) {
 
         }
+        return newsResponse;
     }
     /*
 

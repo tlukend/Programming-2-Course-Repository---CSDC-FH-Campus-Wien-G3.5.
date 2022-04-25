@@ -21,23 +21,21 @@ public class AppController {
         return articles;
     }
 
-    NewsApi newsApi = new NewsApi();
+    NewsApi newsApi = new NewsApi("f970a93f427c449d8a61d53e717fc78c");
 
     public int getArticleCount() {
-        if (articles == null)
+        if (newsApi.getNewsResponse() == null)
             return 0;
-        else return articles.size();
+        else return newsApi.getNewsResponse().getTotalResults();
     }
 
     public List<Article> getTopHeadlinesAustria() {
         newsApi.topHeadlines();
-        if (articles == null) {
+        if (newsApi.getNewsResponse() == null) {
 
             return new ArrayList<Article>();
         }
         return newsApi.getNewsResponse().getArticles();
-
-
     }
 
     public List<Article> getAllNewsBitcoin() {

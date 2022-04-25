@@ -15,7 +15,7 @@ public class Article {
 
 
 
-    //sorce? soll es drinnen sein oder nicht? - siehe unten als inner class
+    //source? soll es drinnen sein oder nicht? - siehe unten als inner class
 
     public Article(String author, String title) {
         this.author = author;
@@ -36,13 +36,15 @@ public class Article {
     public String getAuthor() {
         if (author == null){
             return "not found";
-        }return author;
+        }
+        return author;
     }
 
     public String getTitle() {
         if (title == null) {
             return "not found";
-        }return title;
+        }
+        return title;
     }
 
 
@@ -56,9 +58,10 @@ public class Article {
 
     public String getDescription() {
         if (description == null) {
-            return "not found";}
-            return description;
+            return "not found";
         }
+        return description;
+    }
 
 
     public void setDescription(String description) {
@@ -106,8 +109,8 @@ public class Article {
     }
 
      private class Source{
-        private final String id;
-        private final String name;
+        private String id;
+        private String name;
 
         public Source(String id, String name) {
             this.id = id;
