@@ -9,9 +9,9 @@ import java.io.IOException;
 
 public class NewsApi {
 
-    private String apiKey = "f970a93f427c449d8a61d53e717fc78c";
-    private String urlEverything = "https://newsapi.org/v2/everything?q=";
-    private String urlTopHeadlines = "https://newsapi.org/v2/top-headlines?country="; //url von newsApi hinzugefuegt, weil es zwei gibt als eigene Variable hinzugefügt
+    private final String apiKey = "f970a93f427c449d8a61d53e717fc78c";
+    private final String urlEverything = "https://newsapi.org/v2/everything?q=";
+    private final String urlTopHeadlines = "https://newsapi.org/v2/top-headlines?country="; //url von newsApi hinzugefuegt, weil es zwei gibt als eigene Variable hinzugefügt
     private NewsResponse newsResponse;
 
 

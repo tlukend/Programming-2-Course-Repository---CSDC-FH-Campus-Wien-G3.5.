@@ -10,6 +10,7 @@ public class Article {
     private String urlToImage;
     private String publishedAt;
     private String content;
+    private Source source;
 
 
 
@@ -21,20 +22,29 @@ public class Article {
         this.title = title;
     }
 
+    public Article(String author, String title, String description, String url, String urlToImage, String publishedAt, String content, Source source) {
+        this.author = author;
+        this.title = title;
+        this.description = description;
+        this.url = url;
+        this.urlToImage = urlToImage;
+        this.publishedAt = publishedAt;
+        this.content = content;
+        this.source = source;
+    }
+
     public String getAuthor() {
         if (author == null){
-            return "Anonymous";
+            return "not found";
         }return author;
     }
 
     public String getTitle() {
-        return title;
+        if (title == null) {
+            return "not found";
+        }return title;
     }
 
-    @Override
-    public String toString() {
-        return "Author: " + getAuthor() + ", Title: " + getTitle();
-    }
 
     public void setAuthor(String author) {
         this.author = author;
@@ -45,14 +55,19 @@ public class Article {
     }
 
     public String getDescription() {
-        return description;
-    }
+        if (description == null) {
+            return "not found";}
+            return description;
+        }
+
 
     public void setDescription(String description) {
         this.description = description;
     }
 
     public String getUrl() {
+        if (url == null) {
+            return "not found";}
         return url;
     }
 
@@ -61,6 +76,8 @@ public class Article {
     }
 
     public String getUrlToImage() {
+        if (urlToImage == null) {
+            return "not found";}
         return urlToImage;
     }
 
@@ -69,6 +86,8 @@ public class Article {
     }
 
     public String getPublishedAt() {
+        if (publishedAt == null) {
+            return "not found";}
         return publishedAt;
     }
 
@@ -77,6 +96,8 @@ public class Article {
     }
 
     public String getContent() {
+        if (content == null) {
+            return "not found";}
         return content;
     }
 
@@ -84,9 +105,9 @@ public class Article {
         this.content = content;
     }
 
-    private class Source{
-        private String id;
-        private String name;
+     private class Source{
+        private final String id;
+        private final String name;
 
         public Source(String id, String name) {
             this.id = id;
@@ -94,17 +115,32 @@ public class Article {
         }
 
         public String getId() {
+            if (id == null) {
+                return "not found";}
             return id;
         }
 
         public String getName() {
+            if (name == null) {
+                return "not found";}
             return name;
         }
 
         @Override
         public String toString() {
-            return "source: " + System.lineSeparator() + "id: " + getId() + ", name: " + getName();
+            return "Source: " + System.lineSeparator() + "Id: " + getId() + ", Name: " + getName();
         }
+
+        //noch nicht sicher ob man sich die quelle unabhängig anzeigen lassen soll
+
+    }
+
+
+    @Override
+    public String toString() {
+        return "Author: " + getAuthor() + ", Title: " + getTitle() + System.lineSeparator() +"Description: "
+                + getDescription() + System.lineSeparator() + "Url: " + getUrl() + "Url to Image: " + getUrlToImage()
+                + System.lineSeparator() + "Published at: " + getPublishedAt() + System.lineSeparator() + "Content: " + getContent();
     }
 }
 

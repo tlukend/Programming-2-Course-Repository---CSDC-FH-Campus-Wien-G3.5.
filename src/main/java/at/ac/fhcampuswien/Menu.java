@@ -29,7 +29,6 @@ public class Menu {
                 break;
             case "b":
                 System.out.println("bitcoinCheckMethodeaufrufenundPrinten");
-                ;
                 break;
             case "y":
                 System.out.println("Number of articles: +Variable/methodeaufrufen");
