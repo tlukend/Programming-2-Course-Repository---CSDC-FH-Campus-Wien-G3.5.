@@ -22,7 +22,9 @@ public class Article {
     }
 
     public String getAuthor() {
-        return author;
+        if (author == null){
+            return "Anonymous";
+        }return author;
     }
 
     public String getTitle() {
