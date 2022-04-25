@@ -1,5 +1,6 @@
 package at.ac.fhcampuswien;
 
+import java.lang.reflect.GenericArrayType;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -20,6 +21,8 @@ public class AppController {
         return articles;
     }
 
+    NewsApi newsApi = new NewsApi();
+
     public int getArticleCount() {
         if (articles == null)
             return 0;
@@ -27,14 +30,19 @@ public class AppController {
     }
 
     public List<Article> getTopHeadlinesAustria() {
+        newsApi.topHeadlines();
         if (articles == null) {
+
             return new ArrayList<Article>();
         }
-        return articles;
+        return newsApi.getNewsResponse().getArticles();
+
+
     }
 
     public List<Article> getAllNewsBitcoin() {
-        return filterList("bitcoin", articles );
+        newsApi.everything("bitcoin");
+        return filterList("bitcoin", newsApi.getNewsResponse().getArticles());
     }
 
     protected static List<Article> filterList(String query, List<Article> articles) {
@@ -58,6 +66,8 @@ public class AppController {
 
         return mock;
     }
+
+
 
 
 }

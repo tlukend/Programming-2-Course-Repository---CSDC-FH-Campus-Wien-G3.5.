@@ -36,6 +36,7 @@ public class App extends Application {
 
         AppController ctrl = new AppController();
 
+
         //main menu
         primaryStage.setTitle("N E W S A P P");
         primaryStage.getIcons().add(new Image(getClass().getResource("/NewsAppLogo.png").toExternalForm()));

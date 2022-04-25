@@ -14,6 +14,7 @@ public class NewsApi {
     private String urlTopHeadlines = "https://newsapi.org/v2/top-headlines?country="; //url von newsApi hinzugefuegt, weil es zwei gibt als eigene Variable hinzugefügt
     private NewsResponse newsResponse;
 
+
     public void everything(String keyword) {
         String target = urlEverything + keyword + "&apiKey=" + apiKey;
         try {
@@ -40,12 +41,12 @@ public class NewsApi {
 
         }
     }
+    /*
 
     public static void main(String[] args) {
 //        try {
         NewsApi newsApi = new NewsApi();
         newsApi.everything("Ukraine");
-
         System.out.println(newsApi.getNewsResponse().getTotalResults());
 
 
@@ -66,7 +67,7 @@ public class NewsApi {
         }
 
        */
-    }
+
 
     public static String run(String url) throws IOException {
         OkHttpClient client = new OkHttpClient();
@@ -81,7 +82,9 @@ public class NewsApi {
     }
 
     public NewsResponse getNewsResponse() {
-        return newsResponse;
+    return newsResponse;
     }
+
+
 
 }
