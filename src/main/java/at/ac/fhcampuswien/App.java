@@ -16,6 +16,8 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 
+
+
 import static javafx.scene.paint.Color.*;
 
 public class App extends Application {
@@ -25,9 +27,11 @@ public class App extends Application {
     protected static StackPane mainMenu;
 
 
+
     public static void main(String[] args) {
         launch(args);
-       /* Menu menu = new Menu();
+
+        /* Menu menu = new Menu();
         menu.start(); wird nicht mehr gebraucht wegen GUI */
     }
 
