@@ -14,8 +14,7 @@ public class NewsApi {
     private static final String URL_TOPHEADLINES = "https://newsapi.org/v2/top-headlines?country="; //url von newsApi hinzugefuegt, weil es zwei gibt als eigene Variable hinzugefügt
     private NewsResponse newsResponse;
 
-    public NewsApi(String key)
-    {
+    public NewsApi(String key) {
         this.apiKey = key;
     }
 
@@ -29,6 +28,7 @@ public class NewsApi {
         }
         return newsResponse;
     }
+
     // wir wandeln den gson string in ein Objekt um.
     public NewsResponse transform(String json) {
         Gson gson = new Gson();
@@ -48,6 +48,23 @@ public class NewsApi {
         }
         return newsResponse;
     }
+
+    public NewsResponse bitcoinNews(String bitcoin) {
+
+        String target = URL_EVERYTHING + bitcoin + "&apiKey=" + apiKey;
+        try {
+            String json = run(target);
+            newsResponse = transform(json);
+
+        } catch (IOException ioe) {
+
+        }
+        return newsResponse;
+    }
+
+
+
+
     /*
 
     public static void main(String[] args) {

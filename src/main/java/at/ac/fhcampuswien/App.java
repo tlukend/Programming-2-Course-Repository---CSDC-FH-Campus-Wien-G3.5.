@@ -33,6 +33,7 @@ public class App extends Application {
 
         /* Menu menu = new Menu();
         menu.start(); wird nicht mehr gebraucht wegen GUI */
+
     }
 
     @Override
