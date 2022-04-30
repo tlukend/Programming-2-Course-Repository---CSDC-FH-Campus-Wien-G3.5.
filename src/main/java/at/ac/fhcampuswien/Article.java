@@ -145,5 +145,9 @@ public class Article {
                 + getDescription() + System.lineSeparator() + "Url: " + getUrl() + "Url to Image: " + getUrlToImage()
                 + System.lineSeparator() + "Published at: " + getPublishedAt() + System.lineSeparator() + "Content: " + getContent();
     }
+
+    public String AuthorAndTitleToString(){
+        return "Author: " + getAuthor() + System.lineSeparator() + "Title: " + getTitle();
+    }
 }
 

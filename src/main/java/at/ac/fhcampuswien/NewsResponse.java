@@ -22,7 +22,8 @@ public class NewsResponse {
         return totalResults;
     }
 
-    public List<Article> getArticles(){
+    public List<Article> getArticles() {
         return articles;
     }
+
 }

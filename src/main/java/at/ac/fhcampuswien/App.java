@@ -164,7 +164,7 @@ public class App extends Application {
         }
             String output = "";
         for (int i = 0; i < ctrl.getAllNewsBitcoin().size(); i++) {
-            output += ctrl.getAllNewsBitcoin().get(i).toString()+System.lineSeparator();
+            output += ctrl.getAllNewsBitcoin().get(i).AuthorAndTitleToString()+System.lineSeparator();
         }
         return output;
     }
@@ -175,7 +175,7 @@ public class App extends Application {
         }
             String output = "";
         for (int i = 0; i < ctrl.getTopHeadlinesAustria().size(); i++) {
-            output += ctrl.getTopHeadlinesAustria().get(i).toString()+System.lineSeparator();
+            output += ctrl.getTopHeadlinesAustria().get(i).AuthorAndTitleToString()+System.lineSeparator();
         }
 
         return output;
