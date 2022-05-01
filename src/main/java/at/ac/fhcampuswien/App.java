@@ -1,10 +1,8 @@
 package at.ac.fhcampuswien;
 
-import at.ac.fhcampuswien.enums.Language;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.geometry.Insets;
-import javafx.geometry.Orientation;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
@@ -13,15 +11,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
-import javafx.scene.text.Text;
-import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
-import javafx.scene.layout.Region;
-import javafx.scene.layout.Pane;
-import javafx.scene.layout.GridPane;
-
-
-import javax.swing.plaf.metal.MetalBorders;
 
 import java.util.List;
 
@@ -59,8 +49,8 @@ public class App extends Application {
         Label welcomeText = new Label("Welcome to NewsApp");
 
         Label topHeadlinesAustriaText = new Label("Top Headlines Austria");
-        Label countText = new Label("Number of Articles: " + ctrl.getArticleCount()); //muss noch auf die variable Article.count abgestimmt werden
-        Label bitcoinNews = new Label("Bitcoin News"); //bitcoin news muss noch programmiert werden
+        Label countText = new Label("Number of Articles: " + ctrl.getArticleCount());
+        Label bitcoinNews = new Label("Bitcoin News");
         welcomeText.setTextFill(DARKRED);
         welcomeText.setAlignment(Pos.TOP_CENTER);
         welcomeText.setFont(labelFont);
@@ -134,7 +124,7 @@ public class App extends Application {
         mainMenu.getChildren().addAll(imgView, imgView1, imgView2, imgView3, menuBox, menuButton);
         menuButton.setOnAction(actionEvent -> {
             mainMenu.getChildren().removeAll(countText, bitCoinBox, topHeadlinesAustriaText);
-            mainMenu.getChildren().add(menuBox);   //habe versucht, wenn ich auf einen Button rauf drücke und zurück ins Menü komme, alles wieder zu ist und nicht noch offen!
+            mainMenu.getChildren().add(menuBox);
         });
         //when clicking the numberOfArticles button
         numberOfArticlesButton.setOnAction(event -> {
@@ -149,7 +139,7 @@ public class App extends Application {
 
         //when clicking the getAllNewsBitcoin button
 
-        //Slavica bitte anschauen, ob diese Idee Sinn ergibt - Menütaste funktioniert trotzdem nicht
+        //Slavica bitte anschauen - Menütaste funktioniert immer noch nicht
         bitcoinButton.setOnAction(event -> {
             mainMenu.getChildren().remove(menuBox);
             bitcoinNews.setTextFill(BLACK);

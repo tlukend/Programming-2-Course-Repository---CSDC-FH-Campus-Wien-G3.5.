@@ -170,12 +170,3 @@ public class AppControllerTest {
     }
 
 }
-
-
-//Unittests die geschrieben werden müssen
-//    //+setArticles(List<Article>articles): void
-//   //  eine List Article wird an das probarty Atrribute übergeben und zwar an Articles
-//    //+getArticleCount(): int
-//    //+getTopHeadlinesAustria(): List<Article>
-//    //+getAllNewsBitcoin(): List<Article>
-//    //+filterList(String query, List<Article> articles) : List <Article>
