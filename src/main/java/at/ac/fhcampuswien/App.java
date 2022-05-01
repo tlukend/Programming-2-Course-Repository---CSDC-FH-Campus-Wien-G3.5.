@@ -2,21 +2,28 @@ package at.ac.fhcampuswien;
 
 import javafx.application.Application;
 import javafx.application.Platform;
+import javafx.geometry.Insets;
+import javafx.geometry.Orientation;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.ScrollBar;
+import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.Background;
-import javafx.scene.layout.BackgroundFill;
-import javafx.scene.layout.StackPane;
-import javafx.scene.layout.VBox;
+import javafx.scene.layout.*;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
+import javafx.scene.text.Text;
+import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
+import javafx.scene.layout.Region;
+import javafx.scene.layout.Pane;
+import javafx.scene.layout.GridPane;
 
 
+import javax.swing.plaf.metal.MetalBorders;
 
 import static javafx.scene.paint.Color.*;
 
@@ -37,7 +44,8 @@ public class App extends Application {
     }
 
     @Override
-    public void start(Stage primaryStage) {
+    public void start(Stage primaryStage) throws Exception {
+
 
         AppController ctrl = new AppController();
 
@@ -47,6 +55,7 @@ public class App extends Application {
         primaryStage.getIcons().add(new Image(getClass().getResource("/NewsAppLogo.png").toExternalForm()));
 
         Font labelFont = Font.font("Times New Roman", FontWeight.EXTRA_BOLD, 35);
+        Font articleText = Font.font("Times New Roman",FontWeight.NORMAL, 20);
         Label welcomeText = new Label("Welcome to NewsApp");
 
         Label topHeadlinesAustriaText = new Label("Top Headlines Austria");
@@ -108,25 +117,25 @@ public class App extends Application {
         StackPane.setAlignment(imgView1, Pos.TOP_LEFT);
         StackPane.setAlignment(imgView2, Pos.BOTTOM_RIGHT);
         StackPane.setAlignment(imgView3, Pos.BOTTOM_LEFT);
-        Button menue = new Button("Menü");  //Menü Button wurde hinzugefügt
-        menue.setStyle("-fx-background-color:#3A3B3C");
-        menue.setTextFill(WHITE);
-        menue.setFont(buttonFont);
-        StackPane.setAlignment(menue, Pos.BOTTOM_CENTER);
+        Button menuButton = new Button("Menü");
+        menuButton.setStyle("-fx-background-color:#3A3B3C");
+        menuButton.setTextFill(WHITE);
+        menuButton.setFont(buttonFont);
+        StackPane.setAlignment(menuButton, Pos.BOTTOM_CENTER);
 
         Scene menuScene = new Scene(mainMenu, APP_WIDTH, APP_HEIGHT);
         mainMenu.setBackground(new Background(new BackgroundFill(LIGHTGRAY, null, null)));
-        mainMenu.getChildren().addAll(imgView, imgView1, imgView2, imgView3, menuBox, menue);
-        menue.setOnAction(actionEvent -> {
+        mainMenu.getChildren().addAll(imgView, imgView1, imgView2, imgView3, menuBox, menuButton);
+        menuButton.setOnAction(actionEvent -> {
             mainMenu.getChildren().removeAll(countText, bitcoinNews, topHeadlinesAustriaText);
             mainMenu.getChildren().add(menuBox);   //habe versucht, wenn ich auf einen Button rauf drücke und zurück ins Menü komme, alles wieder zu ist und nicht noch offen!
         });
         //when clicking the numberOfArticles button
         numberOfArticlesButton.setOnAction(event -> {
             mainMenu.getChildren().remove(menuBox);
-            countText.setTextFill(DARKRED);
+            countText.setTextFill(BLACK);
             countText.setAlignment(Pos.TOP_CENTER);
-            countText.setFont(labelFont);
+            countText.setFont(articleText);
             countText.setText("Number of Articles: " + ctrl.getArticleCount());
             mainMenu.getChildren().add(countText);
 
@@ -134,19 +143,22 @@ public class App extends Application {
         //when clicking the getAllNewsBitcoin button
         bitcoinButton.setOnAction(event -> {
             mainMenu.getChildren().remove(menuBox);
-            bitcoinNews.setTextFill(DARKRED);
+            bitcoinNews.setTextFill(BLACK);
             bitcoinNews.setAlignment(Pos.TOP_CENTER);
-            bitcoinNews.setFont(labelFont);
+            bitcoinNews.setLineSpacing(10);
+            topHeadlinesAustriaText.setPadding(new Insets(90));
+            bitcoinNews.setFont(articleText);
             bitcoinNews.setText(getAllNewsBitcoin(ctrl));
             mainMenu.getChildren().add(bitcoinNews);
         });
-
-        //when clicking the topHeadlinesAustria button
+            //when clicking the topHeadlinesAustria button
         topHeadlinesAustriaButton.setOnAction(event -> {
             mainMenu.getChildren().remove(menuBox);
-            topHeadlinesAustriaText.setTextFill(DARKRED);
+            topHeadlinesAustriaText.setTextFill(BLACK);
             topHeadlinesAustriaText.setAlignment(Pos.TOP_CENTER);
-            topHeadlinesAustriaText.setFont(labelFont);
+            topHeadlinesAustriaText.setLineSpacing(10);
+            topHeadlinesAustriaText.setPadding(new Insets(90));
+            topHeadlinesAustriaText.setFont(articleText);
             topHeadlinesAustriaText.setText(getTopHeadlinesAustria(ctrl));
             mainMenu.getChildren().add(topHeadlinesAustriaText);
         });
@@ -164,7 +176,7 @@ public class App extends Application {
         }
             String output = "";
         for (int i = 0; i < ctrl.getAllNewsBitcoin().size(); i++) {
-            output += ctrl.getAllNewsBitcoin().get(i).AuthorAndTitleToString()+System.lineSeparator();
+            output += ctrl.getAllNewsBitcoin().get(i).TitleToString()+System.lineSeparator();
         }
         return output;
     }
@@ -175,7 +187,7 @@ public class App extends Application {
         }
             String output = "";
         for (int i = 0; i < ctrl.getTopHeadlinesAustria().size(); i++) {
-            output += ctrl.getTopHeadlinesAustria().get(i).AuthorAndTitleToString()+System.lineSeparator();
+            output += ctrl.getTopHeadlinesAustria().get(i).TitleToString()+System.lineSeparator();
         }
 
         return output;

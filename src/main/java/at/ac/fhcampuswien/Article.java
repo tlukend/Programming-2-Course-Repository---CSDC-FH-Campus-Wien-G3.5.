@@ -14,7 +14,6 @@ public class Article {
 
 
 
-
     //source? soll es drinnen sein oder nicht? - siehe unten als inner class
 
     public Article(String author, String title) {
@@ -146,8 +145,11 @@ public class Article {
                 + System.lineSeparator() + "Published at: " + getPublishedAt() + System.lineSeparator() + "Content: " + getContent();
     }
 
-    public String AuthorAndTitleToString(){
-        return "Author: " + getAuthor() + System.lineSeparator() + "Title: " + getTitle();
+    public String TitleToString(){
+        return getTitle() + System.lineSeparator();
+    }
+    public String AuthorToString(){
+        return getAuthor() + System.lineSeparator();
     }
 }
 
