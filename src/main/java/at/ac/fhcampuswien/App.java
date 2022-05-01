@@ -22,6 +22,8 @@ import javafx.scene.layout.GridPane;
 
 import javax.swing.plaf.metal.MetalBorders;
 
+import java.util.List;
+
 import static javafx.scene.paint.Color.*;
 
 public class App extends Application {
@@ -207,23 +209,25 @@ public class App extends Application {
     }
 
     private String getAllNewsBitcoin(AppController ctrl) {
-        if (ctrl.getAllNewsBitcoin().size() == 0){
+        List<Article> articles = ctrl.getAllNewsBitcoin();
+        if (articles.size() == 0){
             return "There are no news about Bitcoin.";
         }
             String output = "";
-        for (int i = 0; i < ctrl.getAllNewsBitcoin().size(); i++) {
-            output += ctrl.getAllNewsBitcoin().get(i).TitleToString()+System.lineSeparator();
+        for (int i = 0; i < articles.size(); i++) {
+            output += articles.get(i).TitleToString()+System.lineSeparator();
         }
         return output;
     }
 
     private String getTopHeadlinesAustria(AppController ctrl) {
-        if (ctrl.getTopHeadlinesAustria().size() == 0){
+        List<Article> articles = ctrl.getTopHeadlinesAustria();
+        if (articles.size() == 0){
             return "There are no news about Austria.";
         }
             String output = "";
-        for (int i = 0; i < ctrl.getTopHeadlinesAustria().size(); i++) {
-            output += ctrl.getTopHeadlinesAustria().get(i).TitleToString()+System.lineSeparator();
+        for (int i = 0; i < articles.size(); i++) {
+            output += articles.get(i).TitleToString()+System.lineSeparator();
         }
 
         return output;

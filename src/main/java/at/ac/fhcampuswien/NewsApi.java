@@ -19,12 +19,12 @@ public class NewsApi {
     }
 
     public NewsResponse everything(String keyword) {
-        String target = URL_EVERYTHING + keyword + "&apiKey=" + apiKey;
+        String target = URL_EVERYTHING + keyword + "&pageSize=10" + "&apiKey=" + apiKey;
         try {
             String json = run(target);
             newsResponse = transform(json);
         } catch (IOException ioe) {
-
+            System.err.println(ioe); //gibt Fehlermeldung aus
         }
         return newsResponse;
     }
@@ -44,53 +44,10 @@ public class NewsApi {
             newsResponse = transform(json);
 
         } catch (IOException ioe) {
-
+            System.err.println(ioe);
         }
         return newsResponse;
     }
-
-    public NewsResponse bitcoinNews(String bitcoin) {
-
-        String target = URL_EVERYTHING + bitcoin + "&apiKey=" + apiKey;
-        try {
-            String json = run(target);
-            newsResponse = transform(json);
-
-        } catch (IOException ioe) {
-
-        }
-        return newsResponse;
-    }
-
-
-
-
-    /*
-
-    public static void main(String[] args) {
-//        try {
-        NewsApi newsApi = new NewsApi();
-        newsApi.everything("Ukraine");
-        System.out.println(newsApi.getNewsResponse().getTotalResults());
-
-
-            /*
-            String json=run("https://newsapi.org/v2/everything?q=bitcoin&apiKey=f970a93f427c449d8a61d53e717fc78c");
-
-            Gson gson = new Gson();
-            NewsResponse newsResponse = gson.fromJson(json, NewsResponse.class);
-
-            System.out.println(newsResponse.status);
-            System.out.println(newsResponse.totalResults);
-            System.out.println(newsResponse.articles);
-*/
-
-        //System.out.println(run("https://newsapi.org/v2/everything?q=bitcoin&apiKey=f970a93f427c449d8a61d53e717fc78c")); //url sollte dynamisch generiert werden können
-      /*  } catch (IOException e) {
-            System.out.println("ERROR");
-        }
-
-       */
 
 
     public static String run(String url) throws IOException {
