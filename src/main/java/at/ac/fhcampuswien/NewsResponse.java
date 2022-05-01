@@ -1,5 +1,7 @@
 package at.ac.fhcampuswien;
 
+import javafx.scene.control.Hyperlink;
+
 import java.util.List;
 
 public class NewsResponse {
@@ -23,6 +25,7 @@ public class NewsResponse {
     }
 
     public List<Article> getArticles() {
+        //Hyperlink linkArticles = new Hyperlink();
         return articles;
     }
 

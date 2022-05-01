@@ -6,10 +6,7 @@ import javafx.geometry.Insets;
 import javafx.geometry.Orientation;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.ScrollBar;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
@@ -144,27 +141,46 @@ public class App extends Application {
 
 
 
-
+        VBox bitCoinBox = new VBox();
+        bitCoinBox.getChildren().addAll(bitcoinNews);
+        bitCoinBox.setAlignment(Pos.CENTER);
+        bitCoinBox.setFillWidth(true);
+        menuBox.setSpacing(30);
 
 
         //when clicking the getAllNewsBitcoin button
+
+        //Slavica bitte anschauen, ob diese Idee Sinn ergibt - Menütaste funktioniert trotzdem nicht
         bitcoinButton.setOnAction(event -> {
             mainMenu.getChildren().remove(menuBox);
+
+
             bitcoinNews.setTextFill(BLACK);
             bitcoinNews.setAlignment(Pos.TOP_CENTER);
             bitcoinNews.setLineSpacing(10);
-            bitcoinNews.setPadding(new Insets(90));
+            //bitcoinNews.setPadding(new Insets(90));
             bitcoinNews.setFont(articleText);
             bitcoinNews.setText(getAllNewsBitcoin(ctrl));
-            mainMenu.getChildren().add(bitcoinNews);
 
-            Button menueButton1 = new Button("Menü");
-            menueButton1.setStyle("-fx-background-color:#3A3B3C");
-            menueButton1.setTextFill(WHITE);
-            menueButton1.setFont(buttonFont);
-            StackPane.setAlignment(menueButton1, Pos.BOTTOM_RIGHT);
+
+
+
+
+            ScrollPane scrollPane = new ScrollPane();
+            scrollPane.setContent(bitCoinBox);
+
+
+            mainMenu.getChildren().add(bitCoinBox);
+
 
         });
+
+        menuButton.setOnAction(event -> {
+            mainMenu.getChildren().remove(bitCoinBox);
+            mainMenu.getChildren().add(menuBox);
+                }
+        );
+
             /*menueButton1.setOnAction(event -> {
             mainMenu.getChildren().remove(bitcoinNews);
             mainMenu.getChildren().add(menuBox);
