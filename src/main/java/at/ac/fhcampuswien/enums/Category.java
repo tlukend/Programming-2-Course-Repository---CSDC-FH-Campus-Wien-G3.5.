@@ -1,6 +1,6 @@
 package at.ac.fhcampuswien.enums;
 
-public enum CategoryHeadlines {
+public enum Category {
     business,
     entertainment,
     general,
@@ -8,4 +8,5 @@ public enum CategoryHeadlines {
     science,
     sports,
     technology,
+    none
 }

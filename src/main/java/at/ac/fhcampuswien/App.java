@@ -1,5 +1,6 @@
 package at.ac.fhcampuswien;
 
+import at.ac.fhcampuswien.enums.Language;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.geometry.Insets;
@@ -122,11 +123,17 @@ public class App extends Application {
         menuButton.setFont(buttonFont);
         StackPane.setAlignment(menuButton, Pos.BOTTOM_CENTER);
 
+        VBox bitCoinBox = new VBox();
+        bitCoinBox.getChildren().addAll(bitcoinNews);
+        bitCoinBox.setAlignment(Pos.CENTER);
+        bitCoinBox.setFillWidth(true);
+        menuBox.setSpacing(30);
+
         Scene menuScene = new Scene(mainMenu, APP_WIDTH, APP_HEIGHT);
         mainMenu.setBackground(new Background(new BackgroundFill(LIGHTGRAY, null, null)));
         mainMenu.getChildren().addAll(imgView, imgView1, imgView2, imgView3, menuBox, menuButton);
         menuButton.setOnAction(actionEvent -> {
-            mainMenu.getChildren().removeAll(countText, bitcoinNews, topHeadlinesAustriaText);
+            mainMenu.getChildren().removeAll(countText, bitCoinBox, topHeadlinesAustriaText);
             mainMenu.getChildren().add(menuBox);   //habe versucht, wenn ich auf einen Button rauf drücke und zurück ins Menü komme, alles wieder zu ist und nicht noch offen!
         });
         //when clicking the numberOfArticles button
@@ -140,53 +147,22 @@ public class App extends Application {
 
         });
 
-
-
-
-        VBox bitCoinBox = new VBox();
-        bitCoinBox.getChildren().addAll(bitcoinNews);
-        bitCoinBox.setAlignment(Pos.CENTER);
-        bitCoinBox.setFillWidth(true);
-        menuBox.setSpacing(30);
-
-
         //when clicking the getAllNewsBitcoin button
 
         //Slavica bitte anschauen, ob diese Idee Sinn ergibt - Menütaste funktioniert trotzdem nicht
         bitcoinButton.setOnAction(event -> {
             mainMenu.getChildren().remove(menuBox);
-
-
             bitcoinNews.setTextFill(BLACK);
             bitcoinNews.setAlignment(Pos.TOP_CENTER);
             bitcoinNews.setLineSpacing(10);
             //bitcoinNews.setPadding(new Insets(90));
             bitcoinNews.setFont(articleText);
             bitcoinNews.setText(getAllNewsBitcoin(ctrl));
-
-
-
-
-
-            ScrollPane scrollPane = new ScrollPane();
-            scrollPane.setContent(bitCoinBox);
-
-
+            bitcoinNews.setMouseTransparent(true);
+            bitCoinBox.setMouseTransparent(true);
             mainMenu.getChildren().add(bitCoinBox);
-
-
         });
 
-        menuButton.setOnAction(event -> {
-            mainMenu.getChildren().remove(bitCoinBox);
-            mainMenu.getChildren().add(menuBox);
-                }
-        );
-
-            /*menueButton1.setOnAction(event -> {
-            mainMenu.getChildren().remove(bitcoinNews);
-            mainMenu.getChildren().add(menuBox);
-            });*/
 
 
             //when clicking the topHeadlinesAustria button
@@ -198,6 +174,7 @@ public class App extends Application {
             topHeadlinesAustriaText.setPadding(new Insets(90));
             topHeadlinesAustriaText.setFont(articleText);
             topHeadlinesAustriaText.setText(getTopHeadlinesAustria(ctrl));
+            topHeadlinesAustriaText.setMouseTransparent(true);
             mainMenu.getChildren().add(topHeadlinesAustriaText);
         });
 
@@ -215,7 +192,7 @@ public class App extends Application {
         }
             String output = "";
         for (int i = 0; i < articles.size(); i++) {
-            output += articles.get(i).TitleToString()+System.lineSeparator();
+            output += articles.get(i).getAuthorAndTitle()+System.lineSeparator() + System.lineSeparator();
         }
         return output;
     }
@@ -227,7 +204,7 @@ public class App extends Application {
         }
             String output = "";
         for (int i = 0; i < articles.size(); i++) {
-            output += articles.get(i).TitleToString()+System.lineSeparator();
+            output += articles.get(i).getAuthorAndTitle()+System.lineSeparator() + System.lineSeparator();
         }
 
         return output;

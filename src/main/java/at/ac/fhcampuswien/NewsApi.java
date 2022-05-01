@@ -1,5 +1,6 @@
 package at.ac.fhcampuswien;
 
+import at.ac.fhcampuswien.enums.*;
 import com.google.gson.Gson;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
@@ -10,23 +11,50 @@ import java.io.IOException;
 public class NewsApi {
 
     private final String apiKey;
-    private static final String URL_EVERYTHING = "https://newsapi.org/v2/everything?q=";
-    private static final String URL_TOPHEADLINES = "https://newsapi.org/v2/top-headlines?country="; //url von newsApi hinzugefuegt, weil es zwei gibt als eigene Variable hinzugefügt
     private NewsResponse newsResponse;
 
     public NewsApi(String key) {
         this.apiKey = key;
     }
 
-    public NewsResponse everything(String keyword) {
-        String target = URL_EVERYTHING + keyword + "&pageSize=10" + "&apiKey=" + apiKey;
+    private NewsResponse apiCall(Endpoint endpoint, String query, Language language, Country country, SortBy sortBy, Category category) {
+        StringBuilder builder = new StringBuilder();
+        builder.append(endpoint.getUrl()).append("?apiKey=").append(apiKey);
+
+        if (query.length() > 0) {
+            appendQueryParameter(builder, "q", query);
+        }
+        appendQueryParameter(builder, "pageSize", "5");
+        if (language != Language.any) {
+            appendQueryParameter(builder, "language", language.name());
+        }
+        if (country != Country.none) {
+            appendQueryParameter(builder, "country", country.name());
+        }
+        if (sortBy != SortBy.none) {
+            appendQueryParameter(builder, "sortBy", sortBy.name());
+        }
+        if (category != Category.none) {
+            appendQueryParameter(builder, "category", category.name());
+        }
+
+        String url = builder.toString();
         try {
-            String json = run(target);
+            String json = run(url);
             newsResponse = transform(json);
         } catch (IOException ioe) {
             System.err.println(ioe); //gibt Fehlermeldung aus
         }
         return newsResponse;
+    }
+
+    public NewsResponse everything(String query, Language language) {
+        return apiCall(Endpoint.EVERYTHING, query, language, Country.none, SortBy.none, Category.none);
+    }
+
+    private StringBuilder appendQueryParameter(StringBuilder builder, String parameter, String value)
+    {
+        return builder.append("&").append(parameter).append("=").append(value);
     }
 
     // wir wandeln den gson string in ein Objekt um.
@@ -36,17 +64,7 @@ public class NewsApi {
     }
 
     public NewsResponse topHeadlines() { //man klickt die url und man muss daraus senden.
-        String country = "at";
-        // category ...
-        String target = URL_TOPHEADLINES + country + "&apiKey=" + apiKey;
-        try {
-            String json = run(target);
-            newsResponse = transform(json);
-
-        } catch (IOException ioe) {
-            System.err.println(ioe);
-        }
-        return newsResponse;
+        return apiCall(Endpoint.TOP_HEADLINES, "", Language.any, Country.at, SortBy.none, Category.none);
     }
 
 

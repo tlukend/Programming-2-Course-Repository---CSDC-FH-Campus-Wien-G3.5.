@@ -145,13 +145,8 @@ public class Article {
                 + System.lineSeparator() + "Published at: " + getPublishedAt() + System.lineSeparator() + "Content: " + getContent();
     }
 
-    public String TitleToString(){
-        return getTitle() + System.lineSeparator();
+    public String getAuthorAndTitle(){
+        return "Author: " + getAuthor() + System.lineSeparator() + "Title: " + getTitle();
     }
-    public String AuthorToString(){
-        return getAuthor() + System.lineSeparator();
-    }
-
-
 }
 
