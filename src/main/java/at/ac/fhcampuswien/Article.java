@@ -151,5 +151,7 @@ public class Article {
     public String AuthorToString(){
         return getAuthor() + System.lineSeparator();
     }
+
+
 }
 

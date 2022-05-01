@@ -140,17 +140,37 @@ public class App extends Application {
             mainMenu.getChildren().add(countText);
 
         });
+
+
+
+
+
+
+
         //when clicking the getAllNewsBitcoin button
         bitcoinButton.setOnAction(event -> {
             mainMenu.getChildren().remove(menuBox);
             bitcoinNews.setTextFill(BLACK);
             bitcoinNews.setAlignment(Pos.TOP_CENTER);
             bitcoinNews.setLineSpacing(10);
-            topHeadlinesAustriaText.setPadding(new Insets(90));
+            bitcoinNews.setPadding(new Insets(90));
             bitcoinNews.setFont(articleText);
             bitcoinNews.setText(getAllNewsBitcoin(ctrl));
             mainMenu.getChildren().add(bitcoinNews);
+
+            Button menueButton1 = new Button("Menü");
+            menueButton1.setStyle("-fx-background-color:#3A3B3C");
+            menueButton1.setTextFill(WHITE);
+            menueButton1.setFont(buttonFont);
+            StackPane.setAlignment(menueButton1, Pos.BOTTOM_RIGHT);
+
         });
+            /*menueButton1.setOnAction(event -> {
+            mainMenu.getChildren().remove(bitcoinNews);
+            mainMenu.getChildren().add(menuBox);
+            });*/
+
+
             //when clicking the topHeadlinesAustria button
         topHeadlinesAustriaButton.setOnAction(event -> {
             mainMenu.getChildren().remove(menuBox);

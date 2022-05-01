@@ -39,8 +39,8 @@ public class AppController {
     }
 
     public List<Article> getAllNewsBitcoin() {
-        newsApi.everything("bitcoin");
-        return filterList("bitcoin", newsApi.getNewsResponse().getArticles());
+        return newsApi.everything("bitcoin").getArticles();
+        //return filterList("bitcoin", newsApi.getNewsResponse().getArticles());
     }
 
     protected static List<Article> filterList(String query, List<Article> articles) {
