@@ -7,6 +7,7 @@ import at.ac.fhcampuswien.models.Article;
 import at.ac.fhcampuswien.models.NewsResponse;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class AppController {
     private List<Article> articles;
@@ -62,6 +63,12 @@ public class AppController {
         }
         return new ArrayList<>();
     }
+
+
+    /*public List<Article> getAllHeadlinesWithLessThan15Signs(List<Article> articles){
+        /char titles =
+        List<Article> under15 = getArticles().stream().filter(e -> toString().charAt(.getTitle()) < 15 ;)
+    }*/
 
     /**
      * filters a given article list based on a query
