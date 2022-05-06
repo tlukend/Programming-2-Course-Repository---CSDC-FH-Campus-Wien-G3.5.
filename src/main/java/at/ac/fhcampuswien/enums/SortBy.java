@@ -1,5 +1,9 @@
 package at.ac.fhcampuswien.enums;
 
 public enum SortBy {
-    relevancy, popularity, publishedAt, none
+    RELEVANCY, POPULARITY, PUBLISHED
+
+    //relevancy = articles more closely related to q come first.
+    //popularity = articles from popular sources and publishers come first.
+    //publishedAt = newest articles come first.
 }

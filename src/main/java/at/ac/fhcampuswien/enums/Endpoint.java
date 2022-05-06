@@ -1,14 +1,17 @@
 package at.ac.fhcampuswien.enums;
 
 public enum Endpoint {
-    EVERYTHING("https://newsapi.org/v2/everything"),
-    TOP_HEADLINES("https://newsapi.org/v2/top-headlines");
+    TOP_HEADLINES("top-headlines"),
 
-    private String url;
-    public String getUrl() { return url; }
+    EVERYTHING("everything");
 
-    Endpoint(String url)
-    {
-        this.url = url;
+    private final String endPoint;
+
+    Endpoint(String endPoint){
+        this.endPoint = endPoint;
+    }
+
+    public String getValue() {
+        return endPoint;
     }
 }
