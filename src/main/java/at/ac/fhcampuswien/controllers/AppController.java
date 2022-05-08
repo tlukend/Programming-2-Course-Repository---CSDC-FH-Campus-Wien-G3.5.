@@ -5,7 +5,11 @@ import at.ac.fhcampuswien.enums.Country;
 import at.ac.fhcampuswien.enums.Endpoint;
 import at.ac.fhcampuswien.models.Article;
 import at.ac.fhcampuswien.models.NewsResponse;
+import at.ac.fhcampuswien.models.Source;
+
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -70,6 +74,23 @@ public class AppController {
         List<Article> under15 = getArticles().stream().filter(e -> toString().charAt(.getTitle()) < 15 ;)
     }*/
 
+    /*Are
+
+    //Welcher Provider (= Source) liefert die meisten Artikel?
+    //duplicat definieren / variable die das speichert und dann schauen wer am meisten hat
+    public List duplicate (Source source){
+        int count = 0;
+        for (int i = 0; i<getArticleCount();i++){
+            Source source[i] == Source source[x]
+            count++;
+        }
+    }
+    List<Article> sourceWithMostArticles = articles.stream()
+            .filter(source -> source.()
+            .filter(name->name.startsWith("A"))
+            .collect(Collectors.toList());
+            System.out.println(sourceWithMostArticles);
+            */
     /**
      * filters a given article list based on a query
      * @param query to filter by

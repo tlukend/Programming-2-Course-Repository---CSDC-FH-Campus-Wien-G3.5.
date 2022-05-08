@@ -14,6 +14,9 @@ public class Article {
         this.author = author;
         this.title = title;
     }
+    public Article(Source source){
+        this.source = source;
+    }
 
     public Source getSource() {
         return source;
