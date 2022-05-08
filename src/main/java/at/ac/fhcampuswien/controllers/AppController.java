@@ -7,6 +7,7 @@ import at.ac.fhcampuswien.models.Article;
 import at.ac.fhcampuswien.models.NewsResponse;
 import at.ac.fhcampuswien.models.Source;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
@@ -68,24 +69,34 @@ public class AppController {
         return new ArrayList<>();
     }
 
+    public List<Article> getSourceWithMostArticles() { // unsure Are
+        NewsApi api = new NewsApi(null,Endpoint.TOP_HEADLINES);
+        NewsResponse response = api.requestData();
+        return new ArrayList<>();
+    }
 
     /*public List<Article> getAllHeadlinesWithLessThan15Signs(List<Article> articles){
-        /char titles =
+        char titles =
         List<Article> under15 = getArticles().stream().filter(e -> toString().charAt(.getTitle()) < 15 ;)
     }*/
 
-    /*Are
+    //Are
 
     //Welcher Provider (= Source) liefert die meisten Artikel?
     //duplicat definieren / variable die das speichert und dann schauen wer am meisten hat
-    public List duplicate (Source source){
-        int count = 0;
-        for (int i = 0; i<getArticleCount();i++){
-            Source source[i] == Source source[x]
-            count++;
-        }
+    /*public static void duplicate(AppController controller) {
     }
-    List<Article> sourceWithMostArticles = articles.stream()
+    public List duplicate (List <Source> sources){
+        for (int i = 0; i<getArticleCount();i++){
+            for (int j = i+1; j < getArticleCount(); j++) {
+                if (sources.get(i) == sources.get(j)){
+                    new ArrayList<Source>().add(sources.get(i));
+                }
+            }new ArrayList<Source>().size();
+        }
+        return sources;
+    }
+    /*List<Article> sourceWithMostArticles = articles.stream()
             .filter(source -> source.()
             .filter(name->name.startsWith("A"))
             .collect(Collectors.toList());
