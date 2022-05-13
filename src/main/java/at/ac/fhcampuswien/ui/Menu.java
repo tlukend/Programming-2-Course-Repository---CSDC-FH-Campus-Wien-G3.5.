@@ -2,6 +2,7 @@ package at.ac.fhcampuswien.ui;
 
 import at.ac.fhcampuswien.controllers.AppController;
 import at.ac.fhcampuswien.models.Article;
+import at.ac.fhcampuswien.models.Source;
 
 import java.util.List;
 import java.util.Scanner;
@@ -29,7 +30,7 @@ public class Menu {
             case "b" -> getAllNewsBitcoin(controller);
             case "y" -> getArticleCount(controller);
             case "q" -> printExitMessage();
-            //case "c" -> AppController.getSourceWithMostArticles(controller); //unsure Are
+            //case "c" -> getClass(Source); //unsure Are
             default -> printInvalidInputMessage();
         }
     }

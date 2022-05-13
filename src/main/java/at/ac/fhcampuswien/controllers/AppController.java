@@ -70,21 +70,39 @@ public class AppController {
     }
 
     public List<Article> getSourceWithMostArticles() { // unsure Are
-        NewsApi api = new NewsApi(null,Endpoint.TOP_HEADLINES);
+        NewsApi api = new NewsApi(null,Endpoint.EVERYTHING);
         NewsResponse response = api.requestData();
         return new ArrayList<>();
     }
 
-    /*public List<Article> getAllHeadlinesWithLessThan15Signs(List<Article> articles){
+    public List<Article> getAuthorWithLongestName() {
+        NewsApi api = new NewsApi("", Country.at, Endpoint.EVERYTHING);
+        NewsResponse response = api.requestData();
+
+        if(response != null){
+            articles = response.getArticles();
+            return response.getArticles();
+        }
+        return new ArrayList<>();
+    }
+    /*
+
+    public List<Article> getAllHeadlinesWithLessThan15Signs(List<Article> articles){
         char titles =
         List<Article> under15 = getArticles().stream().filter(e -> toString().charAt(.getTitle()) < 15 ;)
-    }*/
+    }
 
     //Are
 
     //Welcher Provider (= Source) liefert die meisten Artikel?
     //duplicat definieren / variable die das speichert und dann schauen wer am meisten hat
-    /*public static void duplicate(AppController controller) {
+
+    public List<String> distinctElements = getTopHeadlinesAustria().stream()
+            .distinct()
+            .collect(Collectors.toList())
+
+
+    public static void duplicate(AppController controller) {
     }
     public List duplicate (List <Source> sources){
         for (int i = 0; i<getArticleCount();i++){
@@ -96,12 +114,12 @@ public class AppController {
         }
         return sources;
     }
-    /*List<Article> sourceWithMostArticles = articles.stream()
+    List<Article> sourceWithMostArticles = articles.stream()
             .filter(source -> source.()
             .filter(name->name.startsWith("A"))
             .collect(Collectors.toList());
             System.out.println(sourceWithMostArticles);
-            */
+           */
     /**
      * filters a given article list based on a query
      * @param query to filter by
