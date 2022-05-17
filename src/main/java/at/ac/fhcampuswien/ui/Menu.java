@@ -31,6 +31,7 @@ public class Menu {
             case "y" -> getArticleCount(controller);
             case "q" -> printExitMessage();
             //case "c" -> getClass(Source); //unsure Are
+            case "e" -> getNewYorkTimesArticleCount(controller);
             default -> printInvalidInputMessage();
         }
     }
@@ -49,6 +50,10 @@ public class Menu {
 
     private void getAllNewsBitcoin(AppController controller) {
         System.out.println(controller.getAllNewsBitcoin());
+    }
+
+    private void getNewYorkTimesArticleCount(AppController controller){
+        System.out.println(controller.getNewYorkTimesArticleCount());
     }
 
     public static void printExitMessage(){

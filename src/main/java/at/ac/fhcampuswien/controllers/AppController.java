@@ -8,10 +8,7 @@ import at.ac.fhcampuswien.models.NewsResponse;
 import at.ac.fhcampuswien.models.Source;
 
 import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class AppController {
@@ -85,6 +82,22 @@ public class AppController {
         }
         return new ArrayList<>();
     }
+
+    public int getNewYorkTimesArticleCount() {
+        if(articles == null){
+            return 0;
+        }else{
+        return (int)articles
+                .stream()
+                .filter(article -> article
+                        .getSource()
+                        .getName()
+                        .toLowerCase()
+                        .contains("new york times"))
+                .count();
+        }
+    }
+
     /*
 
     public List<Article> getAllHeadlinesWithLessThan15Signs(List<Article> articles){
