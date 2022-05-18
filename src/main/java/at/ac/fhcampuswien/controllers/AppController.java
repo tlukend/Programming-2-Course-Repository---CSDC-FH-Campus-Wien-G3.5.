@@ -73,6 +73,12 @@ public class AppController {
     }
 /*
     public String getAuthorWithLongestName() {
+    if(articles == null){
+    return 0;
+    }else{
+    return author
+    .stream()
+    .filter(authors -> author
         List<String> authorList = new ArrayList<String>();
         //authorList.addAll(Article.getAutho
 
