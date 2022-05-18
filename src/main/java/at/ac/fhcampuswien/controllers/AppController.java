@@ -78,8 +78,8 @@ public class AppController {
         }else{
         return (String) articles
                 .stream()
-                .filter(article -> article
-                        .getSource())
+                //.filter(article -> article
+                 //       .getSource())
                 .toString();
 
         }
