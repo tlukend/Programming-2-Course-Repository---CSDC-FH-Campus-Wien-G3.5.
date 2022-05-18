@@ -71,18 +71,17 @@ public class AppController {
         NewsResponse response = api.requestData();
         return new ArrayList<>();
     }
+/*
+    public String getAuthorWithLongestName() {
+        List<String> authorList = new ArrayList<String>();
+        //authorList.addAll(Article.getAutho
 
-    public List<Article> getAuthorWithLongestName() {
-        NewsApi api = new NewsApi("", Country.at, Endpoint.EVERYTHING);
-        NewsResponse response = api.requestData();
+        getArticles().stream().filter(e -> toString().);
+        //getTopHeadlinesAustria().getAuthor().stream();
 
-        if(response != null){
-            articles = response.getArticles();
-            return response.getArticles();
-        }
-        return new ArrayList<>();
+        return authorWithLongestName;
     }
-
+*/
     public int getNewYorkTimesArticleCount() {
         if(articles == null){
             return 0;
@@ -98,11 +97,11 @@ public class AppController {
         }
     }
 
-    /*
 
+/*
     public List<Article> getAllHeadlinesWithLessThan15Signs(List<Article> articles){
         char titles =
-        List<Article> under15 = getArticles().stream().filter(e -> toString().charAt(.getTitle()) < 15 ;)
+        List<Article> under15 = getArticles().stream().filter(e -> toString().charAt(.getTitle()) < 15;)
     }
 
     //Are
@@ -110,9 +109,9 @@ public class AppController {
     //Welcher Provider (= Source) liefert die meisten Artikel?
     //duplicat definieren / variable die das speichert und dann schauen wer am meisten hat
 
-    public List<String> distinctElements = getTopHeadlinesAustria().stream()
+    public List<String> distinctElements = Article.getSource().stream()
             .distinct()
-            .collect(Collectors.toList())
+            .collect(Collectors.toList());
 
 
     public static void duplicate(AppController controller) {
