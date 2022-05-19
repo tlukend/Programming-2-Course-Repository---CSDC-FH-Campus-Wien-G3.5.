@@ -65,13 +65,18 @@ public class AppController {
         }
         return new ArrayList<>();
     }
-
-    public List<Article> getSourceWithMostArticles() { // unsure Are
-        NewsApi api = new NewsApi(null,Endpoint.EVERYTHING);
-        NewsResponse response = api.requestData();
-        return new ArrayList<>();
+/*
+    public String getSourceWithMostArticles() { // unsure Are
+        if (articles == null){
+            return "no articles found";
+        }else{
+           // return articles
+             //       .stream()
+            //        .filter(article -> article
+          //                  .getSource())
+        }
     }
-
+*/
     public String getAuthorWithLongestName() {
         if(articles == null){
             return "no authors found";
@@ -79,21 +84,12 @@ public class AppController {
         return (String) articles
                 .stream()
                 //.filter(article -> article
-                 //       .getSource())
+                 //       .getAuthor())
                 .toString();
 
         }
     }
-            /*
-        List<String> authorList = new ArrayList<String>();
-        //authorList.addAll(Article.getAutho
 
-        getArticles().stream().filter(e -> toString().);
-        //getTopHeadlinesAustria().getAuthor().stream();
-
-        return authorWithLongestName;
-    }
-*/
     public int getNewYorkTimesArticleCount() {
         if(articles == null){
             return 0;
