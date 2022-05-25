@@ -28,7 +28,7 @@ public class Menu {
         switch (input) {
             case "a" -> getTopHeadlinesAustria(controller);
             case "b" -> getAllNewsBitcoin(controller);
-            //case "c" -> getClass(Source); //unsure Are
+            case "c" -> getSourceWithMostArticles(controller); //unsure Are
             case "d" -> getAuthorwithLongestName(controller);
             case "e" -> getNewYorkTimesArticleCount(controller);
             case "f" -> getArticlesUnder15(controller);
@@ -54,7 +54,11 @@ public class Menu {
     private void getAllNewsBitcoin(AppController controller) {
         System.out.println(controller.getAllNewsBitcoin());
     }
-    private void getAuthorwithLongestName(AppController controller){
+    private void getSourceWithMostArticles(AppController controller){
+        System.out.println(controller.getSourceWithMostArticles());
+
+    }
+        private void getAuthorwithLongestName(AppController controller){
         System.out.println(controller.getAuthorWithLongestName());
     }
 

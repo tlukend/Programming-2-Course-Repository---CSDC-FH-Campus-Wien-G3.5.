@@ -78,25 +78,16 @@ public class AppController {
 
     }*/
 
-    /*
-
-    public String getSourceWithMostArticles() { // unsure Are
+    public String getSourceWithMostArticles() { // done :)
         if (articles == null) {
             return "no articles found";
         } else {
-            /*
-            Source source = articles.stream().map(Article::getSource)
-                    .collect(groupingBy(Article::getSource))
-                    .values().stream()
-                    .max(Comparator.comparing(article -> article))
-                    .get().getSource();
-
-            return source.getName();
-             */
-
-            //articles.stream()
-                    //.collect(groupingBy(Article::getSource), Collectors.summingInt())
-          //  return null;
+            return articles
+                    .stream()
+                    .max(Comparator.comparing(article -> article.getSource().getName()))
+                    .get().getSource().getName();
+        }
+    }
 
 
       //welcher Provider und welcher Autor hat den nächsten Namen haben wir gelöst
@@ -161,45 +152,6 @@ public class AppController {
         }
     }
 
-
-
-    //Are
-
-    //Welcher Provider (= Source) liefert die meisten Artikel?
-    //duplicat definieren / variable die das speichert und dann schauen wer am meisten hat
-/*
-    public List<String> distinctElements = Article.getSource().stream()
-            .distinct()
-            .collect(Collectors.toList());
-*/
-
-    public static void duplicate(AppController controller) {
-    }
-
-    public List duplicate(List<Source> sources) {
-        for (int i = 0; i < getArticleCount(); i++) {
-            for (int j = i + 1; j < getArticleCount(); j++) {
-                if (sources.get(i) == sources.get(j)) {
-                    new ArrayList<Source>().add(sources.get(i));
-                }
-            }
-            new ArrayList<Source>().size();
-        }
-        return sources;
-    }
-
-    /*
-    List<Article> sourceWithMostArticles = articles.stream()
-            .filter(source -> source.()
-            .
-
-    filter(name->name.startsWith("A"))
-            .
-
-    collect(Collectors.toList());
-            System.out.println(sourceWithMostArticles);
-           */
-
     /**
      * filters a given article list based on a query
      *
@@ -207,13 +159,15 @@ public class AppController {
      * @param articles list to filter
      * @return filtered list
      */
-    private static List<Article> filterList(String query, List<Article> articles) {
-        List<Article> filtered = new ArrayList<>();
-        for (Article i : articles) {
-            if (i.getTitle().toLowerCase().contains(query)) {
-                filtered.add(i);
+        private static List<Article> filterList (String query, List < Article > articles){
+            List<Article> filtered = new ArrayList<>();
+            for (Article i : articles) {
+                if (i.getTitle().toLowerCase().contains(query)) {
+                    filtered.add(i);
+                }
             }
+            return filtered;
         }
-        return filtered;
     }
-}
+
+
