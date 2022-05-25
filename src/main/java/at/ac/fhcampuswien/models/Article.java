@@ -16,6 +16,10 @@ public class Article {
     }
     public Article(Source source){
         this.source = source;
+
+    }
+    public Article(String description){
+        this.description = description;
     }
 
     public Source getSource() {
@@ -50,8 +54,13 @@ public class Article {
         return title;
     }
 
+    public int getDescriptionLength(){
+        return getDescription().length();
+    }
+
     @Override
     public String toString() {
-        return "Title: " + getTitle() + "\n" + "Author: " + getAuthor();
+        return "Title: " + getTitle() + "\n" + "Author: " + getAuthor() +"\n" + "Describbo: " + getDescription();
     }
+
 }

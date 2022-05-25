@@ -28,11 +28,13 @@ public class Menu {
         switch (input) {
             case "a" -> getTopHeadlinesAustria(controller);
             case "b" -> getAllNewsBitcoin(controller);
-            case "y" -> getArticleCount(controller);
-            case "q" -> printExitMessage();
             //case "c" -> getClass(Source); //unsure Are
+            case "d" -> getAuthorwithLongestName(controller);
             case "e" -> getNewYorkTimesArticleCount(controller);
             case "f" -> getArticlesUnder15(controller);
+            case "g" -> getSortedArticles(controller);
+            case "y" -> getArticleCount(controller);
+            case "q" -> printExitMessage();
             default -> printInvalidInputMessage();
         }
     }
@@ -52,13 +54,20 @@ public class Menu {
     private void getAllNewsBitcoin(AppController controller) {
         System.out.println(controller.getAllNewsBitcoin());
     }
+    private void getAuthorwithLongestName(AppController controller){
+        System.out.println(controller.getAuthorWithLongestName());
+    }
 
     private void getNewYorkTimesArticleCount(AppController controller){
         System.out.println(controller.getNewYorkTimesArticleCount());
     }
 
     private void getArticlesUnder15(AppController controller){
-        System.out.println(controller.getArticlesUnder15());
+        System.out.println(controller.getArticlesUnder15().toString());
+    }
+
+    private void getSortedArticles(AppController controller){
+        System.out.println(controller.getSortedArticles().toString());
     }
 
     public static void printExitMessage(){
