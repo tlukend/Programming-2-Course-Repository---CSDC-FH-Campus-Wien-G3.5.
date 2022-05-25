@@ -73,7 +73,12 @@ public class AppController {
         }
         return new ArrayList<>();
     }
+    /*public String getAuthorWithLongestName ( ArrayList<Article> articles) {
 
+
+    }*/
+
+    /*
 
     public String getSourceWithMostArticles() { // unsure Are
         if (articles == null) {
@@ -91,9 +96,9 @@ public class AppController {
 
             //articles.stream()
                     //.collect(groupingBy(Article::getSource), Collectors.summingInt())
-            return null;
-        }
-    }
+          //  return null;
+
+
       //welcher Provider und welcher Autor hat den nächsten Namen haben wir gelöst
     public String getAuthorWithLongestName() {
         if (articles == null) {
@@ -122,14 +127,14 @@ public class AppController {
     }
 
 
-    public List<Article> getAllHeadlinesWithLessThan15Signs(List<Article> articles) {
+    public List<Article> getArticlesUnder15() {
 
-        List<Article> under15 = articles // gibt eine Liste mit Stream, dass gefiltert wird anhand der Bedinung
+        return articles
                 .stream()
-                .filter(article -> article.getTitle().length() < 15)
-                .toList();
+                .filter(article -> article
+                        .getTitle()
+                        .length() < 15).collect(Collectors.toList());
 
-        return under15;
     }
 
     //Are

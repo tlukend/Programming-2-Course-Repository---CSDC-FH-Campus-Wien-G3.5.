@@ -32,6 +32,7 @@ public class Menu {
             case "q" -> printExitMessage();
             //case "c" -> getClass(Source); //unsure Are
             case "e" -> getNewYorkTimesArticleCount(controller);
+            case "f" -> getArticlesUnder15(controller);
             default -> printInvalidInputMessage();
         }
     }
@@ -54,6 +55,10 @@ public class Menu {
 
     private void getNewYorkTimesArticleCount(AppController controller){
         System.out.println(controller.getNewYorkTimesArticleCount());
+    }
+
+    private void getArticlesUnder15(AppController controller){
+        System.out.println(controller.getArticlesUnder15());
     }
 
     public static void printExitMessage(){
