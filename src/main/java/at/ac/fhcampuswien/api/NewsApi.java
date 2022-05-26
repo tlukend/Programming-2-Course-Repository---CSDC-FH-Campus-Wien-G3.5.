@@ -9,7 +9,9 @@ import okhttp3.Request;
 import okhttp3.Response;
 
 import java.io.IOException;
+import java.lang.module.ResolutionException;
 import java.util.Objects;
+import java.util.Scanner;
 
 public class NewsApi {
     public static final String DELIMITER = "&";
@@ -84,13 +86,13 @@ public class NewsApi {
         return endpoint;
     }
 
-    public NewsApi(String q, Endpoint endpoint){
+    public NewsApi(String q, Endpoint endpoint) {
         this.client = new OkHttpClient();
         this.q = q;
         this.endpoint = endpoint;
     }
 
-    public NewsApi(String q, Country country, Endpoint endpoint){
+    public NewsApi(String q, Country country, Endpoint endpoint) {
         this.client = new OkHttpClient();
         this.q = q;
         this.sourceCountry = country;
@@ -112,42 +114,42 @@ public class NewsApi {
         this.page = page;
     }
 
-    private String buildUrl(){
+    private String buildUrl() {
         String baseurl = String.format(URL, getEndpoint().getValue(), getQ(), API_KEY);
 
         StringBuilder sb = new StringBuilder(baseurl);
 
-        if(getFrom() != null){
+        if (getFrom() != null) {
             sb.append(DELIMITER).append("from=").append(getFrom());
         }
-        if(getTo() != null){
+        if (getTo() != null) {
             sb.append(DELIMITER).append("to=").append(getTo());
         }
-        if(getPage() != null){
+        if (getPage() != null) {
             sb.append(DELIMITER).append("page=").append(getPage());
         }
-        if(getPageSize() != null){
+        if (getPageSize() != null) {
             sb.append(DELIMITER).append("pageSize=").append(getPageSize());
         }
-        if(getLanguage() != null){
+        if (getLanguage() != null) {
             sb.append(DELIMITER).append("language=").append(getLanguage());
         }
-        if(getSourceCountry() != null){
+        if (getSourceCountry() != null) {
             sb.append(DELIMITER).append("country=").append(getSourceCountry());
         }
-        if(getSourceCategory() != null){
+        if (getSourceCategory() != null) {
             sb.append(DELIMITER).append("category=").append(getSourceCategory());
         }
-        if(getDomains() != null){
+        if (getDomains() != null) {
             sb.append(DELIMITER).append("domains=").append(getDomains());
         }
-        if(getExcludeDomains() != null){
+        if (getExcludeDomains() != null) {
             sb.append(DELIMITER).append("excludeDomains=").append(getExcludeDomains());
         }
-        if(getqInTitle() != null){
+        if (getqInTitle() != null) {
             sb.append(DELIMITER).append("qInTitle=").append(getqInTitle());
         }
-        if(getSortBy() != null){
+        if (getSortBy() != null) {
             sb.append(DELIMITER).append("sortBy=").append(getSortBy());
         }
         return sb.toString();
@@ -163,7 +165,7 @@ public class NewsApi {
         try (Response response = client.newCall(request).execute()) {   // try with resources syntax
             Gson gson = new Gson();
             NewsResponse apiResponse = gson.fromJson(Objects.requireNonNull(response.body()).string(), NewsResponse.class); // parse the json response to NewsResponse
-            if(apiResponse.getStatus().equals("ok")){   // http status code ok - 200
+            if (apiResponse.getStatus().equals("ok")) {   // http status code ok - 200
                 return apiResponse;
             } else {
                 System.err.println(this.getClass() + ": http status not ok");

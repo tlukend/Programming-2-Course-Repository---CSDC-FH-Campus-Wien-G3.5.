@@ -1,16 +1,11 @@
 package at.ac.fhcampuswien.controllers;
-
 import at.ac.fhcampuswien.api.NewsApi;
 import at.ac.fhcampuswien.enums.Country;
 import at.ac.fhcampuswien.enums.Endpoint;
 import at.ac.fhcampuswien.models.Article;
 import at.ac.fhcampuswien.models.NewsResponse;
-import at.ac.fhcampuswien.models.Source;
 
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 import java.util.stream.Collectors;
 
 import static java.util.stream.Collectors.groupingBy;
@@ -169,5 +164,6 @@ public class AppController {
             return filtered;
         }
     }
+
 
 
