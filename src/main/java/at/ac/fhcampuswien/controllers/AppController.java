@@ -4,11 +4,14 @@ import at.ac.fhcampuswien.enums.Country;
 import at.ac.fhcampuswien.enums.Endpoint;
 import at.ac.fhcampuswien.models.Article;
 import at.ac.fhcampuswien.models.NewsResponse;
+import at.ac.fhcampuswien.models.Source;
 
 import java.util.*;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
-import static java.util.stream.Collectors.groupingBy;
+
+import static java.util.stream.Collectors.*;
 
 public class AppController {
     private List<Article> articles;
@@ -79,8 +82,18 @@ public class AppController {
         } else {
             return articles
                     .stream()
-                    .max(Comparator.comparing(article -> article.getSource().getName()))
-                    .get().getSource().getName();
+                    .map(article -> article.getSource().getName())
+                    .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()))
+                    .entrySet()
+                    .stream()
+                    .max(Map.Entry.comparingByValue())
+                    .get().getKey();
+
+            //collect.(Collectors.groupingBy())
+
+
+                //    .max(Comparator.comparing(article -> article.getSource().getName()))
+                //    .get().getSource().getName();
         }
     }
 
@@ -122,7 +135,7 @@ public class AppController {
                     .stream()
                     .filter(article -> article
                             .getTitle()
-                            .length() < 45).collect(Collectors.toList());
+                            .length() < 15).collect(Collectors.toList());
         }
 
     }

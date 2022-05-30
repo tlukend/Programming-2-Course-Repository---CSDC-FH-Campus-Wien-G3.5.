@@ -54,9 +54,9 @@ public class Menu {
     private void getAllNewsBitcoin(AppController controller) {
         System.out.println(controller.getAllNewsBitcoin());
     }
+
     private void getSourceWithMostArticles(AppController controller){
         System.out.println(controller.getSourceWithMostArticles());
-
     }
         private void getAuthorWithLongestName(AppController controller){
         System.out.println(controller.getAuthorWithLongestName());
