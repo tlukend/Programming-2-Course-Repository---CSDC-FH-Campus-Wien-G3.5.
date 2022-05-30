@@ -91,13 +91,14 @@ public class Menu {
                 Enter what you wanna do:
                 a: Get top headlines austria
                 b: Get all news about bitcoin
-                y: Count articles
-                q: Quit program
                 c: Get provider with most articles
                 d: Get longest author name
                 e: Count articles from NY Times
                 f: Get articles with short title
                 g: Sort articles by content length
+                ___________________________________
+                y: Count articles
+                q: Quit program
                 """;
     }
 
