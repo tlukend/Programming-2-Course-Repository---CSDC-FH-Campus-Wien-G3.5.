@@ -122,30 +122,32 @@ public class AppController {
                     .stream()
                     .filter(article -> article
                             .getTitle()
-                            .length() < 15).collect(Collectors.toList());
+                            .length() < 45).collect(Collectors.toList());
         }
 
     }
 
 
-    public List<Article> getSortedArticles(){
+    public List<Article> getSortedArticles() {
         if (articles == null) return new ArrayList<>();
-        else{
+        else {
             // dieser Code wäre es gewesen, wenn wir nur die Länge sortiert hätten
-           // return articles.stream()
-           //          .sorted(Comparator.comparingInt(Article::getDescriptionLength))
-           //         .collect(Collectors.toList());
             return articles.stream()
+                    .sorted(Comparator.comparingInt(Article::getDescriptionLength))
+                    .collect(Collectors.toList());
+           /* return articles.stream()
                     .sorted((o1, o2) -> {
                         if (o1.getDescription().length() == o2.getDescription().length())     //getDescriptionLength ist eine neu geschriebene Methode, um direkt integer Länge zu haben
                             return o1.getDescription().compareTo(o2.getDescription());  // wenn sie gleich lang sind, returne nach alphabetischer Reihenfolge
                         else if (o1.getDescription().length() > o2.getDescription().length())     //wenn eins größer ist als das andere
-                            return 1;                              //returnen wir eine positive nummer, die besagt, dass ein element größer ist als das andere
-                        else return -1;                            // wenn wir negative zahl returnen, heißt das ein element kleiner als das andere ist
+                            return 1;  //returnen wir eine positive nummer, die besagt, dass ein element größer ist als das andere
+                        else return -1; // wenn wir negative zahl returnen, heißt das ein element kleiner als das andere ist
                     })
                             .collect(Collectors.toList());
+        }*/
         }
     }
+
 
     /**
      * filters a given article list based on a query

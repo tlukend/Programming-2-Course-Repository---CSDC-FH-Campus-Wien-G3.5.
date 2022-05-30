@@ -72,6 +72,7 @@ public class Menu {
 
     private void getSortedArticles(AppController controller){
         System.out.println(controller.getSortedArticles().toString());
+
     }
 
     public static void printExitMessage(){

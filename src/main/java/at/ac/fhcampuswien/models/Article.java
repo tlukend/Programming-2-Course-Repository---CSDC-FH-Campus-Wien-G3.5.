@@ -60,7 +60,9 @@ public class Article {
 
     @Override
     public String toString() {
-        return "Title: " + getTitle() + "\n" + "Author: " + getAuthor() +"\n" + "Describbo: " + getDescription();
+        return "Title: " + getTitle() + "\n" + "Author: " + getAuthor() +"\n" + "Decsription-Length: " + getDescriptionLength() + "\n" + "Describbo: " + getDescription();
     }
+
+
 
 }

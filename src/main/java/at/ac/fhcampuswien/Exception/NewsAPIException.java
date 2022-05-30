@@ -25,7 +25,7 @@ public class NewsAPIException extends Article {
         int NewsException = scan.nextInt();
 
 
-        try {
+     /*   try {
             checkException(NewsException);
         } catch ( ) {
             System.out.println(.getMessage() );
@@ -33,6 +33,6 @@ public class NewsAPIException extends Article {
     }
 
     static void checkException(int exception) throws  {
-
+*/
     }
 }
