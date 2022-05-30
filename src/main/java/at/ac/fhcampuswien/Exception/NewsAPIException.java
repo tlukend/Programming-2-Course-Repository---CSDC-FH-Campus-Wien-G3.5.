@@ -1,8 +1,4 @@
 package at.ac.fhcampuswien.Exception;
-import at.ac.fhcampuswien.models.Article;
-
-import java.util.ArrayList;
-import java.util.Scanner;
 
 // Exception Handling:
 //o Implementiert eine Custom Exception mit dem Namen NewsAPIException
@@ -14,38 +10,16 @@ import java.util.Scanner;
 
 public class NewsAPIException extends Exception {
 
-    private final static String ErrorMessage = "Oops! Something went wrong with your wished request!";
+    private final static String DefaultErrorMessage = "Oops! Something went wrong with your wished request!";
 
-    NewsAPIException() {
-        super(ErrorMessage);
+    public NewsAPIException(Throwable cause) {
+        super(DefaultErrorMessage, cause);
     }
 
-    NewsAPIException(String customMessage){
+    public NewsAPIException(String customMessage, Throwable cause){
+        super(customMessage, cause);
+    }
+    public NewsAPIException(String customMessage){
         super(customMessage);
     }
 }
-
-
-//     Article {
-   // NewsAPIException(String message) {
-   //    super(message);
-   //}
-
-
-
-  /*  public static void Article(String args[]) {
-        Scanner scan = new Scanner(System.in);
-        System.out.println("Enter Article");
-        int NewsException = scan.nextInt();
-
-
-        try {
-            checkException(NewsException);
-        } catch ( ) {
-            System.out.println(.getMessage() );
-        }
-    }
-
-    static void checkException(int exception) throws  {
-
-    }*/

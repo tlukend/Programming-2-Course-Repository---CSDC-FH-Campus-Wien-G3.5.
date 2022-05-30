@@ -1,17 +1,17 @@
 package at.ac.fhcampuswien.api;
 
+import at.ac.fhcampuswien.Exception.NewsAPIException;
 import at.ac.fhcampuswien.enums.*;
 import at.ac.fhcampuswien.models.NewsResponse;
 import com.google.gson.Gson;
+import com.google.gson.JsonSyntaxException;
 import io.github.cdimascio.dotenv.Dotenv;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 
 import java.io.IOException;
-import java.lang.module.ResolutionException;
 import java.util.Objects;
-import java.util.Scanner;
 
 public class NewsApi {
     public static final String DELIMITER = "&";
@@ -155,7 +155,7 @@ public class NewsApi {
         return sb.toString();
     }
 
-    public NewsResponse requestData() {
+    public NewsResponse requestData() throws NewsAPIException {
         String url = buildUrl();
 
         Request request = new Request.Builder()
@@ -165,18 +165,24 @@ public class NewsApi {
         try (Response response = client.newCall(request).execute()) {   // try with resources syntax
             Gson gson = new Gson();
             NewsResponse apiResponse = gson.fromJson(Objects.requireNonNull(response.body()).string(), NewsResponse.class); // parse the json response to NewsResponse
+
             if (apiResponse.getStatus().equals("ok")) {   // http status code ok - 200
                 return apiResponse;
             } else {
-                System.err.println(this.getClass() + ": http status not ok");
-                return null;
+                throw new NewsAPIException("The status sent from the server was not okay!");
             }
+        } catch (NewsAPIException e) {
+            throw e;
+        } catch (JsonSyntaxException e) {
+            throw new NewsAPIException("The response from the server did not have the right format!", e);
         } catch (IOException e) {
-            System.out.println(e.getMessage());
-            return null;
+            throw new NewsAPIException("The request to the server failed!", e);
+        } catch (IllegalStateException e) {
+            throw new NewsAPIException("The request has already been sent!", e);
+        } catch (NullPointerException e) {
+            throw new NewsAPIException("The response was empty!", e);
+        } catch (Exception e) {
+            throw new NewsAPIException(e);
         }
-
-
-
     }
 }

@@ -15,7 +15,6 @@ public class Menu {
     public void start(){
         String input;
         controller = new AppController();
-
         do{
             System.out.println(getMenuText());
             input = readLine();
