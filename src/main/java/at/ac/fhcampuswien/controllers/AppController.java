@@ -40,35 +40,29 @@ public class AppController {
      *
      * @return article list
      */
-    public List<Article> getTopHeadlinesAustria() {
+    public List<Article> getTopHeadlinesAustria() throws NewsAPIException {
         NewsApi api = new NewsApi("", Country.at, Endpoint.TOP_HEADLINES);
-        try {
-            NewsResponse response = api.requestData();
 
-            if (response != null) {
-                articles = response.getArticles();
-                return response.getArticles();
-            }
-        } catch (NewsAPIException e) {
-            System.err.println("There was an error with your request! (Error message: " + e.getMessage() + ")");
+        NewsResponse response = api.requestData();
+
+        if (response != null) {
+            articles = response.getArticles();
+            return response.getArticles();
         }
+
         return new ArrayList<>();
     }
 
-    public List<Article> getSearchArticle(String q, Country country, Endpoint endpoint, SortBy sortby, Category category, Language language) {
-        NewsApi api = new NewsApi(q,country, endpoint,sortby,category,language);
-        try {
+    public List<Article> getSearchArticle(String q, Country country, Endpoint endpoint, SortBy sortby, Category category, Language language) throws NewsAPIException {
+        NewsApi api = new NewsApi(q, country, endpoint, sortby, category, language);
 
-            NewsResponse response = api.requestData();
+        NewsResponse response = api.requestData();
 
-            if (response != null) {
-                articles = response.getArticles();
-                return response.getArticles();
-            }
+        if (response != null) {
+            articles = response.getArticles();
+            return response.getArticles();
         }
-        catch (NewsAPIException e) {
-            System.err.println("There was an error with your request! (Error message: " + e.getMessage() + ")");
-        }
+
         return new ArrayList<>();
     }
 
@@ -78,18 +72,16 @@ public class AppController {
      *
      * @return filtered list
      */
-    public List<Article> getAllNewsBitcoin() {
+    public List<Article> getAllNewsBitcoin() throws NewsAPIException {
         NewsApi api = new NewsApi("bitcoin", Endpoint.EVERYTHING);
-        try {
-            NewsResponse response = api.requestData();
 
-            if (response != null) {
-                articles = response.getArticles();
-                return response.getArticles();
-            }
-        } catch (NewsAPIException e) {
-            System.err.println("There was an error with your request! (Error message: " + e.getMessage() + ")");
+        NewsResponse response = api.requestData();
+
+        if (response != null) {
+            articles = response.getArticles();
+            return response.getArticles();
         }
+
         return new ArrayList<>();
     }
 

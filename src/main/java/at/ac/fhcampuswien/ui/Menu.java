@@ -113,7 +113,7 @@ public class Menu {
     }
 
 
-    private void getTopHeadlinesAustria(AppController controller) {
+    private void getTopHeadlinesAustria(AppController controller) throws NewsAPIException {
         List<Article> articleList = controller.getTopHeadlinesAustria();
 
         for (Article a : articleList) {
@@ -121,7 +121,7 @@ public class Menu {
         }
     }
 
-    private void getAllNewsBitcoin(AppController controller) {
+    private void getAllNewsBitcoin(AppController controller) throws NewsAPIException {
         System.out.println(controller.getAllNewsBitcoin());
     }
 
