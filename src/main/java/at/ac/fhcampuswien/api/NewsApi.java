@@ -175,5 +175,8 @@ public class NewsApi {
             System.out.println(e.getMessage());
             return null;
         }
+
+
+
     }
 }

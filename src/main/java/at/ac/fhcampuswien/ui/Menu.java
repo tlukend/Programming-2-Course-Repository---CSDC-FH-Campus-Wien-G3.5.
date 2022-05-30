@@ -29,7 +29,7 @@ public class Menu {
             case "a" -> getTopHeadlinesAustria(controller);
             case "b" -> getAllNewsBitcoin(controller);
             case "c" -> getSourceWithMostArticles(controller); //unsure Are
-            case "d" -> getAuthorwithLongestName(controller);
+            case "d" -> getAuthorWithLongestName(controller);
             case "e" -> getNewYorkTimesArticleCount(controller);
             case "f" -> getArticlesUnder15(controller);
             case "g" -> getSortedArticles(controller);
@@ -58,7 +58,7 @@ public class Menu {
         System.out.println(controller.getSourceWithMostArticles());
 
     }
-        private void getAuthorwithLongestName(AppController controller){
+        private void getAuthorWithLongestName(AppController controller){
         System.out.println(controller.getAuthorWithLongestName());
     }
 
