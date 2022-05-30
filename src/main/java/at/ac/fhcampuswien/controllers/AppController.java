@@ -129,12 +129,16 @@ public class AppController {
 
 
     public List<Article> getSortedArticles() {
-        if (articles == null) return new ArrayList<>();
-        else {
-            // dieser Code wäre es gewesen, wenn wir nur die Länge sortiert hätten
-            return articles.stream()
-                    .sorted(Comparator.comparingInt(Article::getDescriptionLength))
+        removeNull();
+
+        // dieser Code wäre es gewesen, wenn wir nur die Länge sortiert hätten
+        return articles.stream()
+                    .sorted(Comparator.comparingInt((Article a) -> a.getDescription().length())
+                    .thenComparing(Article :: getDescription))
                     .collect(Collectors.toList());
+
+
+
            /* return articles.stream()
                     .sorted((o1, o2) -> {
                         if (o1.getDescription().length() == o2.getDescription().length())     //getDescriptionLength ist eine neu geschriebene Methode, um direkt integer Länge zu haben
@@ -146,8 +150,15 @@ public class AppController {
                             .collect(Collectors.toList());
         }*/
         }
-    }
 
+
+private void removeNull(){
+    for (Article a : articles){
+        if(a.getDescription() == null){
+            a.setDescription("");
+        }
+    }
+}
 
     /**
      * filters a given article list based on a query

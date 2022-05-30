@@ -55,7 +55,13 @@ public class Article {
     }
 
     public int getDescriptionLength(){
-        return getDescription().length();
+        if (getDescription() == null)
+            return 0;
+       else  return getDescription().length();
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     @Override

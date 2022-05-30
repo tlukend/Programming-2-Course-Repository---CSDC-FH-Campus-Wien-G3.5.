@@ -1,6 +1,7 @@
 package at.ac.fhcampuswien.Exception;
 import at.ac.fhcampuswien.models.Article;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 // Exception Handling:
@@ -10,22 +11,39 @@ import java.util.Scanner;
 //o Implementiert das Exception Handling - überlegt an welchen Stellen in eurem
 //Programm die Exceptions geworfen, propagiert und gehandelt (catching)
 //werden sollen
+@SuppressWarnings("yo")
+public class NewsAPIException extends Exception {
 
-public class NewsAPIException extends Article {
-    NewsAPIException(String message) {
-        super(message);
+    private final static String ErrorMessage = "Oops! Something went wrong with your wished request!";
+
+    NewsAPIException() {
+        super(ErrorMessage);
     }
 
-    {
+    NewsAPIException(String customMessage){
+        super(customMessage);
     }
+}
 
-    public static void Article(String args[]) {
+
+
+
+
+
+   //     Article {
+   // NewsAPIException(String message) {
+   //    super(message);
+   //}
+
+
+
+  /*  public static void Article(String args[]) {
         Scanner scan = new Scanner(System.in);
         System.out.println("Enter Article");
         int NewsException = scan.nextInt();
 
 
-     /*   try {
+        try {
             checkException(NewsException);
         } catch ( ) {
             System.out.println(.getMessage() );
@@ -33,6 +51,5 @@ public class NewsAPIException extends Article {
     }
 
     static void checkException(int exception) throws  {
-*/
-    }
-}
+
+    }*/
