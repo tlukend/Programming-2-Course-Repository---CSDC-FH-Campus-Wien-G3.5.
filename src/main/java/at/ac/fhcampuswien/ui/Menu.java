@@ -1,6 +1,7 @@
 package at.ac.fhcampuswien.ui;
 
 import at.ac.fhcampuswien.controllers.AppController;
+import at.ac.fhcampuswien.enums.*;
 import at.ac.fhcampuswien.models.Article;
 
 import java.text.Normalizer;
@@ -35,6 +36,7 @@ public class Menu {
             case "f" -> getArticlesUnder15(controller);
             case "g" -> getSortedArticles(controller);
             case "h" -> download(controller);
+            case "i"-> search(controller);
             case "y" -> getArticleCount(controller);
             case "q" -> printExitMessage();
             default -> printInvalidInputMessage();
@@ -65,6 +67,39 @@ public class Menu {
     private void getArticleCount(AppController controller) {
         System.out.println("Number of articles: " + controller.getArticleCount());
     }
+
+    private void search(AppController controller) {
+        // country,sortby, endpoint,category,language
+        String searchword;
+        System.out.print("searchword :");
+        searchword  = readLine()     ;
+
+        String country;
+        System.out.print("contry :");
+        country   = readLine()     ;
+
+        String sortby;
+        System.out.print("sortby :");
+        sortby   = readLine()     ;
+
+        String endpoint;
+        System.out.print("endpoint :");
+          endpoint= readLine()     ;
+
+        String category;
+        System.out.print("category:");
+        category= readLine()     ;
+
+        String language;
+        System.out.print("language :");
+        language= readLine()     ;
+
+
+        System.out.println(controller.getsearchArticle(
+                searchword, Country.valueOf(country), Endpoint.valueOf(endpoint), SortBy.valueOf(sortby), Category.valueOf(category),Language.valueOf(language)
+        ));
+    }
+
 
     private void getTopHeadlinesAustria(AppController controller) {
         List<Article> articleList = controller.getTopHeadlinesAustria();
@@ -121,6 +156,7 @@ public class Menu {
                 f: Get articles with short title
                 g: Sort articles by content length
                 h: Download 1st article
+                i: Search
                 ___________________________________
                 y: Count articles
                 q: Quit program

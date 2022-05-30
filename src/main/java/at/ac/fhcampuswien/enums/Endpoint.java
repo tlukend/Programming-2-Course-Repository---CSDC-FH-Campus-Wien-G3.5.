@@ -14,4 +14,6 @@ public enum Endpoint {
     public String getValue() {
         return endPoint;
     }
+    // everything kein county, kein q , kein category
+    // top-headlines: alles erlaubt
 }

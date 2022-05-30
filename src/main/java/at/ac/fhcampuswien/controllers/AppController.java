@@ -1,7 +1,6 @@
 package at.ac.fhcampuswien.controllers;
 import at.ac.fhcampuswien.api.NewsApi;
-import at.ac.fhcampuswien.enums.Country;
-import at.ac.fhcampuswien.enums.Endpoint;
+import at.ac.fhcampuswien.enums.*;
 import at.ac.fhcampuswien.models.Article;
 import at.ac.fhcampuswien.models.NewsResponse;
 import at.ac.fhcampuswien.models.Source;
@@ -46,6 +45,17 @@ public class AppController {
      */
     public List<Article> getTopHeadlinesAustria() {
         NewsApi api = new NewsApi("", Country.at, Endpoint.TOP_HEADLINES);
+        NewsResponse response = api.requestData();
+
+        if (response != null) {
+            articles = response.getArticles();
+            return response.getArticles();
+        }
+        return new ArrayList<>();
+    }
+
+    public List<Article> getsearchArticle(String q, Country country, Endpoint endpoint, SortBy sortby, Category category, Language language) {
+        NewsApi api = new NewsApi(q,country, endpoint,sortby,category,language);
         NewsResponse response = api.requestData();
 
         if (response != null) {
