@@ -168,8 +168,6 @@ public class NewsApi {
 
     public NewsResponse requestData() {
         String url = buildUrl();
-        System.out.println(url);
-
         Request request = new Request.Builder()
                 .url(url)
                 .build();
