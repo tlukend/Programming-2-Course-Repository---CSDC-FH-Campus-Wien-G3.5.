@@ -27,7 +27,8 @@ public class Article {
     }
 
     public String getDescription() {
-        return description;
+        if (description == null) return "No description available";
+        else return description;
     }
 
     public String getUrl() {
@@ -47,7 +48,8 @@ public class Article {
     }
 
     public String getAuthor() {
-        return author;
+        if (author == null) return "n.a.";
+        else return author;
     }
 
     public String getTitle() {
@@ -66,7 +68,7 @@ public class Article {
 
     @Override
     public String toString() {
-        return "Title: " + getTitle() + "\n" + "Author: " + getAuthor() +"\n" + "Decsription-Length: " + getDescriptionLength() + "\n" + "Describbo: " + getDescription();
+        return "Title: " + getTitle() + "\n" + "Author: " + getAuthor() +"\n" + "Decsription-Length: " + getDescriptionLength() + "\n" + "Describtion: " + getDescription();
     }
 
 
