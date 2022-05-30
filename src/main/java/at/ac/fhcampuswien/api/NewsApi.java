@@ -99,6 +99,17 @@ public class NewsApi {
         this.endpoint = endpoint;
     }
 
+    public NewsApi(String q, Country country, Endpoint endpoint,SortBy sortby,Category category, Language language) {
+        this.client = new OkHttpClient();
+        this.q = q;
+        this.sourceCountry = country;
+        this.endpoint = endpoint;
+        this.sortBy=sortby;
+        this.sourceCategory=category;
+        this.language=language;
+    }
+
+
     public NewsApi(String q, String qInTitle, Country sourceCountry, Category sourceCategory, String domains, String excludeDomains, String from, String to, Language language, SortBy sortBy, String pageSize, String page, Endpoint endpoint) {
         this(q, endpoint);
         this.qInTitle = qInTitle;
@@ -150,14 +161,13 @@ public class NewsApi {
             sb.append(DELIMITER).append("qInTitle=").append(getqInTitle());
         }
         if (getSortBy() != null) {
-            sb.append(DELIMITER).append("sortBy=").append(getSortBy());
+            sb.append(DELIMITER).append("sortBy=").append(getSortBy().getValue());
         }
         return sb.toString();
     }
 
     public NewsResponse requestData() throws NewsAPIException {
         String url = buildUrl();
-
         Request request = new Request.Builder()
                 .url(url)
                 .build();

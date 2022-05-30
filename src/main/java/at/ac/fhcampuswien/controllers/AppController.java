@@ -1,8 +1,7 @@
 package at.ac.fhcampuswien.controllers;
 import at.ac.fhcampuswien.Exception.NewsAPIException;
 import at.ac.fhcampuswien.api.NewsApi;
-import at.ac.fhcampuswien.enums.Country;
-import at.ac.fhcampuswien.enums.Endpoint;
+import at.ac.fhcampuswien.enums.*;
 import at.ac.fhcampuswien.models.Article;
 import at.ac.fhcampuswien.models.NewsResponse;
 
@@ -52,6 +51,17 @@ public class AppController {
             }
         } catch (NewsAPIException e) {
             System.err.println("There was an error with your request! (Error message: " + e.getMessage() + ")");
+        }
+        return new ArrayList<>();
+    }
+
+    public List<Article> getsearchArticle(String q, Country country, Endpoint endpoint, SortBy sortby, Category category, Language language) {
+        NewsApi api = new NewsApi(q,country, endpoint,sortby,category,language);
+        NewsResponse response = api.requestData();
+
+        if (response != null) {
+            articles = response.getArticles();
+            return response.getArticles();
         }
         return new ArrayList<>();
     }
