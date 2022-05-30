@@ -1,4 +1,10 @@
 package at.ac.fhcampuswien.models;
+import java.io.IOException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.Files;
+import java.nio.file.StandardOpenOption;
+
 
 public class Article {
     private String author;
@@ -70,7 +76,22 @@ public class Article {
     public String toString() {
         return "Title: " + getTitle() + "\n" + "Author: " + getAuthor() +"\n" + "Decsription-Length: " + getDescriptionLength() + "\n" + "Description: " + getDescription() + "\n" + "Source:  " + getSource().getName();
     }
+//wo wir das Speichern wollen, nenen hier Datei filnename wo wir das abspeichern wollen
+    // Files ist die Methode und gibt uns an das wir speichern wollen, erst wenn es aufgerufen wird
+    //ist es gespeichert
+    //Path file:ist der Ort wo wir gespeichert wollen
+    //content: ist der Inhalt der gespeichert werden soll
+    public void download(String filename){
 
+        Path filePath = Paths.get(filename + ".txt");
+        System.out.println("Artikel download");
+        try {
+            Files.writeString(filePath, content, StandardOpenOption.CREATE_NEW);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
 
 
 }
