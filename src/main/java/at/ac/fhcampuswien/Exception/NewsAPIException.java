@@ -11,7 +11,7 @@ import java.util.Scanner;
 //o Implementiert das Exception Handling - überlegt an welchen Stellen in eurem
 //Programm die Exceptions geworfen, propagiert und gehandelt (catching)
 //werden sollen
-@SuppressWarnings("yo")
+
 public class NewsAPIException extends Exception {
 
     private final static String ErrorMessage = "Oops! Something went wrong with your wished request!";
@@ -26,11 +26,7 @@ public class NewsAPIException extends Exception {
 }
 
 
-
-
-
-
-   //     Article {
+//     Article {
    // NewsAPIException(String message) {
    //    super(message);
    //}
