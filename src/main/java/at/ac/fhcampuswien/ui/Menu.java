@@ -1,5 +1,6 @@
 package at.ac.fhcampuswien.ui;
 
+import at.ac.fhcampuswien.Exception.NewsAPIException;
 import at.ac.fhcampuswien.controllers.AppController;
 import at.ac.fhcampuswien.enums.*;
 import at.ac.fhcampuswien.models.Article;
@@ -27,19 +28,25 @@ public class Menu {
     }
 
     private void handleInput(String input) {
-        switch (input) {
-            case "a" -> getTopHeadlinesAustria(controller);
-            case "b" -> getAllNewsBitcoin(controller);
-            case "c" -> getSourceWithMostArticles(controller); //unsure Are
-            case "d" -> getAuthorWithLongestName(controller);
-            case "e" -> getNewYorkTimesArticleCount(controller);
-            case "f" -> getArticlesUnder15(controller);
-            case "g" -> getSortedArticles(controller);
-            case "h" -> download(controller);
-            case "i"-> search(controller);
-            case "y" -> getArticleCount(controller);
-            case "q" -> printExitMessage();
-            default -> printInvalidInputMessage();
+        try {
+            switch (input) {
+                case "a" -> getTopHeadlinesAustria(controller);
+                case "b" -> getAllNewsBitcoin(controller);
+                case "c" -> getSourceWithMostArticles(controller); //unsure Are
+                case "d" -> getAuthorWithLongestName(controller);
+                case "e" -> getNewYorkTimesArticleCount(controller);
+                case "f" -> getArticlesUnder15(controller);
+                case "g" -> getSortedArticles(controller);
+                case "h" -> download(controller);
+                case "i" -> search(controller);
+                case "y" -> getArticleCount(controller);
+                case "q" -> printExitMessage();
+                default -> printInvalidInputMessage();
+            }
+        } catch(NewsAPIException ex) {
+            System.err.println(System.lineSeparator() + ex.getMessage() + System.lineSeparator());
+        } catch (Exception ex) {
+            System.err.println("An error happened while executing your command!");
         }
     }
     //gefunden in Internet für gültige Dateinamen,gibt Dateinamen zurück anhand des Artikels Titels
@@ -54,11 +61,13 @@ public class Menu {
         return slug.toLowerCase();
     }
 
-    private void download(AppController controller) {
+    private void download(AppController controller) throws NewsAPIException {
         List<Article> articleList = controller.getTopHeadlinesAustria();
-        Article articel = articleList.get(1);
+        if(articleList == null || articleList.isEmpty()) { throw new NewsAPIException("The request returned an empty or invalid article list!"); }
+
+        Article articel = articleList.get(0);
         if (articel.getContent() == null) {
-            articel = articleList.get(2);
+            articel = articleList.get(1);
         }
 
         articel.download(getURLSlug(articel.getTitle()));
@@ -68,36 +77,39 @@ public class Menu {
         System.out.println("Number of articles: " + controller.getArticleCount());
     }
 
-    private void search(AppController controller) {
+    private void search(AppController controller) throws NewsAPIException {
         // country,sortby, endpoint,category,language
         String searchword;
         System.out.print("searchword :");
-        searchword  = readLine()     ;
+        searchword = readLine();
 
         String country;
         System.out.print("contry :");
-        country   = readLine()     ;
+        country = readLine();
 
         String sortby;
         System.out.print("sortby :");
-        sortby   = readLine()     ;
+        sortby = readLine();
 
         String endpoint;
         System.out.print("endpoint :");
-          endpoint= readLine()     ;
+        endpoint = readLine();
 
         String category;
         System.out.print("category:");
-        category= readLine()     ;
+        category = readLine();
 
         String language;
         System.out.print("language :");
-        language= readLine()     ;
+        language = readLine();
 
-
-        System.out.println(controller.getsearchArticle(
-                searchword, Country.valueOf(country), Endpoint.valueOf(endpoint), SortBy.valueOf(sortby), Category.valueOf(category),Language.valueOf(language)
-        ));
+        try {
+            System.out.println(controller.getSearchArticle(
+                    searchword, Country.valueOf(country), Endpoint.valueOf(endpoint), SortBy.valueOf(sortby), Category.valueOf(category), Language.valueOf(language)
+            ));
+        } catch (IllegalArgumentException ex) {
+            throw new NewsAPIException("Search input was invalid!", ex);
+        }
     }
 
 
@@ -113,11 +125,11 @@ public class Menu {
         System.out.println(controller.getAllNewsBitcoin());
     }
 
-    private void getSourceWithMostArticles(AppController controller) {
+    private void getSourceWithMostArticles(AppController controller) throws NewsAPIException {
         System.out.println(controller.getSourceWithMostArticles());
     }
 
-    private void getAuthorWithLongestName(AppController controller) {
+    private void getAuthorWithLongestName(AppController controller) throws NewsAPIException {
         System.out.println(controller.getAuthorWithLongestName());
     }
 

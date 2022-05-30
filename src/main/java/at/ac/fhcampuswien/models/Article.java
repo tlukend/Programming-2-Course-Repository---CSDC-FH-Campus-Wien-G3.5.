@@ -1,4 +1,6 @@
 package at.ac.fhcampuswien.models;
+import at.ac.fhcampuswien.Exception.NewsAPIException;
+
 import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -81,17 +83,13 @@ public class Article {
     //ist es gespeichert
     //Path file:ist der Ort wo wir gespeichert wollen
     //content: ist der Inhalt der gespeichert werden soll
-    public void download(String filename){
-
+    public void download(String filename) throws NewsAPIException {
         Path filePath = Paths.get(filename + ".txt");
         System.out.println("Artikel download");
         try {
             Files.writeString(filePath, content, StandardOpenOption.CREATE_NEW);
         } catch (IOException e) {
-            e.printStackTrace();
+            throw new NewsAPIException("Failed to save article to drive!", e);
         }
-
     }
-
-
 }

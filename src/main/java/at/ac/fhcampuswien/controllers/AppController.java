@@ -55,13 +55,19 @@ public class AppController {
         return new ArrayList<>();
     }
 
-    public List<Article> getsearchArticle(String q, Country country, Endpoint endpoint, SortBy sortby, Category category, Language language) {
+    public List<Article> getSearchArticle(String q, Country country, Endpoint endpoint, SortBy sortby, Category category, Language language) {
         NewsApi api = new NewsApi(q,country, endpoint,sortby,category,language);
-        NewsResponse response = api.requestData();
+        try {
 
-        if (response != null) {
-            articles = response.getArticles();
-            return response.getArticles();
+            NewsResponse response = api.requestData();
+
+            if (response != null) {
+                articles = response.getArticles();
+                return response.getArticles();
+            }
+        }
+        catch (NewsAPIException e) {
+            System.err.println("There was an error with your request! (Error message: " + e.getMessage() + ")");
         }
         return new ArrayList<>();
     }
@@ -87,9 +93,9 @@ public class AppController {
         return new ArrayList<>();
     }
 
-    public String getSourceWithMostArticles() { // done :)
+    public String getSourceWithMostArticles() throws NewsAPIException { // done :)
         if (articles == null) {
-            return "no articles found";
+            throw new NewsAPIException("No articles found!");
         } else {
             return articles
                     .stream()
@@ -104,9 +110,9 @@ public class AppController {
 
 
     //welcher Provider und welcher Autor hat den nächsten Namen haben wir gelöst
-    public String getAuthorWithLongestName() {
+    public String getAuthorWithLongestName() throws NewsAPIException {
         if (articles == null) {
-            return "no authors found";
+            throw new NewsAPIException("No articles found!");
         } else {
             return articles
                     .stream()
