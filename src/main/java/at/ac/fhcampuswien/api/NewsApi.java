@@ -163,6 +163,7 @@ public class NewsApi {
         if (getSortBy() != null) {
             sb.append(DELIMITER).append("sortBy=").append(getSortBy().getValue());
         }
+
         return sb.toString();
     }
 

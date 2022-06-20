@@ -5,6 +5,7 @@ import at.ac.fhcampuswien.controllers.AppController;
 import at.ac.fhcampuswien.enums.*;
 import at.ac.fhcampuswien.models.Article;
 
+import java.io.IOException;
 import java.text.Normalizer;
 import java.util.List;
 import java.util.Scanner;
