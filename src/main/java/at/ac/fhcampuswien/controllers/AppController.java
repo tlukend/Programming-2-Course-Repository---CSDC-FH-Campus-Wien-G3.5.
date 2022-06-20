@@ -9,10 +9,16 @@ import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
+
 public class AppController {
     private List<Article> articles;
+    private static final AppController instance = new AppController();
 
-    public AppController() {
+    private AppController() {
+    }
+
+    public static AppController getInstance(){
+        return instance;
     }
 
     public void setArticles(List<Article> articles) {
@@ -166,6 +172,8 @@ public class AppController {
         }
         return filtered;
     }
+
+
 }
 
 

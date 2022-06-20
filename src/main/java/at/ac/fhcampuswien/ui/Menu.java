@@ -15,10 +15,17 @@ public class Menu {
     private static final String INVALID_INPUT_MESSAGE = "No valid input. Try again";
     private static final String EXIT_MESSAGE = "Bye bye!";
     private AppController controller;
+    private static final Menu instance = new Menu();
 
+    private Menu() {
+    }
+
+    public static Menu getInstance(){
+        return instance;
+    }
     public void start() {
         String input;
-        controller = new AppController();
+        controller = AppController.getInstance();
 
         do {
             System.out.println(getMenuText());

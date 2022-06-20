@@ -21,7 +21,7 @@ public class AppControllerTest {
 
     @BeforeEach
     void setup(){
-        controller = new AppController();
+        controller = AppController.getInstance();
     }
 
     @Test

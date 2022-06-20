@@ -1,4 +1,4 @@
-package at.ac.fhcampuswien.downloader;
+package downloader;
 
 import at.ac.fhcampuswien.Exception.NewsAPIException;
 import downloader.Downloader;
