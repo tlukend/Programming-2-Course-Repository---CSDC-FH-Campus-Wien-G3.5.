@@ -6,6 +6,9 @@ import at.ac.fhcampuswien.api.NewsApi;
 import at.ac.fhcampuswien.enums.*;
 import at.ac.fhcampuswien.models.Article;
 import at.ac.fhcampuswien.models.NewsResponse;
+import downloader.Downloader;
+import downloader.PararellDownloader;
+import downloader.SequentialDownloader;
 
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -186,6 +189,31 @@ public class AppController {
     }
 
 
+    public void downloadURLs() throws NewsAPIException {
+        List<Article> articleList = getTopHeadlinesAustria();
+        if (articleList == null || articleList.isEmpty()) {
+            throw new NewsAPIException("The request returned an empty or invalid article list!");
+        }
+
+        List<String> urls = new ArrayList<>();
+        for(Article article: articleList) {
+            urls.add(article.getUrl());
+        }
+
+        System.out.println("Downloading files...");
+        long startSeq = System.currentTimeMillis();
+        Downloader seqDowloader = new SequentialDownloader();
+        int countSeq = seqDowloader.process(urls);
+        long stopSeq = System.currentTimeMillis();
+        System.out.println("Articales: "+countSeq+" files. Download duration: " + (stopSeq - startSeq) + " ms");
+
+        long startPara = System.currentTimeMillis();
+        Downloader paraDowloader = new PararellDownloader();
+        long countPara = paraDowloader.process(urls);
+        long stopPara= System.currentTimeMillis();
+        System.out.println("Articales: "+countPara+" files. Download duration: " + (stopPara - startPara) + " ms");
+
+    }
 }
 
 

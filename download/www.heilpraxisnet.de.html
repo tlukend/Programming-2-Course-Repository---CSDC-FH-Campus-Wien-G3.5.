@@ -1,0 +1,1071 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="de-DE"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="de-DE"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="de-DE"> <![endif]-->
+<!--[if IE 9]>    <html class="no-js lt-ie10" lang="de-DE"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="de-DE"> <!--<![endif]-->
+<head>
+<!-- Sourcepoint Anfang -->
+<script>function _typeof(t){return(_typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(t){return typeof t}:function(t){return t&&"function"==typeof Symbol&&t.constructor===Symbol&&t!==Symbol.prototype?"symbol":typeof t})(t)}!function(){var t=function(){var t,e,o=[],n=window,r=n;for(;r;){try{if(r.frames.__tcfapiLocator){t=r;break}}catch(t){}if(r===n.top)break;r=n.parent}t||(!function t(){var e=n.document,o=!!n.frames.__tcfapiLocator;if(!o)if(e.body){var r=e.createElement("iframe");r.style.cssText="display:none",r.name="__tcfapiLocator",e.body.appendChild(r)}else setTimeout(t,5);return!o}(),n.__tcfapi=function(){for(var t=arguments.length,n=new Array(t),r=0;r<t;r++)n[r]=arguments[r];if(!n.length)return o;"setGdprApplies"===n[0]?n.length>3&&2===parseInt(n[1],10)&&"boolean"==typeof n[3]&&(e=n[3],"function"==typeof n[2]&&n[2]("set",!0)):"ping"===n[0]?"function"==typeof n[2]&&n[2]({gdprApplies:e,cmpLoaded:!1,cmpStatus:"stub"}):o.push(n)},n.addEventListener("message",(function(t){var e="string"==typeof t.data,o={};if(e)try{o=JSON.parse(t.data)}catch(t){}else o=t.data;var n="object"===_typeof(o)?o.__tcfapiCall:null;n&&window.__tcfapi(n.command,n.version,(function(o,r){var a={__tcfapiReturn:{returnValue:o,success:r,callId:n.callId}};t&&t.source&&t.source.postMessage&&t.source.postMessage(e?JSON.stringify(a):a,"*")}),n.parameter)}),!1))};"undefined"!=typeof module?module.exports=t:t()}();</script>
+<!-- Sourcepoint Ende -->
+<!-- Yett Anfang -->
+<script>
+window.YETT_BLACKLIST = [
+/doubleclick\.net/,
+/newsletter2go\.com/,
+/googleapis\.com/,
+/fonts\.googleapis\.com/,
+/outbrain\.com/,
+/cleverpush\.com/,
+/static\.cleverpush\.com/,
+/gstatic\.com/,
+/fonts\.gstatic\.com/,
+/pagead2.googlesyndication.com/,
+];
+</script>
+<script>!function(t,e){"object"==typeof exports&&"undefined"!=typeof module?e(exports):"function"==typeof define&&define.amd?define(["exports"],e):e((t="undefined"!=typeof globalThis?globalThis:t||self).yett={})}(this,(function(t){"use strict";var e="javascript/blocked",r={blacklist:window.YETT_BLACKLIST,whitelist:window.YETT_WHITELIST},n={blacklisted:[]},i=function(t,n){return t&&(!n||n!==e)&&(!r.blacklist||r.blacklist.some((function(e){return e.test(t)})))&&(!r.whitelist||r.whitelist.every((function(e){return!e.test(t)})))},o=function(t){var e=t.getAttribute("src");return r.blacklist&&r.blacklist.every((function(t){return!t.test(e)}))||r.whitelist&&r.whitelist.some((function(t){return t.test(e)}))},c=new MutationObserver((function(t){for(var r=0;r<t.length;r++)for(var o=t[r].addedNodes,c=function(t){var r=o[t];if(1===r.nodeType&&"SCRIPT"===r.tagName){var c=r.src,l=r.type;if(i(c,l)){n.blacklisted.push([r,r.type]),r.type=e;r.addEventListener("beforescriptexecute",(function t(n){r.getAttribute("type")===e&&n.preventDefault(),r.removeEventListener("beforescriptexecute",t)})),r.parentElement&&r.parentElement.removeChild(r)}}},l=0;l<o.length;l++)c(l)}));function l(t,e){var r=Object.keys(t);if(Object.getOwnPropertySymbols){var n=Object.getOwnPropertySymbols(t);e&&(n=n.filter((function(e){return Object.getOwnPropertyDescriptor(t,e).enumerable}))),r.push.apply(r,n)}return r}function a(t){for(var e=1;e<arguments.length;e++){var r=null!=arguments[e]?arguments[e]:{};e%2?l(Object(r),!0).forEach((function(e){s(t,e,r[e])})):Object.getOwnPropertyDescriptors?Object.defineProperties(t,Object.getOwnPropertyDescriptors(r)):l(Object(r)).forEach((function(e){Object.defineProperty(t,e,Object.getOwnPropertyDescriptor(r,e))}))}return t}function s(t,e,r){return e in t?Object.defineProperty(t,e,{value:r,enumerable:!0,configurable:!0,writable:!0}):t[e]=r,t}function u(t,e){return function(t){if(Array.isArray(t))return t}(t)||function(t,e){var r=null==t?null:"undefined"!=typeof Symbol&&t[Symbol.iterator]||t["@@iterator"];if(null==r)return;var n,i,o=[],c=!0,l=!1;try{for(r=r.call(t);!(c=(n=r.next()).done)&&(o.push(n.value),!e||o.length!==e);c=!0);}catch(t){l=!0,i=t}finally{try{c||null==r.return||r.return()}finally{if(l)throw i}}return o}(t,e)||f(t,e)||function(){throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")}()}function p(t){return function(t){if(Array.isArray(t))return y(t)}(t)||function(t){if("undefined"!=typeof Symbol&&null!=t[Symbol.iterator]||null!=t["@@iterator"])return Array.from(t)}(t)||f(t)||function(){throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")}()}function f(t,e){if(t){if("string"==typeof t)return y(t,e);var r=Object.prototype.toString.call(t).slice(8,-1);return"Object"===r&&t.constructor&&(r=t.constructor.name),"Map"===r||"Set"===r?Array.from(t):"Arguments"===r||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(r)?y(t,e):void 0}}function y(t,e){(null==e||e>t.length)&&(e=t.length);for(var r=0,n=new Array(e);r<e;r++)n[r]=t[r];return n}c.observe(document.documentElement,{childList:!0,subtree:!0});var b=document.createElement,d={src:Object.getOwnPropertyDescriptor(HTMLScriptElement.prototype,"src"),type:Object.getOwnPropertyDescriptor(HTMLScriptElement.prototype,"type")};document.createElement=function(){for(var t=arguments.length,r=new Array(t),n=0;n<t;n++)r[n]=arguments[n];if("script"!==r[0].toLowerCase())return b.bind(document).apply(void 0,r);var o=b.bind(document).apply(void 0,r);try{Object.defineProperties(o,{src:a(a({},d.src),{},{set:function(t){i(t,o.type)&&d.type.set.call(this,e),d.src.set.call(this,t)}}),type:a(a({},d.type),{},{get:function(){var t=d.type.get.call(this);return t===e||i(this.src,t)?null:t},set:function(t){var r=i(o.src,o.type)?e:t;d.type.set.call(this,r)}})}),o.setAttribute=function(t,e){"type"===t||"src"===t?o[t]=e:HTMLScriptElement.prototype.setAttribute.call(o,t,e)}}catch(t){console.warn("Yett: unable to prevent script execution for script src ",o.src,".\n",'A likely cause would be because you are using a third-party browser extension that monkey patches the "document.createElement" function.')}return o};var v=new RegExp("[|\\{}()[\\]^$+*?.]","g");t.unblock=function(){for(var t=arguments.length,i=new Array(t),l=0;l<t;l++)i[l]=arguments[l];i.length<1?(r.blacklist=[],r.whitelist=[]):(r.blacklist&&(r.blacklist=r.blacklist.filter((function(t){return i.every((function(e){return"string"==typeof e?!t.test(e):e instanceof RegExp?t.toString()!==e.toString():void 0}))}))),r.whitelist&&(r.whitelist=[].concat(p(r.whitelist),p(i.map((function(t){if("string"==typeof t){var e=".*"+t.replace(v,"\\$&")+".*";if(r.whitelist.every((function(t){return t.toString()!==e.toString()})))return new RegExp(e)}else if(t instanceof RegExp&&r.whitelist.every((function(e){return e.toString()!==t.toString()})))return t;return null})).filter(Boolean)))));for(var a=document.querySelectorAll('script[type="'.concat(e,'"]')),s=0;s<a.length;s++){var f=a[s];o(f)&&(n.blacklisted.push([f,"application/javascript"]),f.parentElement.removeChild(f))}var y=0;p(n.blacklisted).forEach((function(t,e){var r=u(t,2),i=r[0],c=r[1];if(o(i)){for(var l=document.createElement("script"),a=0;a<i.attributes.length;a++){var s=i.attributes[a];"src"!==s.name&&"type"!==s.name&&l.setAttribute(s.name,i.attributes[a].value)}l.setAttribute("src",i.src),l.setAttribute("type",c||"application/javascript"),document.head.appendChild(l),n.blacklisted.splice(e-y,1),y++}})),r.blacklist&&r.blacklist.length<1&&c.disconnect()},Object.defineProperty(t,"__esModule",{value:!0})}));
+//# sourceMappingURL=yett.min.js.map</script>
+<!-- Yett Ende -->
+<script>
+window._sp_queue = [];
+window._sp_ = {
+config: {
+accountId: 1798,
+baseEndpoint: 'https://cdn.privacy-mgmt.com',
+gdpr: { },
+events: {
+onMessageChoiceSelect: function() {
+console.log('[event] onMessageChoiceSelect', arguments);
+},
+onMessageReady: function() {
+console.log('[event] onMessageReady', arguments);
+},
+onMessageChoiceError: function() {
+console.log('[event] onMessageChoiceError', arguments);
+},
+onPrivacyManagerAction: function() {
+console.log('[event] onPrivacyManagerAction', arguments);
+},
+onPMCancel: function() {
+console.log('[event] onPMCancel', arguments);
+},
+onMessageReceiveData: function() {
+console.log('[event] onMessageReceiveData', arguments);
+},
+onSPPMObjectReady: function() {
+console.log('[event] onSPPMObjectReady', arguments);
+},
+onConsentReady: function (consentUUID, euconsent) {
+console.log('[event] onConsentReady', arguments);
+if (arguments[3].consentedToAll) {
+document.dispatchEvent(new Event('consentedToAll'));
+// yett:
+window.yett.unblock();
+}
+},
+onError: function() {
+console.log('[event] onError', arguments);
+},
+}
+}
+}
+</script>
+<script src='https://cdn.privacy-mgmt.com/unified/wrapperMessagingWithoutDetection.js' async></script>
+<meta name="facebook-domain-verification" content="pl5ms0csuz72dcakqo56zvnhvtxwvw" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name='viewport' content='width=device-width, initial-scale=1, user-scalable=yes' />
+<meta name="pocket-site-verification" content="29c4c18702a379c31c3d58924fff19" />
+<link rel="profile" href="http://gmpg.org/xfn/11" />
+<link rel="pingback" href="https://www.heilpraxisnet.de/xmlrpc.php" />
+<meta name="theme-color" content="#73bd5a">
+<meta name="msapplication-navbutton-color" content="#73bd5a">
+<meta name="apple-mobile-web-app-status-bar-style" content="#73bd5a"><title>Beifuß-Allergie: Grundlage für weltweit ersten Impfstoff geschaffen &#8211; Heilpraxis</title>
+<style type="text/css">
+.heateor_sss_button_instagram span.heateor_sss_svg,a.heateor_sss_instagram span.heateor_sss_svg{background:radial-gradient(circle at 30% 107%,#fdf497 0,#fdf497 5%,#fd5949 45%,#d6249f 60%,#285aeb 90%)}
+.heateor_sss_horizontal_sharing .heateor_sss_svg,.heateor_sss_standard_follow_icons_container .heateor_sss_svg{
+color: #fff;
+border-width: 0px;
+border-style: solid;
+border-color: transparent;
+}
+.heateor_sss_horizontal_sharing .heateorSssTCBackground{
+color:#666;
+}
+.heateor_sss_horizontal_sharing span.heateor_sss_svg:hover,.heateor_sss_standard_follow_icons_container span.heateor_sss_svg:hover{
+border-color: transparent;
+}
+.heateor_sss_vertical_sharing span.heateor_sss_svg,.heateor_sss_floating_follow_icons_container span.heateor_sss_svg{
+color: #fff;
+border-width: 0px;
+border-style: solid;
+border-color: transparent;
+}
+.heateor_sss_vertical_sharing .heateorSssTCBackground{
+color:#666;
+}
+.heateor_sss_vertical_sharing span.heateor_sss_svg:hover,.heateor_sss_floating_follow_icons_container span.heateor_sss_svg:hover{
+border-color: transparent;
+}
+@media screen and (max-width:783px) {.heateor_sss_vertical_sharing{display:none!important}}div.heateorSssSharingArrow{display:none}div.heateor_sss_sharing_title{text-align:center}div.heateor_sss_sharing_ul{width:100%;text-align:center;}div.heateor_sss_horizontal_sharing div.heateor_sss_sharing_ul a{float:none!important;display:inline-block;}		</style>
+<meta name='robots' content='max-image-preview:large' />
+<meta property="og:type" content="article">
+<meta property="og:title" content="Beifuß-Allergie: Grundlage für weltweit ersten Impfstoff geschaffen">
+<meta property="og:site_name" content="Heilpraxis">
+<meta property="og:description" content="Beifuß-Allergie: Wesentlicher erster Schritt zur ursächlichen Therapie Fachleuten zufolge sind rund zehn Prozent der Menschen hierzulande von einer Beifuß-Allergie betroffen.">
+<meta property="og:url" content="https://www.heilpraxisnet.de/naturheilpraxis/beifuss-allergie-grundlage-fuer-weltweit-ersten-impfstoff-geschaffen-20220626562022/">
+<meta property="og:locale" content="de_DE">
+<meta property="og:image" content="https://www.heilpraxisnet.de/wp-content/uploads/2020/07/Ambrosia-Allergien-scaled.jpeg">
+<meta property="og:image:height" content="1714">
+<meta property="og:image:width" content="2560">
+<meta property="article:published_time" content="2022-06-26T09:50:59+02:00">
+<meta property="article:modified_time" content="2022-06-26T09:50:59+02:00">
+<meta property="article:author" content="http://Alfred%20Domke">
+<meta property="article:section" content="News">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Beifuß-Allergie: Grundlage für weltweit ersten Impfstoff geschaffen">
+<meta name="twitter:description" content="Beifuß-Allergie: Wesentlicher erster Schritt zur ursächlichen Therapie Fachleuten zufolge sind rund zehn Prozent der Menschen hierzulande von einer Beifuß-Allergie betroffen.">
+<meta name="twitter:url" content="https://www.heilpraxisnet.de/naturheilpraxis/beifuss-allergie-grundlage-fuer-weltweit-ersten-impfstoff-geschaffen-20220626562022/">
+<meta name="twitter:site" content="http://Alfred%20Domke">
+<meta name="twitter:image:src" content="https://www.heilpraxisnet.de/wp-content/uploads/2020/07/Ambrosia-Allergien-scaled.jpeg">
+<meta name="twitter:image:width" content="2560">
+<meta name="twitter:image:height" content="1714">
+<script type="text/javascript">
+var jnews_ajax_url = '/?ajax-request=jnews'
+</script>
+<script type="text/javascript">;var _0x1c8f51=_0x5623;function _0x236e(){var _0x4e9db1=['1px\x20solid\x20black','innerWidth','left','stringify','url','msCancelRequestAnimationFrame','easeInOutQuad','reduce','148980gIOTAk','triggerEvents','not\x20all','passiveOption','setAttribute','removeAttribute','complete','library','POST','callback','interactive','start','dataStorage','increment','slice','fixed','currentTime','indexOf','expired','className','textContent','instr','302984EQPluu','innerHeight','src','addEvents','change','eventType','function','13302aWDpFr','1103661hoDBZu','getStorage','fontSize','100px','script','getHeight','removeItem','getBoundingClientRect','boot','100000','includes','forEach','media','file_version_checker','isVisible','push','expiredStorage','white','jnewsDataStorage','GET','ajax','floor','requestAnimationFrame','call','duration','toLowerCase','height','getNotice','touchmove','jnews','jnewsadmin','width','8pOMDrE','globalBody','doc','classListSupport','scrollTop','getParents','parentNode','mark','assign','clientHeight','open','innerText','move','getText','create_js','getWidth','docReady','createEvent','top','classList','jnewsads','fireEvent','win','defineProperty','defer','async','docEl','oRequestAnimationFrame','initCustomEvent','delete','readyState','innerHTML','setText','getElementById','backgroundColor','documentElement','scrollTo','removeEventListener','concat','84fcgLpb','assets','webkitCancelAnimationFrame','replace','dispatchEvent','attachEvent','style','jnews-','3524816RrtQMz','replaceWith','fpsTable','createElement','number','getItem','unwrap','position','cancelAnimationFrame','getTime','120QIExuZ','offsetWidth','winLoad','join','extend','set','709900hsxpCH','Content-type','appendChild','querySelectorAll','mozCancelAnimationFrame','getMessage','test','bind','setRequestHeader','measure','webkitRequestAnimationFrame','addEventListener','11px','fps','10.0.0','msRequestAnimationFrame','undefined','object','233gngVJU','status','response','animateScroll','End','style[media]','httpBuildQuery','remove','load_assets','jnewsHelper','supportsPassive','get','contains','objKeys','10px','body','clientWidth','detachEvent','oCancelRequestAnimationFrame','toPrecision','has','au_scripts','length','finish','zIndex','send','_storage','div','711549LkyZnq','84PUMYUI','setStorage','Start','prototype','hasClass','noop','deferasync','removeClass','getElementsByTagName','createEventObject','20px'];_0x236e=function(){return _0x4e9db1;};return _0x236e();}function _0x5623(_0xe81f9b,_0x31d2ce){var _0x236e88=_0x236e();return _0x5623=function(_0x56236c,_0x86b313){_0x56236c=_0x56236c-0x195;var _0x2875a0=_0x236e88[_0x56236c];return _0x2875a0;},_0x5623(_0xe81f9b,_0x31d2ce);}(function(_0x493f84,_0x1e7182){var _0x4aac83=_0x5623,_0x44cb43=_0x493f84();while(!![]){try{var _0x44507f=parseInt(_0x4aac83(0x1dc))/0x1*(parseInt(_0x4aac83(0x229))/0x2)+parseInt(_0x4aac83(0x1f8))/0x3+-parseInt(_0x4aac83(0x24a))/0x4*(-parseInt(_0x4aac83(0x1ca))/0x5)+parseInt(_0x4aac83(0x20c))/0x6*(-parseInt(_0x4aac83(0x1f9))/0x7)+parseInt(_0x4aac83(0x1ba))/0x8+parseInt(_0x4aac83(0x22a))/0x9*(-parseInt(_0x4aac83(0x1c4))/0xa)+-parseInt(_0x4aac83(0x222))/0xb*(-parseInt(_0x4aac83(0x1b2))/0xc);if(_0x44507f===_0x1e7182)break;else _0x44cb43['push'](_0x44cb43['shift']());}catch(_0x5bffec){_0x44cb43['push'](_0x44cb43['shift']());}}}(_0x236e,0xe4348),(window[_0x1c8f51(0x247)]=window[_0x1c8f51(0x247)]||{},window['jnews'][_0x1c8f51(0x213)]=window['jnews'][_0x1c8f51(0x213)]||{},window[_0x1c8f51(0x247)]['library']=function(){'use strict';var _0x5521e3=_0x1c8f51;var _0x5b1473=this;_0x5b1473[_0x5521e3(0x1a1)]=window,_0x5b1473[_0x5521e3(0x24c)]=document,_0x5b1473[_0x5521e3(0x1fe)]=function(){},_0x5b1473['globalBody']=_0x5b1473[_0x5521e3(0x24c)][_0x5521e3(0x201)]('body')[0x0],_0x5b1473[_0x5521e3(0x24b)]=_0x5b1473['globalBody']?_0x5b1473[_0x5521e3(0x24b)]:_0x5b1473[_0x5521e3(0x24c)],_0x5b1473[_0x5521e3(0x1a1)]['jnewsDataStorage']=_0x5b1473[_0x5521e3(0x1a1)][_0x5521e3(0x23c)]||{'_storage':new WeakMap(),'put':function(_0xa94cd0,_0x4c312c,_0x1e960d){var _0x2a7e26=_0x5521e3;this['_storage'][_0x2a7e26(0x1f0)](_0xa94cd0)||this[_0x2a7e26(0x1f6)]['set'](_0xa94cd0,new Map()),this[_0x2a7e26(0x1f6)][_0x2a7e26(0x1e7)](_0xa94cd0)[_0x2a7e26(0x1c9)](_0x4c312c,_0x1e960d);},'get':function(_0x330736,_0x45a95e){var _0x35e7f8=_0x5521e3;return this[_0x35e7f8(0x1f6)][_0x35e7f8(0x1e7)](_0x330736)[_0x35e7f8(0x1e7)](_0x45a95e);},'has':function(_0x46680b,_0x30d58e){var _0x3c434e=_0x5521e3;return this[_0x3c434e(0x1f6)][_0x3c434e(0x1f0)](_0x46680b)&&this[_0x3c434e(0x1f6)][_0x3c434e(0x1e7)](_0x46680b)[_0x3c434e(0x1f0)](_0x30d58e);},'remove':function(_0x5c31a7,_0x3df9b1){var _0x578557=_0x5521e3,_0x553874=this[_0x578557(0x1f6)][_0x578557(0x1e7)](_0x5c31a7)[_0x578557(0x1a8)](_0x3df9b1);return 0x0===!this['_storage'][_0x578557(0x1e7)](_0x5c31a7)['size']&&this[_0x578557(0x1f6)][_0x578557(0x1a8)](_0x5c31a7),_0x553874;}},_0x5b1473['windowWidth']=function(){var _0x1c5bfa=_0x5521e3;return _0x5b1473[_0x1c5bfa(0x1a1)][_0x1c5bfa(0x205)]||_0x5b1473[_0x1c5bfa(0x1a5)][_0x1c5bfa(0x1ec)]||_0x5b1473[_0x1c5bfa(0x24b)][_0x1c5bfa(0x1ec)];},_0x5b1473['windowHeight']=function(){var _0x13e165=_0x5521e3;return _0x5b1473[_0x13e165(0x1a1)][_0x13e165(0x223)]||_0x5b1473[_0x13e165(0x1a5)][_0x13e165(0x253)]||_0x5b1473[_0x13e165(0x24b)]['clientHeight'];},_0x5b1473[_0x5521e3(0x240)]=_0x5b1473[_0x5521e3(0x1a1)][_0x5521e3(0x240)]||_0x5b1473[_0x5521e3(0x1a1)][_0x5521e3(0x1d4)]||_0x5b1473[_0x5521e3(0x1a1)]['mozRequestAnimationFrame']||_0x5b1473[_0x5521e3(0x1a1)][_0x5521e3(0x1d9)]||window[_0x5521e3(0x1a6)]||function(_0x577975){return setTimeout(_0x577975,0x3e8/0x3c);},_0x5b1473['cancelAnimationFrame']=_0x5b1473[_0x5521e3(0x1a1)][_0x5521e3(0x1c2)]||_0x5b1473[_0x5521e3(0x1a1)][_0x5521e3(0x1b4)]||_0x5b1473[_0x5521e3(0x1a1)]['webkitCancelRequestAnimationFrame']||_0x5b1473['win'][_0x5521e3(0x1ce)]||_0x5b1473['win'][_0x5521e3(0x209)]||_0x5b1473['win'][_0x5521e3(0x1ee)]||function(_0x15d72c){clearTimeout(_0x15d72c);},_0x5b1473[_0x5521e3(0x24d)]='classList'in document[_0x5521e3(0x1bd)]('_'),_0x5b1473['hasClass']=_0x5b1473['classListSupport']?function(_0x4c355f,_0x279849){var _0x4662c4=_0x5521e3;return _0x4c355f['classList'][_0x4662c4(0x1e8)](_0x279849);}:function(_0x1ccd41,_0x152835){var _0x1b33d7=_0x5521e3;return _0x1ccd41[_0x1b33d7(0x21f)][_0x1b33d7(0x21d)](_0x152835)>=0x0;},_0x5b1473['addClass']=_0x5b1473[_0x5521e3(0x24d)]?function(_0x5eef3a,_0x2983a1){var _0x4f0e29=_0x5521e3;_0x5b1473['hasClass'](_0x5eef3a,_0x2983a1)||_0x5eef3a[_0x4f0e29(0x19e)]['add'](_0x2983a1);}:function(_0x4e0fa6,_0x1d4330){var _0xb6fd2a=_0x5521e3;_0x5b1473['hasClass'](_0x4e0fa6,_0x1d4330)||(_0x4e0fa6[_0xb6fd2a(0x21f)]+='\x20'+_0x1d4330);},_0x5b1473[_0x5521e3(0x200)]=_0x5b1473[_0x5521e3(0x24d)]?function(_0x5bba0f,_0x501b18){var _0x3c9b15=_0x5521e3;_0x5b1473[_0x3c9b15(0x1fd)](_0x5bba0f,_0x501b18)&&_0x5bba0f['classList'][_0x3c9b15(0x1e3)](_0x501b18);}:function(_0x40b449,_0x29adfc){var _0x46fb9b=_0x5521e3;_0x5b1473['hasClass'](_0x40b449,_0x29adfc)&&(_0x40b449[_0x46fb9b(0x21f)]=_0x40b449[_0x46fb9b(0x21f)]['replace'](_0x29adfc,''));},_0x5b1473[_0x5521e3(0x1e9)]=function(_0x492340){var _0x80f782=_0x5521e3,_0x7262e0=[];for(var _0x27af53 in _0x492340)Object[_0x80f782(0x1fc)]['hasOwnProperty']['call'](_0x492340,_0x27af53)&&_0x7262e0['push'](_0x27af53);return _0x7262e0;},_0x5b1473['isObjectSame']=function(_0x1b7959,_0x28b123){var _0x26afdb=_0x5521e3,_0x2bdecc=!0x0;return JSON[_0x26afdb(0x207)](_0x1b7959)!==JSON[_0x26afdb(0x207)](_0x28b123)&&(_0x2bdecc=!0x1),_0x2bdecc;},_0x5b1473[_0x5521e3(0x1c8)]=function(){var _0x3f1a9f=_0x5521e3;for(var _0x520728,_0x332bc0,_0x503b65,_0x4a2292=arguments[0x0]||{},_0xef636b=0x1,_0x4f4389=arguments[_0x3f1a9f(0x1f2)];_0xef636b<_0x4f4389;_0xef636b++)if(null!==(_0x520728=arguments[_0xef636b])){for(_0x332bc0 in _0x520728)_0x4a2292!==(_0x503b65=_0x520728[_0x332bc0])&&void 0x0!==_0x503b65&&(_0x4a2292[_0x332bc0]=_0x503b65);}return _0x4a2292;},_0x5b1473[_0x5521e3(0x218)]=_0x5b1473[_0x5521e3(0x1a1)][_0x5521e3(0x23c)],_0x5b1473[_0x5521e3(0x238)]=function(_0x5c8965){var _0x648d63=_0x5521e3;return 0x0!==_0x5c8965['offsetWidth']&&0x0!==_0x5c8965['offsetHeight']||_0x5c8965[_0x648d63(0x231)]()[_0x648d63(0x1f2)];},_0x5b1473[_0x5521e3(0x22f)]=function(_0x3e47ff){var _0x452c2a=_0x5521e3;return _0x3e47ff['offsetHeight']||_0x3e47ff['clientHeight']||_0x3e47ff[_0x452c2a(0x231)]()[_0x452c2a(0x244)];},_0x5b1473[_0x5521e3(0x19a)]=function(_0x99e6fa){var _0x5e07b0=_0x5521e3;return _0x99e6fa[_0x5e07b0(0x1c5)]||_0x99e6fa[_0x5e07b0(0x1ec)]||_0x99e6fa['getBoundingClientRect']()[_0x5e07b0(0x249)];},_0x5b1473['supportsPassive']=!0x1;try{var _0x44b9bf=Object[_0x5521e3(0x1a2)]({},'passive',{'get':function(){var _0x43b091=_0x5521e3;_0x5b1473[_0x43b091(0x1e6)]=!0x0;}});_0x5521e3(0x19c)in _0x5b1473[_0x5521e3(0x24c)]?_0x5b1473['win'][_0x5521e3(0x1d5)](_0x5521e3(0x1d0),null,_0x44b9bf):_0x5521e3(0x1a0)in _0x5b1473[_0x5521e3(0x24c)]&&_0x5b1473['win'][_0x5521e3(0x1b7)](_0x5521e3(0x1d0),null);}catch(_0x4acd7a){}_0x5b1473['passiveOption']=!!_0x5b1473[_0x5521e3(0x1e6)]&&{'passive':!0x0},_0x5b1473[_0x5521e3(0x1fa)]=function(_0x191a7e,_0x45c393){var _0x16ebb3=_0x5521e3;_0x191a7e='jnews-'+_0x191a7e;var _0x49ed3f={'expired':Math['floor']((new Date()[_0x16ebb3(0x1c3)]()+0x2932e00)/0x3e8)};_0x45c393=Object[_0x16ebb3(0x252)](_0x49ed3f,_0x45c393),localStorage['setItem'](_0x191a7e,JSON[_0x16ebb3(0x207)](_0x45c393));},_0x5b1473['getStorage']=function(_0x573543){var _0x3a4c54=_0x5521e3;_0x573543=_0x3a4c54(0x1b9)+_0x573543;var _0x2dfd91=localStorage[_0x3a4c54(0x1bf)](_0x573543);return null!==_0x2dfd91&&0x0<_0x2dfd91[_0x3a4c54(0x1f2)]?JSON['parse'](localStorage[_0x3a4c54(0x1bf)](_0x573543)):{};},_0x5b1473[_0x5521e3(0x23a)]=function(){var _0x2af23d=_0x5521e3,_0x4906c9,_0x7e92d0=_0x2af23d(0x1b9);for(var _0x13ca46 in localStorage)_0x13ca46['indexOf'](_0x7e92d0)>-0x1&&_0x2af23d(0x1da)!==(_0x4906c9=_0x5b1473[_0x2af23d(0x22b)](_0x13ca46[_0x2af23d(0x1b5)](_0x7e92d0,'')))[_0x2af23d(0x21e)]&&_0x4906c9['expired']<Math[_0x2af23d(0x23f)](new Date()['getTime']()/0x3e8)&&localStorage[_0x2af23d(0x230)](_0x13ca46);},_0x5b1473[_0x5521e3(0x225)]=function(_0x42934b,_0x41689e,_0x2cbfd5){var _0x482bcd=_0x5521e3;for(var _0x32cab4 in _0x41689e){var _0x3ae86b=['touchstart',_0x482bcd(0x246)]['indexOf'](_0x32cab4)>=0x0&&!_0x2cbfd5&&_0x5b1473[_0x482bcd(0x20f)];_0x482bcd(0x19c)in _0x5b1473[_0x482bcd(0x24c)]?_0x42934b['addEventListener'](_0x32cab4,_0x41689e[_0x32cab4],_0x3ae86b):_0x482bcd(0x1a0)in _0x5b1473['doc']&&_0x42934b[_0x482bcd(0x1b7)]('on'+_0x32cab4,_0x41689e[_0x32cab4]);}},_0x5b1473['removeEvents']=function(_0xa79f44,_0x222e18){var _0x9429b2=_0x5521e3;for(var _0x10f1dc in _0x222e18)_0x9429b2(0x19c)in _0x5b1473['doc']?_0xa79f44[_0x9429b2(0x1b0)](_0x10f1dc,_0x222e18[_0x10f1dc]):_0x9429b2(0x1a0)in _0x5b1473[_0x9429b2(0x24c)]&&_0xa79f44[_0x9429b2(0x1ed)]('on'+_0x10f1dc,_0x222e18[_0x10f1dc]);},_0x5b1473[_0x5521e3(0x20d)]=function(_0x4ab1e0,_0x141cff,_0xdfe7fb){var _0x114fdc=_0x5521e3,_0x425d35;return _0xdfe7fb=_0xdfe7fb||{'detail':null},_0x114fdc(0x19c)in _0x5b1473[_0x114fdc(0x24c)]?(!(_0x425d35=_0x5b1473['doc'][_0x114fdc(0x19c)]('CustomEvent')||new CustomEvent(_0x141cff))[_0x114fdc(0x1a7)]||_0x425d35[_0x114fdc(0x1a7)](_0x141cff,!0x0,!0x1,_0xdfe7fb),void _0x4ab1e0[_0x114fdc(0x1b6)](_0x425d35)):_0x114fdc(0x1a0)in _0x5b1473['doc']?((_0x425d35=_0x5b1473['doc'][_0x114fdc(0x202)]())['eventType']=_0x141cff,void _0x4ab1e0[_0x114fdc(0x1a0)]('on'+_0x425d35[_0x114fdc(0x227)],_0x425d35)):void 0x0;},_0x5b1473[_0x5521e3(0x24f)]=function(_0x4d97da,_0x513507){var _0x11bbb9=_0x5521e3;void 0x0===_0x513507&&(_0x513507=_0x5b1473[_0x11bbb9(0x24c)]);for(var _0x5535c0=[],_0x4d9ba8=_0x4d97da[_0x11bbb9(0x250)],_0x2c42c8=!0x1;!_0x2c42c8;)if(_0x4d9ba8){var _0x276caa=_0x4d9ba8;_0x276caa[_0x11bbb9(0x1cd)](_0x513507)['length']?_0x2c42c8=!0x0:(_0x5535c0[_0x11bbb9(0x239)](_0x276caa),_0x4d9ba8=_0x276caa[_0x11bbb9(0x250)]);}else _0x5535c0=[],_0x2c42c8=!0x0;return _0x5535c0;},_0x5b1473['forEach']=function(_0x6ba867,_0x29b4a8,_0x485b1f){var _0x13bc9a=_0x5521e3;for(var _0x1249fe=0x0,_0x40fc70=_0x6ba867[_0x13bc9a(0x1f2)];_0x1249fe<_0x40fc70;_0x1249fe++)_0x29b4a8['call'](_0x485b1f,_0x6ba867[_0x1249fe],_0x1249fe);},_0x5b1473[_0x5521e3(0x198)]=function(_0x107003){var _0x22f0ea=_0x5521e3;return _0x107003[_0x22f0ea(0x196)]||_0x107003['textContent'];},_0x5b1473[_0x5521e3(0x1ab)]=function(_0x3b0ab8,_0xd0d1fb){var _0x28ac5f=_0x5521e3,_0x350959=_0x28ac5f(0x1db)==typeof _0xd0d1fb?_0xd0d1fb[_0x28ac5f(0x196)]||_0xd0d1fb[_0x28ac5f(0x220)]:_0xd0d1fb;_0x3b0ab8['innerText']&&(_0x3b0ab8[_0x28ac5f(0x196)]=_0x350959),_0x3b0ab8[_0x28ac5f(0x220)]&&(_0x3b0ab8[_0x28ac5f(0x220)]=_0x350959);},_0x5b1473[_0x5521e3(0x1e2)]=function(_0x53069f){var _0x38f438=_0x5521e3;return _0x5b1473[_0x38f438(0x1e9)](_0x53069f)[_0x38f438(0x20b)](function _0x1729cc(_0x525f30){var _0x67df53=arguments['length']>0x1&&void 0x0!==arguments[0x1]?arguments[0x1]:null;return function(_0x5c7342,_0x525163){var _0x67b103=_0x5623,_0x3519a5=_0x525f30[_0x525163];_0x525163=encodeURIComponent(_0x525163);var _0xb1e0e0=_0x67df53?''['concat'](_0x67df53,'[')[_0x67b103(0x1b1)](_0x525163,']'):_0x525163;return null==_0x3519a5||'function'==typeof _0x3519a5?(_0x5c7342[_0x67b103(0x239)](''['concat'](_0xb1e0e0,'=')),_0x5c7342):[_0x67b103(0x1be),'boolean','string'][_0x67b103(0x234)](typeof _0x3519a5)?(_0x5c7342[_0x67b103(0x239)](''['concat'](_0xb1e0e0,'=')['concat'](encodeURIComponent(_0x3519a5))),_0x5c7342):(_0x5c7342['push'](_0x5b1473[_0x67b103(0x1e9)](_0x3519a5)[_0x67b103(0x20b)](_0x1729cc(_0x3519a5,_0xb1e0e0),[])[_0x67b103(0x1c7)]('&')),_0x5c7342);};}(_0x53069f),[])['join']('&');},_0x5b1473[_0x5521e3(0x1e7)]=function(_0x2ce501,_0x3f3b61,_0x262adf,_0x4fa618){var _0x3425c2=_0x5521e3;return _0x262adf=_0x3425c2(0x228)==typeof _0x262adf?_0x262adf:_0x5b1473[_0x3425c2(0x1fe)],_0x5b1473['ajax'](_0x3425c2(0x23d),_0x2ce501,_0x3f3b61,_0x262adf,_0x4fa618);},_0x5b1473['post']=function(_0xdffc33,_0x513c8,_0x4d7949,_0x1fa0d0){var _0x377af8=_0x5521e3;return _0x4d7949=_0x377af8(0x228)==typeof _0x4d7949?_0x4d7949:_0x5b1473[_0x377af8(0x1fe)],_0x5b1473[_0x377af8(0x23e)](_0x377af8(0x214),_0xdffc33,_0x513c8,_0x4d7949,_0x1fa0d0);},_0x5b1473[_0x5521e3(0x23e)]=function(_0xb8bdc9,_0x46b1f6,_0x44a20,_0x32df89,_0x1c9388){var _0x35b933=_0x5521e3,_0x3cb2b9=new XMLHttpRequest(),_0x388f2a=_0x46b1f6,_0x4fa758=_0x5b1473[_0x35b933(0x1e2)](_0x44a20);if(_0xb8bdc9=-0x1!=[_0x35b933(0x23d),_0x35b933(0x214)][_0x35b933(0x21d)](_0xb8bdc9)?_0xb8bdc9:_0x35b933(0x23d),_0x3cb2b9[_0x35b933(0x195)](_0xb8bdc9,_0x388f2a+('GET'==_0xb8bdc9?'?'+_0x4fa758:''),!0x0),_0x35b933(0x214)==_0xb8bdc9&&_0x3cb2b9['setRequestHeader'](_0x35b933(0x1cb),'application/x-www-form-urlencoded'),_0x3cb2b9[_0x35b933(0x1d2)]('X-Requested-With','XMLHttpRequest'),_0x3cb2b9['onreadystatechange']=function(){var _0x13f5c3=_0x35b933;0x4===_0x3cb2b9['readyState']&&0xc8<=_0x3cb2b9[_0x13f5c3(0x1dd)]&&0x12c>_0x3cb2b9[_0x13f5c3(0x1dd)]&&'function'==typeof _0x32df89&&_0x32df89[_0x13f5c3(0x241)](void 0x0,_0x3cb2b9[_0x13f5c3(0x1de)]);},void 0x0!==_0x1c9388&&!_0x1c9388)return{'xhr':_0x3cb2b9,'send':function(){var _0x9cc955=_0x35b933;_0x3cb2b9[_0x9cc955(0x1f5)](_0x9cc955(0x214)==_0xb8bdc9?_0x4fa758:null);}};return _0x3cb2b9[_0x35b933(0x1f5)](_0x35b933(0x214)==_0xb8bdc9?_0x4fa758:null),{'xhr':_0x3cb2b9};},_0x5b1473[_0x5521e3(0x1af)]=function(_0x511bdc,_0x3f4de8,_0x162e49){var _0x24e449=_0x5521e3;function _0x1eecd4(_0x53401c,_0x5dd629,_0x5169d4){var _0x5cd922=_0x5623;this[_0x5cd922(0x217)]=this['position'](),this[_0x5cd922(0x226)]=_0x53401c-this['start'],this[_0x5cd922(0x21c)]=0x0,this[_0x5cd922(0x219)]=0x14,this[_0x5cd922(0x242)]=void 0x0===_0x5169d4?0x1f4:_0x5169d4,this['callback']=_0x5dd629,this[_0x5cd922(0x1f3)]=!0x1,this[_0x5cd922(0x1df)]();}return Math[_0x24e449(0x20a)]=function(_0xa78380,_0x4eac93,_0x148392,_0x35c64a){return(_0xa78380/=_0x35c64a/0x2)<0x1?_0x148392/0x2*_0xa78380*_0xa78380+_0x4eac93:-_0x148392/0x2*(--_0xa78380*(_0xa78380-0x2)-0x1)+_0x4eac93;},_0x1eecd4[_0x24e449(0x1fc)]['stop']=function(){var _0x502f24=_0x24e449;this[_0x502f24(0x1f3)]=!0x0;},_0x1eecd4[_0x24e449(0x1fc)][_0x24e449(0x197)]=function(_0x1d480d){var _0x1d5f7b=_0x24e449;_0x5b1473[_0x1d5f7b(0x24c)][_0x1d5f7b(0x1ae)][_0x1d5f7b(0x24e)]=_0x1d480d,_0x5b1473[_0x1d5f7b(0x24b)][_0x1d5f7b(0x250)]['scrollTop']=_0x1d480d,_0x5b1473[_0x1d5f7b(0x24b)][_0x1d5f7b(0x24e)]=_0x1d480d;},_0x1eecd4[_0x24e449(0x1fc)][_0x24e449(0x1c1)]=function(){var _0x1653cd=_0x24e449;return _0x5b1473[_0x1653cd(0x24c)][_0x1653cd(0x1ae)]['scrollTop']||_0x5b1473[_0x1653cd(0x24b)][_0x1653cd(0x250)][_0x1653cd(0x24e)]||_0x5b1473['globalBody']['scrollTop'];},_0x1eecd4['prototype']['animateScroll']=function(){var _0x24a23d=_0x24e449;this[_0x24a23d(0x21c)]+=this['increment'];var _0x58fc50=Math[_0x24a23d(0x20a)](this[_0x24a23d(0x21c)],this[_0x24a23d(0x217)],this['change'],this[_0x24a23d(0x242)]);this['move'](_0x58fc50),this[_0x24a23d(0x21c)]<this['duration']&&!this[_0x24a23d(0x1f3)]?_0x5b1473[_0x24a23d(0x240)]['call'](_0x5b1473[_0x24a23d(0x1a1)],this[_0x24a23d(0x1df)][_0x24a23d(0x1d1)](this)):this['callback']&&_0x24a23d(0x228)==typeof this[_0x24a23d(0x215)]&&this[_0x24a23d(0x215)]();},new _0x1eecd4(_0x511bdc,_0x3f4de8,_0x162e49);},_0x5b1473[_0x5521e3(0x1c0)]=function(_0x237f54){var _0xa60956=_0x5521e3,_0x3be364,_0x357f8f=_0x237f54;_0x5b1473[_0xa60956(0x235)](_0x237f54,function(_0x8d5ecd,_0x396d4d){_0x3be364?_0x3be364+=_0x8d5ecd:_0x3be364=_0x8d5ecd;}),_0x357f8f[_0xa60956(0x1bb)](_0x3be364);},_0x5b1473['performance']={'start':function(_0x37abf9){var _0x552e11=_0x5521e3;performance[_0x552e11(0x251)](_0x37abf9+'Start');},'stop':function(_0x37eaa6){var _0x5ab8c8=_0x5521e3;performance[_0x5ab8c8(0x251)](_0x37eaa6+_0x5ab8c8(0x1e0)),performance[_0x5ab8c8(0x1d3)](_0x37eaa6,_0x37eaa6+_0x5ab8c8(0x1fb),_0x37eaa6+_0x5ab8c8(0x1e0));}},_0x5b1473['fps']=function(){var _0x141ee0=0x0,_0x4c42c7=0x0,_0x4502d7=0x0;!(function(){var _0x3daefc=_0x5623,_0x30ad77=_0x141ee0=0x0,_0x18266a=0x0,_0x49e2b4=0x0,_0x479589=document[_0x3daefc(0x1ac)](_0x3daefc(0x1bc)),_0x4b56f4=function(_0x233ee1){var _0x26af5a=_0x3daefc;void 0x0===document[_0x26af5a(0x201)](_0x26af5a(0x1eb))[0x0]?_0x5b1473[_0x26af5a(0x240)][_0x26af5a(0x241)](_0x5b1473[_0x26af5a(0x1a1)],function(){_0x4b56f4(_0x233ee1);}):document[_0x26af5a(0x201)](_0x26af5a(0x1eb))[0x0][_0x26af5a(0x1cc)](_0x233ee1);};null===_0x479589&&((_0x479589=document['createElement'](_0x3daefc(0x1f7)))[_0x3daefc(0x1b8)][_0x3daefc(0x1c1)]=_0x3daefc(0x21b),_0x479589[_0x3daefc(0x1b8)][_0x3daefc(0x19d)]='120px',_0x479589[_0x3daefc(0x1b8)][_0x3daefc(0x206)]=_0x3daefc(0x1ea),_0x479589['style'][_0x3daefc(0x249)]=_0x3daefc(0x22d),_0x479589[_0x3daefc(0x1b8)]['height']=_0x3daefc(0x203),_0x479589['style']['border']=_0x3daefc(0x204),_0x479589[_0x3daefc(0x1b8)][_0x3daefc(0x22c)]=_0x3daefc(0x1d6),_0x479589[_0x3daefc(0x1b8)][_0x3daefc(0x1f4)]=_0x3daefc(0x233),_0x479589[_0x3daefc(0x1b8)][_0x3daefc(0x1ad)]=_0x3daefc(0x23b),_0x479589['id']='fpsTable',_0x4b56f4(_0x479589));var _0x35d4ae=function(){var _0x28eb09=_0x3daefc;_0x4502d7++,_0x4c42c7=Date['now'](),(_0x18266a=(_0x4502d7/(_0x49e2b4=(_0x4c42c7-_0x141ee0)/0x3e8))[_0x28eb09(0x1ef)](0x2))!=_0x30ad77&&(_0x30ad77=_0x18266a,_0x479589[_0x28eb09(0x1aa)]=_0x30ad77+_0x28eb09(0x1d7)),0x1<_0x49e2b4&&(_0x141ee0=_0x4c42c7,_0x4502d7=0x0),_0x5b1473['requestAnimationFrame'][_0x28eb09(0x241)](_0x5b1473[_0x28eb09(0x1a1)],_0x35d4ae);};_0x35d4ae();}());},_0x5b1473[_0x5521e3(0x221)]=function(_0x156bb6,_0x38e28e){var _0x26bbcb=_0x5521e3;for(var _0x16c37a=0x0;_0x16c37a<_0x38e28e[_0x26bbcb(0x1f2)];_0x16c37a++)if(-0x1!==_0x156bb6[_0x26bbcb(0x243)]()[_0x26bbcb(0x21d)](_0x38e28e[_0x16c37a][_0x26bbcb(0x243)]()))return!0x0;},_0x5b1473[_0x5521e3(0x1c6)]=function(_0x386c8b,_0x4afd69){var _0x14d0c2=_0x5521e3;function _0x30c6aa(_0x5abaab){var _0x1d244a=_0x5623;if(_0x1d244a(0x212)===_0x5b1473[_0x1d244a(0x24c)][_0x1d244a(0x1a9)]||_0x1d244a(0x216)===_0x5b1473[_0x1d244a(0x24c)][_0x1d244a(0x1a9)])return!_0x5abaab||_0x4afd69?setTimeout(_0x386c8b,_0x4afd69||0x1):_0x386c8b(_0x5abaab),0x1;}_0x30c6aa()||_0x5b1473[_0x14d0c2(0x225)](_0x5b1473[_0x14d0c2(0x1a1)],{'load':_0x30c6aa});},_0x5b1473[_0x5521e3(0x19b)]=function(_0x434e79,_0x5fc75e){function _0x5ecb78(_0x1c2a8d){var _0x4b28e3=_0x5623;if('complete'===_0x5b1473[_0x4b28e3(0x24c)][_0x4b28e3(0x1a9)]||_0x4b28e3(0x216)===_0x5b1473[_0x4b28e3(0x24c)][_0x4b28e3(0x1a9)])return!_0x1c2a8d||_0x5fc75e?setTimeout(_0x434e79,_0x5fc75e||0x1):_0x434e79(_0x1c2a8d),0x1;}_0x5ecb78()||_0x5b1473['addEvents'](_0x5b1473['doc'],{'DOMContentLoaded':_0x5ecb78});},_0x5b1473['fireOnce']=function(){_0x5b1473['docReady'](function(){var _0x5c39fc=_0x5623;_0x5b1473[_0x5c39fc(0x1b3)]=_0x5b1473[_0x5c39fc(0x1b3)]||[],_0x5b1473[_0x5c39fc(0x1b3)][_0x5c39fc(0x1f2)]&&(_0x5b1473[_0x5c39fc(0x232)](),_0x5b1473[_0x5c39fc(0x1e4)]());},0x32);},_0x5b1473[_0x5521e3(0x232)]=function(){var _0x387d51=_0x5521e3;_0x5b1473['length']&&_0x5b1473[_0x387d51(0x24c)][_0x387d51(0x1cd)](_0x387d51(0x1e1))[_0x387d51(0x235)](function(_0x50d557){var _0x20c92e=_0x387d51;_0x20c92e(0x20e)==_0x50d557['getAttribute'](_0x20c92e(0x236))&&_0x50d557[_0x20c92e(0x211)](_0x20c92e(0x236));});},_0x5b1473[_0x5521e3(0x199)]=function(_0x1aecfc,_0x5102f9){var _0x29eea4=_0x5521e3,_0x2465f1=_0x5b1473[_0x29eea4(0x24c)][_0x29eea4(0x1bd)](_0x29eea4(0x22e));switch(_0x2465f1['setAttribute'](_0x29eea4(0x224),_0x1aecfc),_0x5102f9){case _0x29eea4(0x1a3):_0x2465f1[_0x29eea4(0x210)]('defer',!0x0);break;case _0x29eea4(0x1a4):_0x2465f1['setAttribute'](_0x29eea4(0x1a4),!0x0);break;case _0x29eea4(0x1ff):_0x2465f1[_0x29eea4(0x210)](_0x29eea4(0x1a3),!0x0),_0x2465f1[_0x29eea4(0x210)]('async',!0x0);}_0x5b1473['globalBody'][_0x29eea4(0x1cc)](_0x2465f1);},_0x5b1473[_0x5521e3(0x1e4)]=function(){var _0x139140=_0x5521e3;_0x139140(0x1db)==typeof _0x5b1473['assets']&&_0x5b1473[_0x139140(0x235)](_0x5b1473[_0x139140(0x1b3)][_0x139140(0x21a)](0x0),function(_0x4320c9,_0x5b4e39){var _0x4b80a9=_0x139140,_0x33788e='';_0x4320c9[_0x4b80a9(0x1a3)]&&(_0x33788e+=_0x4b80a9(0x1a3)),_0x4320c9[_0x4b80a9(0x1a4)]&&(_0x33788e+='async'),_0x5b1473['create_js'](_0x4320c9[_0x4b80a9(0x208)],_0x33788e);var _0x2f3a99=_0x5b1473[_0x4b80a9(0x1b3)][_0x4b80a9(0x21d)](_0x4320c9);_0x2f3a99>-0x1&&_0x5b1473[_0x4b80a9(0x1b3)]['splice'](_0x2f3a99,0x1);}),_0x5b1473[_0x139140(0x1b3)]=jnewsoption[_0x139140(0x1f1)]=window[_0x139140(0x19f)]=[];},_0x5b1473[_0x5521e3(0x19b)](function(){var _0x2c9271=_0x5521e3;_0x5b1473[_0x2c9271(0x24b)]=_0x5b1473[_0x2c9271(0x24b)]==_0x5b1473[_0x2c9271(0x24c)]?_0x5b1473[_0x2c9271(0x24c)][_0x2c9271(0x201)](_0x2c9271(0x1eb))[0x0]:_0x5b1473[_0x2c9271(0x24b)],_0x5b1473[_0x2c9271(0x24b)]=_0x5b1473[_0x2c9271(0x24b)]?_0x5b1473[_0x2c9271(0x24b)]:_0x5b1473[_0x2c9271(0x24c)];}),_0x5b1473[_0x5521e3(0x1c6)](function(){_0x5b1473['winLoad'](function(){var _0xe0ae6d=_0x5623,_0x543b9e=!0x1;if(void 0x0!==window[_0xe0ae6d(0x248)]){if(void 0x0!==window[_0xe0ae6d(0x237)]){var _0x1a64cf=_0x5b1473[_0xe0ae6d(0x1e9)](window['file_version_checker']);_0x1a64cf['length']?_0x1a64cf[_0xe0ae6d(0x235)](function(_0x112e86){var _0x1f8f6e=_0xe0ae6d;_0x543b9e||_0x1f8f6e(0x1d8)===window[_0x1f8f6e(0x237)][_0x112e86]||(_0x543b9e=!0x0);}):_0x543b9e=!0x0;}else _0x543b9e=!0x0;}_0x543b9e&&(window['jnewsHelper'][_0xe0ae6d(0x1cf)](),window[_0xe0ae6d(0x1e5)][_0xe0ae6d(0x245)]());},0x9c4);});},window[_0x1c8f51(0x247)][_0x1c8f51(0x213)]=new window[(_0x1c8f51(0x247))][(_0x1c8f51(0x213))]()));</script><link rel='dns-prefetch' href='//www.googletagmanager.com' />
+<link rel='dns-prefetch' href='//pagead2.googlesyndication.com' />
+<link rel="alternate" type="application/rss+xml" title="Heilpraxis &raquo; Feed" href="https://www.heilpraxisnet.de/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Heilpraxis &raquo; Kommentar-Feed" href="https://www.heilpraxisnet.de/comments/feed/" />
+<link rel='stylesheet' id='n2go-styles-css'  href='//www.heilpraxisnet.de/wp-content/cache/wpfc-minified/lb0waij6/fxgg8.css' type='text/css' media='all' />
+<link rel='stylesheet' id='jnews-parent-style-css'  href='//www.heilpraxisnet.de/wp-content/themes/jnews/style.css' type='text/css' media='all' />
+<link rel='stylesheet' id='wp-block-library-css'  href='//www.heilpraxisnet.de/wp-content/cache/wpfc-minified/q7zjcv0s/fxgg8.css' type='text/css' media='all' />
+<link rel='stylesheet' id='a-z-listing-block-css'  href='//www.heilpraxisnet.de/wp-content/cache/wpfc-minified/kp8ut0x9/fxgg8.css' type='text/css' media='all' />
+<link rel='stylesheet' id='accordion_archives-css'  href='//www.heilpraxisnet.de/wp-content/cache/wpfc-minified/89rzhl4x/fxgg8.css' type='text/css' media='all' />
+<link rel='stylesheet' id='orgseries-default-css-css'  href='//www.heilpraxisnet.de/wp-content/cache/wpfc-minified/23w0v3i3/fxgg8.css' type='text/css' media='all' />
+<link rel='stylesheet' id='ppress-frontend-css'  href='//www.heilpraxisnet.de/wp-content/cache/wpfc-minified/30xrmzfo/fxgg8.css' type='text/css' media='all' />
+<link rel='stylesheet' id='ppress-flatpickr-css'  href='//www.heilpraxisnet.de/wp-content/cache/wpfc-minified/12ei66qd/fxgg8.css' type='text/css' media='all' />
+<link rel='stylesheet' id='ppress-select2-css'  href='//www.heilpraxisnet.de/wp-content/cache/wpfc-minified/2zro83gk/fxgg8.css' type='text/css' media='all' />
+<link rel='stylesheet' id='js_composer_front-css'  href='//www.heilpraxisnet.de/wp-content/cache/wpfc-minified/kakddx3h/fxgg8.css' type='text/css' media='all' />
+<link rel='stylesheet' id='dashicons-css'  href='//www.heilpraxisnet.de/wp-content/cache/wpfc-minified/21i4jie9/fxgg8.css' type='text/css' media='all' />
+<link rel='stylesheet' id='a-z-listing-css'  href='//www.heilpraxisnet.de/wp-content/cache/wpfc-minified/kp8ut0x9/fxgg8.css' type='text/css' media='all' />
+<link rel='stylesheet' id='heateor_sss_frontend_css-css'  href='//www.heilpraxisnet.de/wp-content/cache/wpfc-minified/jpx8pw38/fxgg8.css' type='text/css' media='all' />
+<link rel='stylesheet' id='jnews-frontend-css'  href='//www.heilpraxisnet.de/wp-content/cache/wpfc-minified/20ebe2i8/fxgg8.css' type='text/css' media='all' />
+<link rel='stylesheet' id='jnews-js-composer-css'  href='//www.heilpraxisnet.de/wp-content/cache/wpfc-minified/mnss1s9h/fxgg8.css' type='text/css' media='all' />
+<link rel='stylesheet' id='jnews-style-css'  href='//www.heilpraxisnet.de/wp-content/cache/wpfc-minified/86uavigm/fxgg8.css' type='text/css' media='all' />
+<link rel='stylesheet' id='jnews-darkmode-css'  href='//www.heilpraxisnet.de/wp-content/cache/wpfc-minified/e1sjyrrn/fxgg8.css' type='text/css' media='all' />
+<script type='text/javascript' src='https://www.heilpraxisnet.de/wp-includes/js/jquery/jquery.min.js' id='jquery-core-js'></script>
+<script type='text/javascript' src='https://www.heilpraxisnet.de/wp-includes/js/jquery/jquery-migrate.min.js' id='jquery-migrate-js'></script>
+<script type='text/javascript' src='https://www.heilpraxisnet.de/wp-content/plugins/accordion-archive-widget/script.js' id='accordion_archives_script-js'></script>
+<script type='text/javascript' src='https://www.heilpraxisnet.de/wp-content/plugins/wp-user-avatar/assets/flatpickr/flatpickr.min.js' id='ppress-flatpickr-js'></script>
+<script type='text/javascript' src='https://www.heilpraxisnet.de/wp-content/plugins/wp-user-avatar/assets/select2/select2.min.js' id='ppress-select2-js'></script>
+<!-- Von Site Kit hinzugefügtes Google-Analytics-Snippet -->
+<script type='text/javascript' src='https://www.googletagmanager.com/gtag/js?id=UA-7538264-5' id='google_gtagjs-js' async></script>
+<script type='text/javascript' id='google_gtagjs-js-after'>
+window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}
+gtag('set', 'linker', {"domains":["www.heilpraxisnet.de"]} );
+gtag("js", new Date());
+gtag("set", "developer_id.dZTNiMT", true);
+gtag("config", "UA-7538264-5", {"anonymize_ip":true});
+</script>
+<!-- Ende des von Site Kit hinzugefügten Google-Analytics-Snippets -->
+<link rel="https://api.w.org/" href="https://www.heilpraxisnet.de/wp-json/" /><link rel="alternate" type="application/json" href="https://www.heilpraxisnet.de/wp-json/wp/v2/posts/562022" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.heilpraxisnet.de/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://www.heilpraxisnet.de/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 5.8.4" />
+<link rel='shortlink' href='https://www.heilpraxisnet.de/?p=562022' />
+<link rel="alternate" type="application/json+oembed" href="https://www.heilpraxisnet.de/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.heilpraxisnet.de%2Fnaturheilpraxis%2Fbeifuss-allergie-grundlage-fuer-weltweit-ersten-impfstoff-geschaffen-20220626562022%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://www.heilpraxisnet.de/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.heilpraxisnet.de%2Fnaturheilpraxis%2Fbeifuss-allergie-grundlage-fuer-weltweit-ersten-impfstoff-geschaffen-20220626562022%2F&#038;format=xml" />
+<meta name="generator" content="Site Kit by Google 1.75.0" /><meta name="description" content="Fachleuten zufolge sind rund zehn Prozent der Menschen hierzulande von einer Beifuß-Allergie betroffen. Durch den Kontakt mit den Pollen dieses Krauts werden bei ihnen typische Heuschnupfen-Beschwerden ausgelöst, die zu einer starken Beeinträchtigung des Allgemeinbefindens und der Lebensqualität führen können. Doch nun besteht Hoffnung: Forschende haben die Grundlage für einen Impfstoff geschaffen." />
+<meta name="keywords" content="Beifuß-Allergie, Impfstoff, Therapie, Antikörper, Hauptallergen, Immunreaktion, Abwehrstoffe" />
+<meta name="robots" content="index, follow" />
+<meta name="robots" content="max-image-preview:large">
+<!-- Von Site Kit hinzugefügtes Google-AdSense-Snippet -->
+<meta name="google-adsense-platform-account" content="ca-host-pub-2644536267352236">
+<meta name="google-adsense-platform-domain" content="sitekit.withgoogle.com">
+<!-- Ende des von Site Kit hinzugefügten Google-AdSense-Snippets -->
+<!-- Schema & Structured Data For WP v1.9.98.1 - -->
+<script type="application/ld+json" class="saswp-schema-markup-output">
+[{"@context":"https://schema.org","@type":"NewsArticle","@id":"https://www.heilpraxisnet.de/naturheilpraxis/beifuss-allergie-grundlage-fuer-weltweit-ersten-impfstoff-geschaffen-20220626562022/#newsarticle","url":"https://www.heilpraxisnet.de/naturheilpraxis/beifuss-allergie-grundlage-fuer-weltweit-ersten-impfstoff-geschaffen-20220626562022/","headline":"Beifuß-Allergie: Grundlage für weltweit ersten Impfstoff geschaffen","mainEntityOfPage":"https://www.heilpraxisnet.de/naturheilpraxis/beifuss-allergie-grundlage-fuer-weltweit-ersten-impfstoff-geschaffen-20220626562022/","datePublished":"2022-06-26T09:50:59+02:00","dateModified":"2022-06-26T09:50:59+02:00","description":"Beifuß-Allergie: Wesentlicher erster Schritt zur ursächlichen Therapie Fachleuten zufolge sind rund zehn Prozent der Menschen hierzulande von einer Beifuß-Allergie betroffen. Durch den Kontakt mit den Pollen dieses Krauts werden bei ihnen typische Heuschnupfen-Beschwerden ausgelöst, die zu einer starken Beeinträchtigung des Allgemeinbefindens und der Lebensqualität führen können. Doch nun besteht Hoffnung: Forschende haben die Grundlage für","articleSection":"News","articleBody":"Beifuß-Allergie: Wesentlicher erster Schritt zur ursächlichen Therapie  Fachleuten zufolge sind rund zehn Prozent der Menschen hierzulande von einer Beifuß-Allergie betroffen. Durch den Kontakt mit den Pollen dieses Krauts werden bei ihnen typische Heuschnupfen-Beschwerden ausgelöst, die zu einer starken Beeinträchtigung des Allgemeinbefindens und der Lebensqualität führen können. Doch nun besteht Hoffnung: Forschende haben die Grundlage für einen Impfstoff geschaffen.    Ein Forschungsteam der Medizinischen Universität (MedUni) Wien hat zentrale Mechanismen der Allergie gegen die Pollen aus dem weit verbreiteten Unkraut Beifuß entdeckt und damit gleichzeitig die Grundlage für die Entwicklung des weltweit ersten Impfstoffs geschaffen. Die neuen Erkenntnisse sind ein wesentlicher erster Schritt zur ursächlichen Therapie und zur Prävention. Die Studie wurde in der Fachzeitschrift „Journal of Allergy and Clinical Immunology“ veröffentlicht.    Überschießende Immunreaktion  Laut einer aktuellen Mitteilung setzten die Wissenschaftlerinnen und Wissenschaftler in ihrer präklinischen Forschungsarbeit am Ausgangspunkt der Beifuß-Allergie an.    Dabei entdeckten die Forschenden, wo und wie die Antikörper vom Typ Immunglobulin-E (IgE) das Hauptallergen des Beifuß (Art v 1) erkennen und die überschießende Immunreaktion in Gang bringen.    Gleichzeitig hat sich gezeigt, dass die Eiweißbausteine des Beifuß-Hauptallergens so beschaffen sind, dass sie durch Abwehrstoffe IgG (Immunglobulin-G) blockiert werden können.    Mit diesen Erkenntnissen schuf das Team um Maja Zabel und Winfried Pickl in Zusammenarbeit mit dem Team von Rudolf Valenta (alle vom Zentrum für Pathophysiologie, Infektiologie und Immunologie der MedUni Wien) die Grundlage für die Entwicklung eines Impfstoffs gegen die Beifuß-Allergie.    Krankmachende IgE-Antiköper  „Unsere Studie zeigt, wie Bruchstücke des Hauptallergens von Beifuß für die wirksame und sichere Therapie verwendet werden können“, sagt Studienleiter Winfried Pickl.    „Unsere Beobachtungen der Wirkweise des Impfstoffs ergeben, dass eines der Enden des Beifuß-Hauptallergens wichtige Bindungsstellen für die krankmachenden IgE-Antiköper von AllergikerInnen bereitstellt, die für eine neuartige Impfung genutzt werden können“, so der Forscher.    Rund zehn Prozent der Bevölkerung betroffen  Der Gemeine Beifuß ist auf der Nordhalbkugel weit verbreitet, wo die Pollen seiner Blüten bei Allergikerinnen und Allergikern von Juli bis September Beschwerden bis hin zu Asthma verursachen.    Den Angaben zufolge stehen den etwa zehn Prozent der Menschen in der Bevölkerung, die gegen Beifuß sensibilisiert sind, derzeit lediglich Behandlungsmöglichkeiten zur Linderung ihrer Symptome zur Verfügung.    Die aktuelle Studie ist ein international viel beachteter erster Schritt zur ursächlichen Therapie und Prävention. „Als nächstes werden wir unsere Forschungsergebnisse für die Herstellung eines synthetischen Impfstoffs verwenden, der im Rahmen einer klinischen Studie überprüft werden kann“, erläutert Rudolf Valenta. (ad)","keywords":"","name":"Beifuß-Allergie: Grundlage für weltweit ersten Impfstoff geschaffen","thumbnailUrl":"https://www.heilpraxisnet.de/wp-content/uploads/2020/07/Ambrosia-Allergien-150x150.jpeg","wordCount":"375","timeRequired":"PT1M40S","mainEntity":{"@type":"WebPage","@id":"https://www.heilpraxisnet.de/naturheilpraxis/beifuss-allergie-grundlage-fuer-weltweit-ersten-impfstoff-geschaffen-20220626562022/"},"author":{"@type":"Person","name":"Alfred Domke","description":"","url":"https://www.heilpraxisnet.de/profil/alfred-domke/","sameAs":["http://Alfred%20Domke"],"image":{"@type":"ImageObject","url":"https://www.heilpraxisnet.de/wp-content/uploads/2021/01/hp_alfred_domke_sw-150x150.jpg","height":96,"width":96}},"editor":{"@type":"Person","name":"Alfred Domke","description":"","url":"https://www.heilpraxisnet.de/profil/alfred-domke/","sameAs":["http://Alfred%20Domke"],"image":{"@type":"ImageObject","url":"https://www.heilpraxisnet.de/wp-content/uploads/2021/01/hp_alfred_domke_sw-150x150.jpg","height":96,"width":96}},"publisher":{"@type":"Organization","name":"Heilpraxisnet GbR","url":"https://www.heilpraxisnet.de","logo":{"@type":"ImageObject","url":"https://www.heilpraxisnet.de/wp-content/uploads/2019/08/heilpraxis-google-logo.png","width":"160","height":"50"}},"image":[{"@type":"ImageObject","@id":"https://www.heilpraxisnet.de/naturheilpraxis/beifuss-allergie-grundlage-fuer-weltweit-ersten-impfstoff-geschaffen-20220626562022/#primaryimage","url":"https://www.heilpraxisnet.de/wp-content/uploads/2020/07/Ambrosia-Allergien-scaled.jpeg","width":"2560","height":"1714"},{"@type":"ImageObject","url":"https://www.heilpraxisnet.de/wp-content/uploads/2020/07/Ambrosia-Allergien-scaled-1200x900.jpeg","width":"1200","height":"900"},{"@type":"ImageObject","url":"https://www.heilpraxisnet.de/wp-content/uploads/2020/07/Ambrosia-Allergien-scaled-1200x675.jpeg","width":"1200","height":"675"}]}]
+</script>
+<meta name="generator" content="Powered by WPBakery Page Builder - drag and drop page builder for WordPress."/>
+<style type="text/css">.broken_link, a.broken_link {
+text-decoration: line-through;
+}</style><link rel="amphtml" href="https://www.heilpraxisnet.de/naturheilpraxis/beifuss-allergie-grundlage-fuer-weltweit-ersten-impfstoff-geschaffen-20220626562022/amp/">
+<!-- Von Site Kit hinzugefügtes Google-AdSense-Snippet -->
+<script async="async" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6229478257876424" crossorigin="anonymous" type="text/javascript"></script>
+<!-- Ende des von Site Kit hinzugefügten Google-AdSense-Snippets -->
+<script type='application/ld+json'>{"@context":"http:\/\/schema.org","@type":"Organization","@id":"https:\/\/www.heilpraxisnet.de\/#organization","url":"https:\/\/www.heilpraxisnet.de\/","name":"Heilpraxisnet.de GbR","logo":{"@type":"ImageObject","url":"https:\/\/www.heilpraxisnet.de\/wp-content\/uploads\/2019\/11\/heilpraxis-logo@2x.png"},"sameAs":["https:\/\/www.facebook.com\/Heilpraxis","https:\/\/twitter.com\/heilpraxisnet","https:\/\/www.pinterest.de\/redaktion1091\/","https:\/\/www.youtube.com\/channel\/UCCk3Vawj0QbjIOnUYLTqeNg\/","https:\/\/www.heilpraxisnet.de\/feed\/"],"contactPoint":{"@type":"ContactPoint","telephone":"+ 49-511-777720","contactType":"customer service","areaServed":["DE","CH","AT"]}}</script>
+<script type='application/ld+json'>{"@context":"http:\/\/schema.org","@type":"WebSite","@id":"https:\/\/www.heilpraxisnet.de\/#website","url":"https:\/\/www.heilpraxisnet.de\/","name":"Heilpraxisnet.de GbR","potentialAction":{"@type":"SearchAction","target":"https:\/\/www.heilpraxisnet.de\/?s={search_term_string}","query-input":"required name=search_term_string"}}</script>
+<style id="jeg_dynamic_css" type="text/css" data-type="jeg_custom-css">body { --j-body-color : #4f5254; --j-accent-color : #73bd5a; --j-alt-color : #c4cccc; --j-heading-color : #282c2e; } body,.jeg_newsfeed_list .tns-outer .tns-controls button,.jeg_filter_button,.owl-carousel .owl-nav div,.jeg_readmore,.jeg_hero_style_7 .jeg_post_meta a,.widget_calendar thead th,.widget_calendar tfoot a,.jeg_socialcounter a,.entry-header .jeg_meta_like a,.entry-header .jeg_meta_comment a,.entry-header .jeg_meta_donation a,.entry-header .jeg_meta_bookmark a,.entry-content tbody tr:hover,.entry-content th,.jeg_splitpost_nav li:hover a,#breadcrumbs a,.jeg_author_socials a:hover,.jeg_footer_content a,.jeg_footer_bottom a,.jeg_cartcontent,.woocommerce .woocommerce-breadcrumb a { color : #4f5254; } a, .jeg_menu_style_5>li>a:hover, .jeg_menu_style_5>li.sfHover>a, .jeg_menu_style_5>li.current-menu-item>a, .jeg_menu_style_5>li.current-menu-ancestor>a, .jeg_navbar .jeg_menu:not(.jeg_main_menu)>li>a:hover, .jeg_midbar .jeg_menu:not(.jeg_main_menu)>li>a:hover, .jeg_side_tabs li.active, .jeg_block_heading_5 strong, .jeg_block_heading_6 strong, .jeg_block_heading_7 strong, .jeg_block_heading_8 strong, .jeg_subcat_list li a:hover, .jeg_subcat_list li button:hover, .jeg_pl_lg_7 .jeg_thumb .jeg_post_category a, .jeg_pl_xs_2:before, .jeg_pl_xs_4 .jeg_postblock_content:before, .jeg_postblock .jeg_post_title a:hover, .jeg_hero_style_6 .jeg_post_title a:hover, .jeg_sidefeed .jeg_pl_xs_3 .jeg_post_title a:hover, .widget_jnews_popular .jeg_post_title a:hover, .jeg_meta_author a, .widget_archive li a:hover, .widget_pages li a:hover, .widget_meta li a:hover, .widget_recent_entries li a:hover, .widget_rss li a:hover, .widget_rss cite, .widget_categories li a:hover, .widget_categories li.current-cat>a, #breadcrumbs a:hover, .jeg_share_count .counts, .commentlist .bypostauthor>.comment-body>.comment-author>.fn, span.required, .jeg_review_title, .bestprice .price, .authorlink a:hover, .jeg_vertical_playlist .jeg_video_playlist_play_icon, .jeg_vertical_playlist .jeg_video_playlist_item.active .jeg_video_playlist_thumbnail:before, .jeg_horizontal_playlist .jeg_video_playlist_play, .woocommerce li.product .pricegroup .button, .widget_display_forums li a:hover, .widget_display_topics li:before, .widget_display_replies li:before, .widget_display_views li:before, .bbp-breadcrumb a:hover, .jeg_mobile_menu li.sfHover>a, .jeg_mobile_menu li a:hover, .split-template-6 .pagenum, .jeg_mobile_menu_style_5>li>a:hover, .jeg_mobile_menu_style_5>li.sfHover>a, .jeg_mobile_menu_style_5>li.current-menu-item>a, .jeg_mobile_menu_style_5>li.current-menu-ancestor>a { color : #73bd5a; } .jeg_menu_style_1>li>a:before, .jeg_menu_style_2>li>a:before, .jeg_menu_style_3>li>a:before, .jeg_side_toggle, .jeg_slide_caption .jeg_post_category a, .jeg_slider_type_1_wrapper .tns-controls button.tns-next, .jeg_block_heading_1 .jeg_block_title span, .jeg_block_heading_2 .jeg_block_title span, .jeg_block_heading_3, .jeg_block_heading_4 .jeg_block_title span, .jeg_block_heading_6:after, .jeg_pl_lg_box .jeg_post_category a, .jeg_pl_md_box .jeg_post_category a, .jeg_readmore:hover, .jeg_thumb .jeg_post_category a, .jeg_block_loadmore a:hover, .jeg_postblock.alt .jeg_block_loadmore a:hover, .jeg_block_loadmore a.active, .jeg_postblock_carousel_2 .jeg_post_category a, .jeg_heroblock .jeg_post_category a, .jeg_pagenav_1 .page_number.active, .jeg_pagenav_1 .page_number.active:hover, input[type="submit"], .btn, .button, .widget_tag_cloud a:hover, .popularpost_item:hover .jeg_post_title a:before, .jeg_splitpost_4 .page_nav, .jeg_splitpost_5 .page_nav, .jeg_post_via a:hover, .jeg_post_source a:hover, .jeg_post_tags a:hover, .comment-reply-title small a:before, .comment-reply-title small a:after, .jeg_storelist .productlink, .authorlink li.active a:before, .jeg_footer.dark .socials_widget:not(.nobg) a:hover .fa, div.jeg_breakingnews_title, .jeg_overlay_slider_bottom_wrapper .tns-controls button, .jeg_overlay_slider_bottom_wrapper .tns-controls button:hover, .jeg_vertical_playlist .jeg_video_playlist_current, .woocommerce span.onsale, .woocommerce #respond input#submit:hover, .woocommerce a.button:hover, .woocommerce button.button:hover, .woocommerce input.button:hover, .woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt, .jeg_popup_post .caption, .jeg_footer.dark input[type="submit"], .jeg_footer.dark .btn, .jeg_footer.dark .button, .footer_widget.widget_tag_cloud a:hover, .jeg_inner_content .content-inner .jeg_post_category a:hover, #buddypress .standard-form button, #buddypress a.button, #buddypress input[type="submit"], #buddypress input[type="button"], #buddypress input[type="reset"], #buddypress ul.button-nav li a, #buddypress .generic-button a, #buddypress .generic-button button, #buddypress .comment-reply-link, #buddypress a.bp-title-button, #buddypress.buddypress-wrap .members-list li .user-update .activity-read-more a, div#buddypress .standard-form button:hover, div#buddypress a.button:hover, div#buddypress input[type="submit"]:hover, div#buddypress input[type="button"]:hover, div#buddypress input[type="reset"]:hover, div#buddypress ul.button-nav li a:hover, div#buddypress .generic-button a:hover, div#buddypress .generic-button button:hover, div#buddypress .comment-reply-link:hover, div#buddypress a.bp-title-button:hover, div#buddypress.buddypress-wrap .members-list li .user-update .activity-read-more a:hover, #buddypress #item-nav .item-list-tabs ul li a:before, .jeg_inner_content .jeg_meta_container .follow-wrapper a { background-color : #73bd5a; } .jeg_block_heading_7 .jeg_block_title span, .jeg_readmore:hover, .jeg_block_loadmore a:hover, .jeg_block_loadmore a.active, .jeg_pagenav_1 .page_number.active, .jeg_pagenav_1 .page_number.active:hover, .jeg_pagenav_3 .page_number:hover, .jeg_prevnext_post a:hover h3, .jeg_overlay_slider .jeg_post_category, .jeg_sidefeed .jeg_post.active, .jeg_vertical_playlist.jeg_vertical_playlist .jeg_video_playlist_item.active .jeg_video_playlist_thumbnail img, .jeg_horizontal_playlist .jeg_video_playlist_item.active { border-color : #73bd5a; } .jeg_tabpost_nav li.active, .woocommerce div.product .woocommerce-tabs ul.tabs li.active, .jeg_mobile_menu_style_1>li.current-menu-item a, .jeg_mobile_menu_style_1>li.current-menu-ancestor a, .jeg_mobile_menu_style_2>li.current-menu-item::after, .jeg_mobile_menu_style_2>li.current-menu-ancestor::after, .jeg_mobile_menu_style_3>li.current-menu-item::before, .jeg_mobile_menu_style_3>li.current-menu-ancestor::before { border-bottom-color : #73bd5a; } .jeg_post_meta .fa, .jeg_post_meta .jpwt-icon, .entry-header .jeg_post_meta .fa, .jeg_review_stars, .jeg_price_review_list { color : #c4cccc; } .jeg_share_button.share-float.share-monocrhome a { background-color : #c4cccc; } h1,h2,h3,h4,h5,h6,.jeg_post_title a,.entry-header .jeg_post_title,.jeg_hero_style_7 .jeg_post_title a,.jeg_block_title,.jeg_splitpost_bar .current_title,.jeg_video_playlist_title,.gallery-caption,.jeg_push_notification_button>a.button { color : #282c2e; } .split-template-9 .pagenum, .split-template-10 .pagenum, .split-template-11 .pagenum, .split-template-12 .pagenum, .split-template-13 .pagenum, .split-template-15 .pagenum, .split-template-18 .pagenum, .split-template-20 .pagenum, .split-template-19 .current_title span, .split-template-20 .current_title span { background-color : #282c2e; } .jeg_topbar, .jeg_topbar.dark, .jeg_topbar.custom { background : #4f4040; } .jeg_topbar a, .jeg_topbar.dark a { color : #ffffff; } .jeg_header .jeg_bottombar.jeg_navbar,.jeg_bottombar .jeg_nav_icon { height : 61px; } .jeg_header .jeg_bottombar.jeg_navbar, .jeg_header .jeg_bottombar .jeg_main_menu:not(.jeg_menu_style_1) > li > a, .jeg_header .jeg_bottombar .jeg_menu_style_1 > li, .jeg_header .jeg_bottombar .jeg_menu:not(.jeg_main_menu) > li > a { line-height : 61px; } .jeg_header .jeg_bottombar.jeg_navbar_wrapper:not(.jeg_navbar_boxed), .jeg_header .jeg_bottombar.jeg_navbar_boxed .jeg_nav_row { background : #73bd5a; } .jeg_header_sticky .jeg_navbar_wrapper:not(.jeg_navbar_boxed), .jeg_header_sticky .jeg_navbar_boxed .jeg_nav_row { background : rgba(115,189,90,0.9); } .jeg_stickybar, .jeg_stickybar.dark { border-bottom-width : 0px; } .jeg_mobile_midbar, .jeg_mobile_midbar.dark { background : #73bd5a; } .jeg_header .socials_widget > a > i.fa:before { color : #f5f5f5; } .jeg_header .socials_widget.nobg > a > span.jeg-icon svg { fill : #f5f5f5; } .jeg_header .socials_widget > a > span.jeg-icon svg { fill : #f5f5f5; } .jeg_header .jeg_search_wrapper.jeg_search_popup_expand .jeg_search_form .jeg_search_input, .jeg_header .jeg_search_popup_expand .jeg_search_result a, .jeg_header .jeg_search_popup_expand .jeg_search_result .search-link { color : #333333; } .jeg_header .jeg_search_expanded .jeg_search_modal_expand .jeg_search_toggle i, .jeg_header .jeg_search_expanded .jeg_search_modal_expand .jeg_search_button, .jeg_header .jeg_search_expanded .jeg_search_modal_expand .jeg_search_input { color : #ffffff; } .jeg_header .jeg_search_expanded .jeg_search_modal_expand .jeg_search_input { border-bottom-color : #ffffff; } .jeg_header .jeg_search_expanded .jeg_search_modal_expand .jeg_search_input::-webkit-input-placeholder { color : rgba(255,255,255,0.9); } .jeg_header .jeg_search_expanded .jeg_search_modal_expand .jeg_search_input:-moz-placeholder { color : rgba(255,255,255,0.9); } .jeg_header .jeg_search_expanded .jeg_search_modal_expand .jeg_search_input::-moz-placeholder { color : rgba(255,255,255,0.9); } .jeg_header .jeg_search_expanded .jeg_search_modal_expand .jeg_search_input:-ms-input-placeholder { color : rgba(255,255,255,0.9); } .jeg_header .jeg_search_expanded .jeg_search_modal_expand { background : rgba(115,189,90,0.9); } .jeg_navbar_mobile .jeg_search_popup_expand .jeg_search_form .jeg_search_button { color : #9b9b9b; } .jeg_navbar_mobile .jeg_search_wrapper.jeg_search_popup_expand .jeg_search_form .jeg_search_input, .jeg_navbar_mobile .jeg_search_popup_expand .jeg_search_result a, .jeg_navbar_mobile .jeg_search_popup_expand .jeg_search_result .search-link { color : #070707; } .jeg_nav_search { width : 86%; } .jeg_header .jeg_search_no_expand .jeg_search_form .jeg_search_input { background-color : #ffffff; border-color : rgba(255,255,255,0); } .jeg_header .jeg_search_no_expand .jeg_search_form button.jeg_search_button { color : #3b3f41; } .jeg_header .jeg_search_wrapper.jeg_search_no_expand .jeg_search_form .jeg_search_input { color : #333333; } .jeg_header .jeg_search_no_expand .jeg_search_form .jeg_search_input::-webkit-input-placeholder { color : #a0a0a0; } .jeg_header .jeg_search_no_expand .jeg_search_form .jeg_search_input:-moz-placeholder { color : #a0a0a0; } .jeg_header .jeg_search_no_expand .jeg_search_form .jeg_search_input::-moz-placeholder { color : #a0a0a0; } .jeg_header .jeg_search_no_expand .jeg_search_form .jeg_search_input:-ms-input-placeholder { color : #a0a0a0; } .jeg_header .jeg_menu.jeg_main_menu > li > a { color : #ffffff; } .jeg_menu_style_1 > li > a:before, .jeg_menu_style_2 > li > a:before, .jeg_menu_style_3 > li > a:before { background : #ffffff; } .jeg_header .jeg_menu_style_4 > li > a:hover, .jeg_header .jeg_menu_style_4 > li.sfHover > a, .jeg_header .jeg_menu_style_4 > li.current-menu-item > a, .jeg_header .jeg_menu_style_4 > li.current-menu-ancestor > a, .jeg_navbar_dark .jeg_menu_style_4 > li > a:hover, .jeg_navbar_dark .jeg_menu_style_4 > li.sfHover > a, .jeg_navbar_dark .jeg_menu_style_4 > li.current-menu-item > a, .jeg_navbar_dark .jeg_menu_style_4 > li.current-menu-ancestor > a { background : rgba(255,255,255,0.24); } .jeg_header .jeg_menu.jeg_main_menu > li > a:hover, .jeg_header .jeg_menu.jeg_main_menu > li.sfHover > a, .jeg_header .jeg_menu.jeg_main_menu > li > .sf-with-ul:hover:after, .jeg_header .jeg_menu.jeg_main_menu > li.sfHover > .sf-with-ul:after, .jeg_header .jeg_menu_style_4 > li.current-menu-item > a, .jeg_header .jeg_menu_style_4 > li.current-menu-ancestor > a, .jeg_header .jeg_menu_style_5 > li.current-menu-item > a, .jeg_header .jeg_menu_style_5 > li.current-menu-ancestor > a { color : #ffffff; } .jeg_navbar_wrapper .sf-arrows .sf-with-ul:after { color : rgba(255,255,255,0.56); } .jeg_footer_content,.jeg_footer.dark .jeg_footer_content { background-color : #4f4040; } .jeg_footer .jeg_footer_heading h3,.jeg_footer.dark .jeg_footer_heading h3,.jeg_footer .widget h2,.jeg_footer .footer_dark .widget h2 { color : #73bd5a; } .jeg_main_menu > li > a { font-size: 16px;  } .jeg_post_excerpt p, .content-inner p { font-size: 16px;  } .jeg_thumb .jeg_post_category a,.jeg_pl_lg_box .jeg_post_category a,.jeg_pl_md_box .jeg_post_category a,.jeg_postblock_carousel_2 .jeg_post_category a,.jeg_heroblock .jeg_post_category a,.jeg_slide_caption .jeg_post_category a { background-color : #73bd5a; } .jeg_overlay_slider .jeg_post_category,.jeg_thumb .jeg_post_category a,.jeg_pl_lg_box .jeg_post_category a,.jeg_pl_md_box .jeg_post_category a,.jeg_postblock_carousel_2 .jeg_post_category a,.jeg_heroblock .jeg_post_category a,.jeg_slide_caption .jeg_post_category a { border-color : #73bd5a; } </style>		<style type="text/css" id="wp-custom-css">
+.jeg_main_menu>li>a {
+text-transform: none;
+}
+.sf-arrows .sf-with-ul:after {
+position: absolute;
+left: 0;
+font-size: 20px !important;
+width: 100%;
+text-align: center;
+bottom: 3px;
+margin-left: 0;
+margin-right: 0;
+display: none;
+}
+.m70{
+padding-top: 70px;
+padding-bottom: 70px;
+}
+.greenbg.hpnheading {
+background-color: #72bd5a;
+color: white;
+}
+.jeg_authorpage .jeg_author_image img, .thumbnail-container>img {
+object-fit: cover;
+}
+#jeg_off_canvas .jeg_mobile_wrapper {
+background-color: #73bd5a;
+}
+.jeg_mobile_menu li a {
+color: #ffffff;
+}
+.jeg_mobile_menu li a:hover,
+.jeg_aside_copyright a:hover {
+color: #1b1b1b;
+}
+.jeg_aside_copyright a, .jeg_aside_copyright {
+color: #ffffff;
+border-bottom: 1px solid #ffffff;
+}
+.jeg_menu .jeg-badge-floating:after {
+content: "";
+border-left: 3px solid #D46574;
+border-top: 3px solid #D46574;
+}
+.firsttopbarmobileli {
+margin-top: 6em;
+position: relative;
+}
+.topbarmobile{
+position: relative;
+z-index: 2;
+}
+.topbarmobile a {
+color: #f2f2f2;
+}
+.jeg_mobile_wrapper .firsttopbarmobileli:after {
+content: "";
+position: absolute;
+display: block;
+z-index: -1;
+background-color: #9EDB8A;
+width: calc(100% + 40px);
+left: -20px;
+height: 10.6em;
+top: -1.5em;
+overflow: hidden;
+-webkit-box-shadow: 0px 0px 10px rgba(0,0,0,.1);
+-moz-box-shadow: 0px 0px 10px rgba(0,0,0,.1);
+box-shadow: 0px 0px 10px rgba(0,0,0,.1);
+}
+.jeg_mobile_wrapper .item_bottom {
+background-color: #4f4040;
+}
+.jeg_hero_style_7 .jeg_postblock_content {
+background: hsla(0,0%,100%,0.74) !important;
+}		</style>
+<noscript><style> .wpb_animate_when_almost_visible { opacity: 1; }</style></noscript><style>
+.ai-viewports                 {--ai: 1;}
+.ai-viewport-2                { display: none !important;}
+.ai-viewport-1                { display: inherit !important;}
+.ai-viewport-0                { display: none !important;}
+@media (max-width: 979px) {
+.ai-viewport-1                { display: none !important;}
+.ai-viewport-2                { display: inherit !important;}
+}
+</style>
+<script>
+document.addEventListener('consentedToAll', () => {
+var jwplatform = document.createElement('script');
+jwplatform.src = 'https://content.jwplatform.com/libraries/X2VvCT6C.js';
+document.head.appendChild(jwplatform);
+var cleverpush = document.createElement('script');
+cleverpush.src = 'https://static.cleverpush.com/channel/loader/hZttCmFoypkvoMhv4.js?ver=1.6.3';
+document.head.appendChild(cleverpush);
+/**var googletagmanager = document.createElement('script');
+googletagmanager.src = 'https://www.googletagmanager.com/gtag/js?id=UA-7538264-5';
+googletagmanager.onload = () => {
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'UA-7538264-5');
+};
+document.head.appendChild(googletagmanager);*/
+var googletagmanager = document.createElement('script');
+googletagmanager.src = 'https://www.googletagmanager.com/gtag/js?id=G-LRMZ68PJQT';
+googletagmanager.onload = () => {
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-LRMZ68PJQT');
+};
+document.head.appendChild(googletagmanager);
+});
+</script>
+<script>
+document.addEventListener('consentedToAll', () => {
+var outbrain = document.createElement('script');
+outbrain.src = 'https://widgets.outbrain.com/outbrain.js';
+document.head.appendChild(outbrain);
+});
+</script>
+<script>
+document.addEventListener('consentedToAll', () => {
+var googlesyndication = document.createElement('script');
+googlesyndication.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js';
+googlesyndication.setAttribute('data-ad-client', 'ca-pub-1259870772210333');
+document.head.appendChild(googlesyndication);
+var doubleclick = document.createElement('script');
+doubleclick.src = 'https://securepubads.g.doubleclick.net/tag/js/gpt.js';
+document.head.appendChild(doubleclick);
+window.googletag = window.googletag || {cmd: []};
+googletag.cmd.push(function() {
+googletag.defineSlot('/16333650761/HPN_AdSlot_Center1', [[1140, 280]], 'div-gpt-ad-1616507120843-0').addService(googletag.pubads());
+googletag.defineSlot('/16333650761/HPN_AdSlot_Center2', [[750,250]], 'div-gpt-ad-1556634292010-0').addService(googletag.pubads());
+googletag.defineSlot('/16333650761/HPN_AdSlot_Center3', [[750,250]], 'div-gpt-ad-1556634357726-0').addService(googletag.pubads());
+googletag.defineSlot('/16333650761/HPN_AdSlot_Center4', [[750,250]], 'div-gpt-ad-1616511450235-0').addService(googletag.pubads());
+googletag.defineSlot('/16333650761/HPN_AdSlot_Center5', [[750,250]], 'div-gpt-ad-1616511511504-0').addService(googletag.pubads());
+googletag.pubads().enableSingleRequest();
+googletag.pubads().collapseEmptyDivs();
+googletag.enableServices();
+});
+document.dispatchEvent(new Event('doubleClickLoaded'));
+});
+</script>
+</head>
+<body class="post-template-default single single-post postid-562022 single-format-standard wp-embed-responsive jeg_toggle_light jeg_single_tpl_2 jnews jsc_normal wpb-js-composer js-comp-ver-6.9.0 vc_responsive">
+<div class="jeg_ad jeg_ad_top jnews_header_top_ads">
+<div class='ads-wrapper  '></div>	</div>
+<!-- The Main Wrapper
+============================================= -->
+<div class="jeg_viewport">
+<div class="jeg_header_wrapper">
+<div class="jeg_header_instagram_wrapper">
+</div>
+<!-- HEADER -->
+<div class="jeg_header normal">
+<div class="jeg_topbar jeg_container dark">
+<div class="container">
+<div class="jeg_nav_row">
+<div class="jeg_nav_col jeg_nav_left  jeg_nav_grow">
+<div class="item_wrap jeg_nav_alignleft">
+<div
+class="jeg_nav_item socials_widget jeg_social_icon_block nobg">
+<a href="https://www.facebook.com/Heilpraxis" target='_blank' rel='external noopener nofollow' class="jeg_facebook"><i class="fa fa-facebook"></i> </a><a href="https://twitter.com/heilpraxisnet" target='_blank' rel='external noopener nofollow' class="jeg_twitter"><i class="fa fa-twitter"></i> </a><a href="https://www.pinterest.de/redaktion1091/" target='_blank' rel='external noopener nofollow' class="jeg_pinterest"><i class="fa fa-pinterest"></i> </a><a href="https://www.youtube.com/channel/UCCk3Vawj0QbjIOnUYLTqeNg/" target='_blank' rel='external noopener nofollow' class="jeg_youtube"><i class="fa fa-youtube-play"></i> </a><a href="https://www.heilpraxisnet.de/feed/" target='_blank' rel='external noopener nofollow' class="jeg_rss"><i class="fa fa-rss"></i> </a>			</div>
+</div>
+</div>
+<div class="jeg_nav_col jeg_nav_center  jeg_nav_normal">
+<div class="item_wrap jeg_nav_aligncenter">
+</div>
+</div>
+<div class="jeg_nav_col jeg_nav_right  jeg_nav_normal">
+<div class="item_wrap jeg_nav_alignright">
+<div class="jeg_nav_item">
+<ul class="jeg_menu jeg_top_menu"><li id="menu-item-500200" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-500200"><a href="https://www.heilpraxisnet.de/kontakt/">Kontakt</a></li>
+<li id="menu-item-500201" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-500201"><a href="https://verzeichnis.heilpraxisnet.de/">Therapeuten</a></li>
+<li id="menu-item-520545" class="menu-item menu-item-type-post_type_archive menu-item-object-themen menu-item-520545"><a href="https://www.heilpraxisnet.de/themen/">Themen</a></li>
+<li id="menu-item-500199" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-500199"><a href="https://www.heilpraxisnet.de/fachliche-aufsicht/">Fachliche Aufsicht</a></li>
+</ul></div>                    </div>
+</div>
+</div>
+</div>
+</div><!-- /.jeg_container --><div class="jeg_midbar jeg_container normal">
+<div class="container">
+<div class="jeg_nav_row">
+<div class="jeg_nav_col jeg_nav_left jeg_nav_normal">
+<div class="item_wrap jeg_nav_alignleft">
+<div class="jeg_nav_item jeg_logo jeg_desktop_logo">
+<div class="site-title">
+<a href="https://www.heilpraxisnet.de/" style="padding: 0 0 0 0;">
+<img class='jeg_logo_img' src="https://www.heilpraxisnet.de/wp-content/uploads/2019/11/logo-heilpraxis.png" srcset="https://www.heilpraxisnet.de/wp-content/uploads/2019/11/logo-heilpraxis.png 1x, https://www.heilpraxisnet.de/wp-content/uploads/2019/11/logo-heilpraxis@2x.png 2x" alt="Heilpraxis - Fachportal für Naturheilkunde und Gesundheit"data-light-src="https://www.heilpraxisnet.de/wp-content/uploads/2019/11/logo-heilpraxis.png" data-light-srcset="https://www.heilpraxisnet.de/wp-content/uploads/2019/11/logo-heilpraxis.png 1x, https://www.heilpraxisnet.de/wp-content/uploads/2019/11/logo-heilpraxis@2x.png 2x" data-dark-src="https://www.heilpraxisnet.de/wp-content/uploads/2019/11/logo-heilpraxis.png" data-dark-srcset="https://www.heilpraxisnet.de/wp-content/uploads/2019/11/logo-heilpraxis.png 1x, https://www.heilpraxisnet.de/wp-content/uploads/2019/11/logo-heilpraxis@2x.png 2x">			</a>
+</div>
+</div>
+</div>
+</div>
+<div class="jeg_nav_col jeg_nav_center jeg_nav_grow">
+<div class="item_wrap jeg_nav_aligncenter">
+</div>
+</div>
+<div class="jeg_nav_col jeg_nav_right jeg_nav_normal">
+<div class="item_wrap jeg_nav_alignright">
+<!-- Search Form -->
+<div class="jeg_nav_item jeg_nav_search">
+<div class="jeg_search_wrapper jeg_search_no_expand square">
+<a href="#" class="jeg_search_toggle"><i class="fa fa-search"></i></a>
+<form action="https://www.heilpraxisnet.de/" method="get" class="jeg_search_form" target="_top">
+<input name="s" class="jeg_search_input" placeholder="Suche..." type="text" value="" autocomplete="off">
+<button aria-label="Search Button" type="submit" class="jeg_search_button btn"><i class="fa fa-search"></i></button>
+</form>
+<!-- jeg_search_hide with_result no_result -->
+<div class="jeg_search_result jeg_search_hide with_result">
+<div class="search-result-wrapper">
+</div>
+<div class="search-link search-noresult">
+Kein Ergebnis    </div>
+<div class="search-link search-all-button">
+<i class="fa fa-search"></i> Alle Ergebnisse anzeigen    </div>
+</div>	</div>
+</div>                    </div>
+</div>
+</div>
+</div>
+</div><div class="jeg_bottombar jeg_navbar jeg_container jeg_navbar_wrapper  jeg_navbar_dark">
+<div class="container">
+<div class="jeg_nav_row">
+<div class="jeg_nav_col jeg_nav_left jeg_nav_grow">
+<div class="item_wrap jeg_nav_alignleft">
+<div class="jeg_nav_item jeg_main_menu_wrapper">
+<div class="jeg_mainmenu_wrap"><ul class="jeg_menu jeg_main_menu jeg_menu_style_4" data-animation="slide"><li id="menu-item-507470" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-507470 bgnav" data-item-row="default" ><a href="/"><i class="fa fa-home"></i></a></li>
+<li id="menu-item-520546" class="menu-item menu-item-type-post_type_archive menu-item-object-symptome menu-item-520546 bgnav" data-item-row="default" ><a href="https://www.heilpraxisnet.de/symptome/">Symptome</a></li>
+<li id="menu-item-520547" class="menu-item menu-item-type-post_type_archive menu-item-object-krankheiten menu-item-520547 bgnav" data-item-row="default" ><a href="https://www.heilpraxisnet.de/krankheiten/">Krankheiten</a></li>
+<li id="menu-item-520556" class="menu-item menu-item-type-post_type_archive menu-item-object-hausmittel menu-item-520556 bgnav" data-item-row="default" ><a href="https://www.heilpraxisnet.de/hausmittel/">Hausmittel</a></li>
+<li id="menu-item-520548" class="menu-item menu-item-type-post_type_archive menu-item-object-naturheilkunde menu-item-520548 bgnav" data-item-row="default" ><a href="https://www.heilpraxisnet.de/naturheilkunde/">Naturheilkunde</a></li>
+<li id="menu-item-520557" class="menu-item menu-item-type-post_type_archive menu-item-object-ghmedizin menu-item-520557 bgnav" data-item-row="default" ><a href="https://www.heilpraxisnet.de/ganzheitliche-medizin/">Ganzheitliche Medizin</a></li>
+<li id="menu-item-520558" class="menu-item menu-item-type-post_type_archive menu-item-object-heilpflanzen menu-item-520558 bgnav" data-item-row="default" ><a href="https://www.heilpraxisnet.de/heilpflanzen/">Heilpflanzen</a></li>
+<li id="menu-item-500211" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-500211 bgnav" data-item-row="default" ><a href="https://www.heilpraxisnet.de/naturheilpraxis/">News</a></li>
+</ul></div></div>
+</div>
+</div>
+<div class="jeg_nav_col jeg_nav_center jeg_nav_normal">
+<div class="item_wrap jeg_nav_aligncenter">
+</div>
+</div>
+<div class="jeg_nav_col jeg_nav_right jeg_nav_normal">
+<div class="item_wrap jeg_nav_alignright">
+</div>
+</div>
+</div>
+</div>
+</div></div><!-- /.jeg_header -->		</div>
+<div class="jeg_header_sticky">
+<div class="sticky_blankspace"></div>
+<div class="jeg_header full">
+<div class="jeg_container">
+<div data-mode="fixed" class="jeg_stickybar jeg_navbar jeg_navbar_wrapper  jeg_navbar_dark">
+<div class="container">
+<div class="jeg_nav_row">
+<div class="jeg_nav_col jeg_nav_left jeg_nav_normal">
+<div class="item_wrap jeg_nav_alignleft">
+<div class="jeg_nav_item jeg_logo">
+<div class="site-title">
+<a href="https://www.heilpraxisnet.de/">
+<img class='jeg_logo_img' src="https://www.heilpraxisnet.de/wp-content/uploads/2019/11/heilpraxis-footerlogo-1.png" srcset="https://www.heilpraxisnet.de/wp-content/uploads/2019/11/heilpraxis-footerlogo-1.png 1x, https://www.heilpraxisnet.de/wp-content/uploads/2019/11/heilpraxis-footerlogo@2x-1.png 2x" alt="Heilpraxisnet.de - Portal für Naturheilverfahren und Naturheilkunde"data-light-src="https://www.heilpraxisnet.de/wp-content/uploads/2019/11/heilpraxis-footerlogo-1.png" data-light-srcset="https://www.heilpraxisnet.de/wp-content/uploads/2019/11/heilpraxis-footerlogo-1.png 1x, https://www.heilpraxisnet.de/wp-content/uploads/2019/11/heilpraxis-footerlogo@2x-1.png 2x" data-dark-src="https://www.heilpraxisnet.de/wp-content/uploads/2019/11/heilpraxis-footerlogo-1.png" data-dark-srcset="https://www.heilpraxisnet.de/wp-content/uploads/2019/11/heilpraxis-footerlogo-1.png 1x, https://www.heilpraxisnet.de/wp-content/uploads/2019/11/heilpraxis-footerlogo@2x-1.png 2x">    	</a>
+</div>
+</div>                </div>
+</div>
+<div class="jeg_nav_col jeg_nav_center jeg_nav_grow">
+<div class="item_wrap jeg_nav_alignright">
+<div class="jeg_nav_item jeg_main_menu_wrapper">
+<div class="jeg_mainmenu_wrap"><ul class="jeg_menu jeg_main_menu jeg_menu_style_4" data-animation="slide"><li id="menu-item-507470" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-507470 bgnav" data-item-row="default" ><a href="/"><i class="fa fa-home"></i></a></li>
+<li id="menu-item-520546" class="menu-item menu-item-type-post_type_archive menu-item-object-symptome menu-item-520546 bgnav" data-item-row="default" ><a href="https://www.heilpraxisnet.de/symptome/">Symptome</a></li>
+<li id="menu-item-520547" class="menu-item menu-item-type-post_type_archive menu-item-object-krankheiten menu-item-520547 bgnav" data-item-row="default" ><a href="https://www.heilpraxisnet.de/krankheiten/">Krankheiten</a></li>
+<li id="menu-item-520556" class="menu-item menu-item-type-post_type_archive menu-item-object-hausmittel menu-item-520556 bgnav" data-item-row="default" ><a href="https://www.heilpraxisnet.de/hausmittel/">Hausmittel</a></li>
+<li id="menu-item-520548" class="menu-item menu-item-type-post_type_archive menu-item-object-naturheilkunde menu-item-520548 bgnav" data-item-row="default" ><a href="https://www.heilpraxisnet.de/naturheilkunde/">Naturheilkunde</a></li>
+<li id="menu-item-520557" class="menu-item menu-item-type-post_type_archive menu-item-object-ghmedizin menu-item-520557 bgnav" data-item-row="default" ><a href="https://www.heilpraxisnet.de/ganzheitliche-medizin/">Ganzheitliche Medizin</a></li>
+<li id="menu-item-520558" class="menu-item menu-item-type-post_type_archive menu-item-object-heilpflanzen menu-item-520558 bgnav" data-item-row="default" ><a href="https://www.heilpraxisnet.de/heilpflanzen/">Heilpflanzen</a></li>
+<li id="menu-item-500211" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-500211 bgnav" data-item-row="default" ><a href="https://www.heilpraxisnet.de/naturheilpraxis/">News</a></li>
+</ul></div></div>
+</div>
+</div>
+<div class="jeg_nav_col jeg_nav_right jeg_nav_normal">
+<div class="item_wrap jeg_nav_alignright">
+<!-- Search Icon -->
+<div class="jeg_nav_item jeg_search_wrapper search_icon jeg_search_modal_expand">
+<a href="#" class="jeg_search_toggle"><i class="fa fa-search"></i></a>
+<form action="https://www.heilpraxisnet.de/" method="get" class="jeg_search_form" target="_top">
+<input name="s" class="jeg_search_input" placeholder="Suche..." type="text" value="" autocomplete="off">
+<button aria-label="Search Button" type="submit" class="jeg_search_button btn"><i class="fa fa-search"></i></button>
+</form>
+<!-- jeg_search_hide with_result no_result -->
+<div class="jeg_search_result jeg_search_hide with_result">
+<div class="search-result-wrapper">
+</div>
+<div class="search-link search-noresult">
+Kein Ergebnis    </div>
+<div class="search-link search-all-button">
+<i class="fa fa-search"></i> Alle Ergebnisse anzeigen    </div>
+</div></div>                </div>
+</div>
+</div>
+</div>        </div>
+</div>
+</div>
+</div>
+<div class="jeg_navbar_mobile_wrapper">
+<div class="jeg_navbar_mobile" data-mode="scroll">
+<div class="jeg_mobile_bottombar jeg_mobile_midbar jeg_container dark">
+<div class="container">
+<div class="jeg_nav_row">
+<div class="jeg_nav_col jeg_nav_left jeg_nav_normal">
+<div class="item_wrap jeg_nav_alignleft">
+<div class="jeg_nav_item">
+<a href="#" class="toggle_btn jeg_mobile_toggle"><i class="fa fa-bars"></i></a>
+</div>                    </div>
+</div>
+<div class="jeg_nav_col jeg_nav_center jeg_nav_grow">
+<div class="item_wrap jeg_nav_aligncenter">
+<div class="jeg_nav_item jeg_mobile_logo">
+<div class="site-title">
+<a href="https://www.heilpraxisnet.de/">
+<img class='jeg_logo_img' src="https://www.heilpraxisnet.de/wp-content/uploads/2019/11/heilpraxis-footerlogo-1.png" srcset="https://www.heilpraxisnet.de/wp-content/uploads/2019/11/heilpraxis-footerlogo-1.png 1x, https://www.heilpraxisnet.de/wp-content/uploads/2019/11/heilpraxis-footerlogo@2x-1.png 2x" alt="Heilpraxisnet.de - Portal für Naturheilverfahren und Naturheilkunde"data-light-src="https://www.heilpraxisnet.de/wp-content/uploads/2019/11/heilpraxis-footerlogo-1.png" data-light-srcset="https://www.heilpraxisnet.de/wp-content/uploads/2019/11/heilpraxis-footerlogo-1.png 1x, https://www.heilpraxisnet.de/wp-content/uploads/2019/11/heilpraxis-footerlogo@2x-1.png 2x" data-dark-src="https://www.heilpraxisnet.de/wp-content/uploads/2019/11/heilpraxis-footerlogo-1.png" data-dark-srcset="https://www.heilpraxisnet.de/wp-content/uploads/2019/11/heilpraxis-footerlogo-1.png 1x, https://www.heilpraxisnet.de/wp-content/uploads/2019/11/heilpraxis-footerlogo@2x-1.png 2x">		    </a>
+</div>
+</div>                    </div>
+</div>
+<div class="jeg_nav_col jeg_nav_right jeg_nav_normal">
+<div class="item_wrap jeg_nav_alignright">
+<div class="jeg_nav_item jeg_search_wrapper jeg_search_popup_expand">
+<a href="#" class="jeg_search_toggle"><i class="fa fa-search"></i></a>
+<form action="https://www.heilpraxisnet.de/" method="get" class="jeg_search_form" target="_top">
+<input name="s" class="jeg_search_input" placeholder="Suche..." type="text" value="" autocomplete="off">
+<button aria-label="Search Button" type="submit" class="jeg_search_button btn"><i class="fa fa-search"></i></button>
+</form>
+<!-- jeg_search_hide with_result no_result -->
+<div class="jeg_search_result jeg_search_hide with_result">
+<div class="search-result-wrapper">
+</div>
+<div class="search-link search-noresult">
+Kein Ergebnis    </div>
+<div class="search-link search-all-button">
+<i class="fa fa-search"></i> Alle Ergebnisse anzeigen    </div>
+</div></div>                    </div>
+</div>
+</div>
+</div>
+</div></div>
+<div class="sticky_blankspace" style="height: 60px;"></div>		</div>
+<div id="corona-news" class="row vc_row breakingnews">
+<div  class="jeg_breakingnews clearfix jnews_module_562022_0_62b80ff6182d7 vc_custom_vc_custom_1584552125977  ">
+<div class="jeg_breakingnews_title"><i class="fa fa-fire">&nbsp;</i> <span>++Coronavirus++ LIVE:</span></div>
+<div class="jeg_news_ticker" data-autoplay='true' data-delay='4000' data-animation='horizontal'>
+<div class="jeg_news_ticker_items">
+<div class="jeg_news_ticker_item jeg_news_ticker_animated jeg_news_ticker_active format-standard">
+<span>
+<a href="https://www.heilpraxisnet.de/naturheilpraxis/long-covid-hunde-koennen-erkrankte-erschnueffeln-20220618561674/" >Long-COVID: Hunde können Erkrankte erschnüffeln</a>
+</span>
+<span class="post-date">
+18. Juni 2022
+</span>
+</div><div class="jeg_news_ticker_item jeg_news_ticker_animated  format-standard">
+<span>
+<a href="https://www.heilpraxisnet.de/naturheilpraxis/covid-19-omikron-infektion-bringt-nur-schwachen-schutz-vor-erneuter-ansteckung-20220615561563/" >COVID-19: Omikron-Infektion bringt nur schwachen Schutz vor erneuter Ansteckung</a>
+</span>
+<span class="post-date">
+15. Juni 2022
+</span>
+</div><div class="jeg_news_ticker_item jeg_news_ticker_animated  format-standard">
+<span>
+<a href="https://www.heilpraxisnet.de/naturheilpraxis/corona-pandemie-eindaemmen-diese-massnahmen-am-effektivsten-20220613561470/" >Corona-Pandemie eindämmen: Diese Maßnahmen sind am effektivsten</a>
+</span>
+<span class="post-date">
+13. Juni 2022
+</span>
+</div><div class="jeg_news_ticker_item jeg_news_ticker_animated  format-standard">
+<span>
+<a href="https://www.heilpraxisnet.de/naturheilpraxis/covid-19-akute-nierenschaedigung-doppelt-so-haeufig-wie-diagnostiziert-20220612561409/" >COVID-19: Akute Nierenschädigung doppelt so häufig wie diagnostiziert</a>
+</span>
+<span class="post-date">
+12. Juni 2022
+</span>
+</div><div class="jeg_news_ticker_item jeg_news_ticker_animated  format-standard">
+<span>
+<a href="https://www.heilpraxisnet.de/naturheilpraxis/long-covid-veraenderte-proteine-im-gehirn-aehneln-alzheimer-und-parkinson-20220611561390/" >Long-COVID: Veränderte Proteine im Gehirn ähneln Alzheimer und Parkinson</a>
+</span>
+<span class="post-date">
+11. Juni 2022
+</span>
+</div>
+</div>
+<div class="jeg_news_ticker_control">
+<div class="jeg_news_ticker_next jeg_news_ticker_arrow"><span>Weiter</span></div>
+<div class="jeg_news_ticker_prev jeg_news_ticker_arrow"><span>Zurück</span></div>
+</div>
+</div>
+</div>		</div>
+<div class="post-wrapper">
+<div class="post-wrap" >
+<div class="jeg_main ">
+<div class="jeg_container">
+<div class="jeg_content jeg_singlepage">
+<div class="container">
+<div class="jeg_ad jeg_article_top jnews_article_top_ads">
+<div class='ads-wrapper  '></div>		</div>
+<div class='code-block code-block-2' style='margin: 8px auto; text-align: center; display: block; clear: both;'>
+<!-- /16333650761/HPN_AdSlot_Center1 -->
+<div id="div-gpt-ad-1616507120843-0">
+<script>
+document.addEventListener('doubleClickLoaded', () => {
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-1616507120843-0'); });
+});
+</script>
+</div></div>
+<div class="entry-header">
+<h1 class="jeg_post_title">Beifuß-Allergie: Grundlage für weltweit ersten Impfstoff geschaffen</h1>
+<div class="jeg_meta_container">
+<div class="jeg_post_meta jeg_post_meta_2">
+<div class="jeg_meta_author">
+<div class="meta_author_container clearfix">
+<div class="featuredimage_container">
+<span class="verticalalignhelper"></span>
+<img data-del="avatar" alt="Alfred Domke" src='https://www.heilpraxisnet.de/wp-content/uploads/2021/01/hp_alfred_domke_sw-150x150.jpg' class='avatar pp-user-avatar avatar-80 photo ' height='80' width='80'/>				</div>
+<div class="approver_author_container">
+<div class="pruefer">Verfasst von&nbsp;<a href="https://www.heilpraxisnet.de/profil/alfred-domke/" rel="author">Alfred Domke,&nbsp;</a><span>Redakteur für Gesundheits-News</span></div><div class="quellenlink_top"><a href="#quality-statement-container" id="goToQuellen">Quellen ansehen</a></div>				</div>
+</div>
+</div>
+<div class="jeg_meta_date">
+<a href="https://www.heilpraxisnet.de/naturheilpraxis/beifuss-allergie-grundlage-fuer-weltweit-ersten-impfstoff-geschaffen-20220626562022/">
+<time datetime="2022-06-26 09:50:59">
+26. Juni 2022					</time>		</a>
+</div>
+<div class="jeg_meta_category">
+<span><span class="meta_text">in</span>
+News			</span>
+</div>
+<div class="meta_right">
+</div>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="jeg_main_content col-md-8">
+<div class="jeg_inner_content">
+<div class="jeg_ad jeg_article jnews_content_top_ads "><div class='ads-wrapper  '></div></div>
+<figure class="jeg_featured featured_image"><img width="750" height="375" src="https://www.heilpraxisnet.de/wp-content/uploads/2020/07/Ambrosia-Allergien-750x375.jpeg" class="attachment-jnews-750x375 size-jnews-750x375 wp-post-image" alt="Ambrosiapflanze mit Blüten" loading="lazy" srcset="https://www.heilpraxisnet.de/wp-content/uploads/2020/07/Ambrosia-Allergien-750x375.jpeg 750w, https://www.heilpraxisnet.de/wp-content/uploads/2020/07/Ambrosia-Allergien-360x180.jpeg 360w, https://www.heilpraxisnet.de/wp-content/uploads/2020/07/Ambrosia-Allergien-1140x570.jpeg 1140w" sizes="(max-width: 750px) 100vw, 750px" /><figcaption>Rund zehn Prozent der Menschen in der Bevölkerung sind gegen Beifuß sensibilisiert. Ihnen stehen derzeit lediglich Behandlungsmöglichkeiten zur Linderung ihrer Symptome zur Verfügung. Eine aktuelle Studie ist nun ein erster Schritt zur ursächlichen Therapie und Prävention. (Bild: stadelpeter/stock.adobe.com)</figcaption></figure>
+<div class="entry-content no-share">
+<div class="jeg_share_button share-float jeg_sticky_share clearfix share-monocrhome">
+</div>
+<div class="content-inner  jeg_link_underline">
+<div class='heateorSssClear'></div><div  class='heateor_sss_sharing_container heateor_sss_horizontal_sharing' data-heateor-sss-href='https://www.heilpraxisnet.de/naturheilpraxis/beifuss-allergie-grundlage-fuer-weltweit-ersten-impfstoff-geschaffen-20220626562022/'><div class='heateor_sss_sharing_title' style="font-weight:bold" >Teile den Artikel</div><div class="heateor_sss_sharing_ul"><a class="heateor_sss_facebook" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.heilpraxisnet.de%2Fnaturheilpraxis%2Fbeifuss-allergie-grundlage-fuer-weltweit-ersten-impfstoff-geschaffen-20220626562022%2F" title="Facebook" rel="nofollow noopener" target="_blank" style="font-size:32px!important;box-shadow:none;display:inline-block;vertical-align:middle"><span class="heateor_sss_svg" style="background-color:#3c589a;width:35px;height:35px;border-radius:999px;display:inline-block;opacity:1;float:left;font-size:32px;box-shadow:none;display:inline-block;font-size:16px;padding:0 4px;vertical-align:middle;background-repeat:repeat;overflow:hidden;padding:0;cursor:pointer;box-sizing:content-box"><svg style="display:block;border-radius:999px;" focusable="false" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="-5 -5 42 42"><path d="M17.78 27.5V17.008h3.522l.527-4.09h-4.05v-2.61c0-1.182.33-1.99 2.023-1.99h2.166V4.66c-.375-.05-1.66-.16-3.155-.16-3.123 0-5.26 1.905-5.26 5.405v3.016h-3.53v4.09h3.53V27.5h4.223z" fill="#fff"></path></svg></span></a><a class="heateor_sss_button_twitter" href="http://twitter.com/intent/tweet?text=Beifu%C3%9F-Allergie%3A%20Grundlage%20f%C3%BCr%20weltweit%20ersten%20Impfstoff%20geschaffen&url=https%3A%2F%2Fwww.heilpraxisnet.de%2Fnaturheilpraxis%2Fbeifuss-allergie-grundlage-fuer-weltweit-ersten-impfstoff-geschaffen-20220626562022%2F" title="Twitter" rel="nofollow noopener" target="_blank" style="font-size:32px!important;box-shadow:none;display:inline-block;vertical-align:middle"><span class="heateor_sss_svg heateor_sss_s__default heateor_sss_s_twitter" style="background-color:#55acee;width:35px;height:35px;border-radius:999px;display:inline-block;opacity:1;float:left;font-size:32px;box-shadow:none;display:inline-block;font-size:16px;padding:0 4px;vertical-align:middle;background-repeat:repeat;overflow:hidden;padding:0;cursor:pointer;box-sizing:content-box"><svg style="display:block;border-radius:999px;" focusable="false" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="-4 -4 39 39"><path d="M28 8.557a9.913 9.913 0 0 1-2.828.775 4.93 4.93 0 0 0 2.166-2.725 9.738 9.738 0 0 1-3.13 1.194 4.92 4.92 0 0 0-3.593-1.55 4.924 4.924 0 0 0-4.794 6.049c-4.09-.21-7.72-2.17-10.15-5.15a4.942 4.942 0 0 0-.665 2.477c0 1.71.87 3.214 2.19 4.1a4.968 4.968 0 0 1-2.23-.616v.06c0 2.39 1.7 4.38 3.952 4.83-.414.115-.85.174-1.297.174-.318 0-.626-.03-.928-.086a4.935 4.935 0 0 0 4.6 3.42 9.893 9.893 0 0 1-6.114 2.107c-.398 0-.79-.023-1.175-.068a13.953 13.953 0 0 0 7.55 2.213c9.056 0 14.01-7.507 14.01-14.013 0-.213-.005-.426-.015-.637.96-.695 1.795-1.56 2.455-2.55z" fill="#fff"></path></svg></span></a><a class="heateor_sss_whatsapp" href="https://api.whatsapp.com/send?text=Beifu%C3%9F-Allergie%3A%20Grundlage%20f%C3%BCr%20weltweit%20ersten%20Impfstoff%20geschaffen https%3A%2F%2Fwww.heilpraxisnet.de%2Fnaturheilpraxis%2Fbeifuss-allergie-grundlage-fuer-weltweit-ersten-impfstoff-geschaffen-20220626562022%2F" title="Whatsapp" rel="nofollow noopener" target="_blank" style="font-size:32px!important;box-shadow:none;display:inline-block;vertical-align:middle"><span class="heateor_sss_svg" style="background-color:#55eb4c;width:35px;height:35px;border-radius:999px;display:inline-block;opacity:1;float:left;font-size:32px;box-shadow:none;display:inline-block;font-size:16px;padding:0 4px;vertical-align:middle;background-repeat:repeat;overflow:hidden;padding:0;cursor:pointer;box-sizing:content-box"><svg style="display:block;border-radius:999px;" focusable="false" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="-6 -5 40 40"><path class="heateor_sss_svg_stroke heateor_sss_no_fill" stroke="#fff" stroke-width="2" fill="none" d="M 11.579798566743314 24.396926207859085 A 10 10 0 1 0 6.808479557110079 20.73576436351046"></path><path d="M 7 19 l -1 6 l 6 -1" class="heateor_sss_no_fill heateor_sss_svg_stroke" stroke="#fff" stroke-width="2" fill="none"></path><path d="M 10 10 q -1 8 8 11 c 5 -1 0 -6 -1 -3 q -4 -3 -5 -5 c 4 -2 -1 -5 -1 -4" fill="#fff"></path></svg></span></a><a class="heateor_sss_button_telegram" href="https://telegram.me/share/url?url=https%3A%2F%2Fwww.heilpraxisnet.de%2Fnaturheilpraxis%2Fbeifuss-allergie-grundlage-fuer-weltweit-ersten-impfstoff-geschaffen-20220626562022%2F&text=Beifu%C3%9F-Allergie%3A%20Grundlage%20f%C3%BCr%20weltweit%20ersten%20Impfstoff%20geschaffen" title="Telegram" rel="nofollow noopener" target="_blank" style="font-size:32px!important;box-shadow:none;display:inline-block;vertical-align:middle"><span class="heateor_sss_svg heateor_sss_s__default heateor_sss_s_telegram" style="background-color:#3da5f1;width:35px;height:35px;border-radius:999px;display:inline-block;opacity:1;float:left;font-size:32px;box-shadow:none;display:inline-block;font-size:16px;padding:0 4px;vertical-align:middle;background-repeat:repeat;overflow:hidden;padding:0;cursor:pointer;box-sizing:content-box"><svg style="display:block;border-radius:999px;" focusable="false" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 32 32"><path fill="#fff" d="M25.515 6.896L6.027 14.41c-1.33.534-1.322 1.276-.243 1.606l5 1.56 1.72 5.66c.226.625.115.873.77.873.506 0 .73-.235 1.012-.51l2.43-2.363 5.056 3.734c.93.514 1.602.25 1.834-.863l3.32-15.638c.338-1.363-.52-1.98-1.41-1.577z"></path></svg></span></a><a class="heateor_sss_button_xing" href="https://www.xing.com/spi/shares/new?cb=0&url=https%3A%2F%2Fwww.heilpraxisnet.de%2Fnaturheilpraxis%2Fbeifuss-allergie-grundlage-fuer-weltweit-ersten-impfstoff-geschaffen-20220626562022%2F" title="xing" rel="nofollow noopener" target="_blank" style="font-size:32px!important;box-shadow:none;display:inline-block;vertical-align:middle"><span class="heateor_sss_svg heateor_sss_s__default heateor_sss_s_xing" style="background-color:#00797d;width:35px;height:35px;border-radius:999px;display:inline-block;opacity:1;float:left;font-size:32px;box-shadow:none;display:inline-block;font-size:16px;padding:0 4px;vertical-align:middle;background-repeat:repeat;overflow:hidden;padding:0;cursor:pointer;box-sizing:content-box"><svg style="display:block;border-radius:999px;" focusable="false" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="-6 -6 42 42"><path d="M 6 9 h 5 l 4 4 l -5 7 h -5 l 5 -7 z m 15 -4 h 5 l -9 13 l 4 8 h -5 l -4 -8 z" fill="#fff"></path> </svg></span></a><a class="heateor_sss_button_flipboard" href="https://share.flipboard.com/bookmarklet/popout?v=2&url=https%3A%2F%2Fwww.heilpraxisnet.de%2Fnaturheilpraxis%2Fbeifuss-allergie-grundlage-fuer-weltweit-ersten-impfstoff-geschaffen-20220626562022%2F&title=Beifu%C3%9F-Allergie%3A%20Grundlage%20f%C3%BCr%20weltweit%20ersten%20Impfstoff%20geschaffen" title="Flipboard" rel="nofollow noopener" target="_blank" style="font-size:32px!important;box-shadow:none;display:inline-block;vertical-align:middle"><span class="heateor_sss_svg heateor_sss_s__default heateor_sss_s_flipboard" style="background-color:#c00;width:35px;height:35px;border-radius:999px;display:inline-block;opacity:1;float:left;font-size:32px;box-shadow:none;display:inline-block;font-size:16px;padding:0 4px;vertical-align:middle;background-repeat:repeat;overflow:hidden;padding:0;cursor:pointer;box-sizing:content-box"><svg style="display:block;border-radius:999px;" focusable="false" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 32 32"><path fill="#fff" d="M19 19H7V7h12v12z"/><path fill="#fff" d="M25 13H7V7h18v6z"/><path fill="#fff" d="M13 25H7V7h6v18z"/></svg></span></a></div><div class="heateorSssClear"></div></div><div class='heateorSssClear'></div><h2>Beifuß-Allergie: Wesentlicher erster Schritt zur ursächlichen Therapie</h2>
+<p>Fachleuten zufolge sind rund zehn Prozent der Menschen hierzulande von einer <strong>Beifuß-Allergie</strong> betroffen. Durch den Kontakt mit den Pollen dieses Krauts werden bei ihnen typische <strong>Heuschnupfen-Beschwerden</strong> ausgelöst, die zu einer starken Beeinträchtigung des Allgemeinbefindens und der Lebensqualität führen können. Doch nun besteht Hoffnung: Forschende haben die <strong>Grundlage</strong> für einen <strong>Impfstoff</strong> geschaffen.</p><div class='code-block code-block-3' style='margin: 8px auto; text-align: center; display: block; clear: both;'>
+<!-- START TARGET-VIDEO SYN-Phttps://www.heilpraxisnet.de/wp-admin/options-general.php?page=ad-inserter.php&start=1#tab-4LAYER -->
+<div id="target-video-syn-player" data-tag="/16333650761/HP_content_native_player"></div>
+<script>
+document.addEventListener('consentedToAll', () => {
+var targetvideo = document.createElement('script');
+targetvideo.src = 'https://syndication.target-video.com/syndication-player.js';
+document.head.appendChild(targetvideo);
+});
+</script>
+<!-- /END TARGET-VIDEO SYN-PLAYER --></div>
+<p>Ein Forschungsteam der Medizinischen Universität (MedUni) Wien hat zentrale Mechanismen der Allergie gegen die Pollen aus dem weit verbreiteten Unkraut Beifuß entdeckt und damit gleichzeitig die Grundlage für die Entwicklung des weltweit ersten Impfstoffs geschaffen. Die neuen Erkenntnisse sind ein wesentlicher erster Schritt zur ursächlichen Therapie und zur Prävention. Die Studie wurde in der Fachzeitschrift „<a href="https://www.jacionline.org/article/S0091-6749(22)00701-1/fulltext" rel="noopener" target="_blank">Journal of Allergy and Clinical Immunology</a>“ veröffentlicht.</p>
+<h2>Überschießende Immunreaktion</h2>
+<p>Laut einer aktuellen <a href="https://www.meduniwien.ac.at/web/ueber-uns/news/news-im-juni-2022/beifuss-allergie-meduni-wien-studie-schafft-grundlage-fuer-impfstoff/" rel="noopener" target="_blank">Mitteilung</a> setzten die Wissenschaftlerinnen und Wissenschaftler in ihrer präklinischen Forschungsarbeit am Ausgangspunkt der Beifuß-Allergie an.</p>
+<p>Dabei entdeckten die Forschenden, wo und wie die Antikörper vom Typ Immunglobulin-E (IgE) das Hauptallergen des Beifuß (Art v 1) erkennen und die überschießende <strong>Immunreaktion</strong> in Gang bringen.</p><div class='code-block code-block-4' style='margin: 8px auto; text-align: center; display: block; clear: both;'>
+<!-- /16333650761/HPN_AdSlot_Center2 -->
+<div id="div-gpt-ad-1556634292010-0" style="margin-bottom: 10px;">
+<script>
+document.addEventListener('doubleClickLoaded', () => {
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-1556634292010-0'); });
+});
+</script>
+</div></div>
+<p>Gleichzeitig hat sich gezeigt, dass die Eiweißbausteine des Beifuß-Hauptallergens so beschaffen sind, dass sie durch <strong>Abwehrstoffe</strong> IgG (Immunglobulin-G) blockiert werden können.</p>
+<p>Mit diesen Erkenntnissen schuf das Team um Maja Zabel und Winfried Pickl in Zusammenarbeit mit dem Team von Rudolf Valenta (alle vom Zentrum für Pathophysiologie, Infektiologie und Immunologie der MedUni Wien) die <strong>Grundlage</strong> für die Entwicklung eines Impfstoffs gegen die Beifuß-Allergie.</p>
+<h2>Krankmachende IgE-Antiköper</h2>
+<p><em>„Unsere Studie zeigt, wie Bruchstücke des <strong>Hauptallergens</strong> von Beifuß für die wirksame und sichere Therapie verwendet werden können“</em>, sagt Studienleiter Winfried Pickl.</p>
+<p><em>„Unsere Beobachtungen der Wirkweise des Impfstoffs ergeben, dass eines der Enden des Beifuß-Hauptallergens wichtige Bindungsstellen für die krankmachenden IgE-Antiköper von AllergikerInnen bereitstellt, die für eine <strong>neuartige Impfung</strong> genutzt werden können“</em>, so der Forscher.</p>
+<h2>Rund zehn Prozent der Bevölkerung betroffen</h2>
+<p>Der Gemeine Beifuß ist auf der Nordhalbkugel weit verbreitet, wo die Pollen seiner Blüten bei Allergikerinnen und Allergikern von Juli bis September <strong>Beschwerden</strong> bis hin zu Asthma verursachen.</p>
+<p>Den Angaben zufolge stehen den etwa zehn Prozent der Menschen in der Bevölkerung, die gegen Beifuß sensibilisiert sind, derzeit lediglich <strong>Behandlungsmöglichkeiten</strong> zur Linderung ihrer Symptome zur Verfügung.</p><div class='code-block code-block-12' style='margin: 8px 0; clear: both;'>
+<!-- /16333650761/HPN_AdSlot_Center3 -->
+<div id="div-gpt-ad-1556634357726-0">
+<script>
+document.addEventListener('doubleClickLoaded', () => {
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-1556634357726-0'); });
+});
+</script>
+</div></div>
+<p>Die aktuelle Studie ist ein international viel beachteter erster Schritt zur <strong>ursächlichen Therapie</strong> und Prävention. <em>„Als nächstes werden wir unsere Forschungsergebnisse für die Herstellung eines synthetischen Impfstoffs verwenden, der im Rahmen einer klinischen Studie überprüft werden kann“</em>, erläutert Rudolf Valenta. (ad)</p>
+<div class='code-block code-block-6' style='margin: 8px auto; text-align: center; display: block; clear: both;'>
+<!-- /16333650761/HPN_AdSlot_Center5 -->
+<div id="div-gpt-ad-1616511511504-0">
+<script>
+document.addEventListener('doubleClickLoaded', () => {
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-1616511511504-0'); });
+});
+</script>
+</div></div>
+<!-- AI CONTENT END 1 -->
+<div id="quality-statement-container" class="clearfix">
+<h2>Autoren- und Quelleninformationen</h2><div id="source-container">
+<button aria-labelledby="show-sources-label" class="button button-clear" id="show-sources-button" onclick="document.getElementById('source-container').classList.toggle('active')" type="button"><span id="show-sources-label" class="hpn-scope">Jetzt einblenden</span><div class="svg material-icon hpn-scope"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z"></path></svg></div></button>
+<div id="article-sources">
+<div class="quellen-details">
+<p class="details">Dieser Text entspricht den Vorgaben der ärztlichen Fachliteratur, medizinischen Leitlinien sowie aktuellen Studien und wurde von Medizinern und Medizinerinnen geprüft.</p>
+</div>
+<div aria-labelledby="authors-label" class="source-section clearfix" role="directory">
+<div class="label" id="authors-label">Autor:</div>
+<div class="value">
+<span role="listitem">Alfred Domke</span>
+</div>
+</div>
+<div aria-labelledby="sources-label" class="source-section clearfix" role="directory">
+<div class="label" id="sources-label">Quellen:</div>
+<ul class="value"><li itemprop="citation" role="listitem">Medizinische Universität Wien: Beifuß-Allergie: MedUni-Wien-Studie schafft Grundlage für Impfstoff, (Abruf: 26.06.2022), <a href="https://www.meduniwien.ac.at/web/ueber-uns/news/news-im-juni-2022/beifuss-allergie-meduni-wien-studie-schafft-grundlage-fuer-impfstoff/" target="_blank" rel="nofollow noopener">Medizinische Universität Wien</a></li><li itemprop="citation" role="listitem">Maja Zabel, Milena Weber, Bernhard Kratzer, Cordula Köhler, Beatrice Jahn-Schmid, Gabriele Gadermaier, Pia Gattinger, Urška Bidovec-Stojkovič, Peter Korošec, Ursula Smole, Gert Wurzinger, Kuan-Wei Chen, Carmen Bunu Panaitescu, Ludger Klimek, Isabel Pablos, Katarzyna Niespodziana, Alina Neunkirchner, Walter Keller, Rudolf Valenta & Winfried F. Pickl: Art v 1 IgE epitopes of patients and humanized mice are conformational; in: Journal of Allergy and Clinical Immunology, (veröffentlicht: 20.06.2022), <a href="https://www.jacionline.org/article/S0091-6749(22)00701-1/fulltext" target="_blank" rel="nofollow noopener">Journal of Allergy and Clinical Immunology</a></li></ul>
+</div>
+</div>
+</div><script type="text/javascript">
+document.getElementById('goToQuellen').addEventListener('click', function(event) {
+event.preventDefault();
+document.getElementById('source-container').classList.toggle('active');
+document.getElementById('quality-statement-container').scrollIntoView();
+});
+</script><p class="wichtiger_hinweis"><strong>Wichtiger Hinweis:</strong><br>Dieser Artikel enthält nur allgemeine Hinweise und darf nicht zur Selbstdiagnose oder -behandlung verwendet werden. Er kann einen Arztbesuch nicht ersetzen.</p></div>
+</div>
+</div>
+<div class="jeg_ad jeg_article jnews_content_bottom_ads "><div class='ads-wrapper  '></div></div><div class="jnews_prev_next_container"></div><div class="jnews_author_box_container "></div><div class="jnews_related_post_container"></div><div class="jnews_popup_post_container"></div><div class="jnews_comment_container"></div>					</div>
+</div>
+<div id="heilpraxis-sidebar">
+<div id="heilpraxis-sidebar-inner" class="jeg_sidebar  jeg_sticky_sidebar col-md-4">
+<div class="widget_text widget widget_custom_html" id="custom_html-3"><div class="textwidget custom-html-widget"><div class='code-block code-block-14' style='margin: 8px 0; clear: both;'>
+<!-- Outbrain Widget for Sidebar -->
+<div class="OUTBRAIN" data-widget-id="SB_1"></div></div>
+</div></div><div class="widget widget_jnews_module_block_19" id="jnews_module_block_19-2"><div  class="jeg_postblock_19 jeg_postblock jeg_module_hook jeg_pagination_disable jeg_col_1o3 jnews_module_562022_1_62b80ff61f547  normal " data-unique="jnews_module_562022_1_62b80ff61f547">
+<div class="jeg_block_heading jeg_block_heading_3 jeg_subcat_right">
+<h3 class="jeg_block_title"><span>Jetzt News lesen</span></h3>
+</div>
+<div class="jeg_block_container">
+<div class="jeg_posts">
+<article class="jeg_post jeg_pl_md_box format-standard">
+<div class="box_wrap">
+<div class="jeg_thumb">
+<a href="https://www.heilpraxisnet.de/naturheilpraxis/fettleber-neuer-bluttest-zur-bestimmung-des-aktuellen-status-der-erkrankung-20220625561982/"><div class="thumbnail-container  size-715 "><img width="350" height="250" src="https://www.heilpraxisnet.de/wp-content/uploads/2020/03/Bakterien-Bluttest-350x250.jpeg" class="attachment-jnews-350x250 size-jnews-350x250 wp-post-image" alt="Forscherteam findet neues Mittel im Kampf gegen Covid-19. (Bild: angellodeco/Stock.Adobe.com)" srcset="https://www.heilpraxisnet.de/wp-content/uploads/2020/03/Bakterien-Bluttest-350x250.jpeg 350w, https://www.heilpraxisnet.de/wp-content/uploads/2020/03/Bakterien-Bluttest-120x86.jpeg 120w, https://www.heilpraxisnet.de/wp-content/uploads/2020/03/Bakterien-Bluttest-750x536.jpeg 750w, https://www.heilpraxisnet.de/wp-content/uploads/2020/03/Bakterien-Bluttest-1140x815.jpeg 1140w" sizes="(max-width: 350px) 100vw, 350px" /></div></a>
+</div>
+<div class="jeg_postblock_content">
+<h3 class="jeg_post_title">
+<a href="https://www.heilpraxisnet.de/naturheilpraxis/fettleber-neuer-bluttest-zur-bestimmung-des-aktuellen-status-der-erkrankung-20220625561982/">Fettleber: Neuer Bluttest zur Bestimmung des aktuellen Status der Erkrankung</a>
+</h3>
+<div class="jeg_post_meta"><div class="jeg_meta_date"><a href="https://www.heilpraxisnet.de/naturheilpraxis/fettleber-neuer-bluttest-zur-bestimmung-des-aktuellen-status-der-erkrankung-20220625561982/" ><i class="fa fa-clock-o"></i> 25. Juni 2022</a></div></div>
+</div> 
+</div>
+</article>
+<div class="jeg_postsmall jeg_load_more_flag">
+<article class="jeg_post jeg_pl_sm format-standard">
+<div class="jeg_thumb">
+<a href="https://www.heilpraxisnet.de/naturheilpraxis/krebs-welche-rolle-spielt-die-tageszeit-bei-der-metastasierung-20220625561930/"><div class="thumbnail-container  size-715 "><img width="120" height="86" src="https://www.heilpraxisnet.de/wp-content/uploads/2021/07/Krebs-Protein-120x86.jpeg" class="attachment-jnews-120x86 size-jnews-120x86 wp-post-image" alt="Bild einer Krebszelle." srcset="https://www.heilpraxisnet.de/wp-content/uploads/2021/07/Krebs-Protein-120x86.jpeg 120w, https://www.heilpraxisnet.de/wp-content/uploads/2021/07/Krebs-Protein-350x250.jpeg 350w, https://www.heilpraxisnet.de/wp-content/uploads/2021/07/Krebs-Protein-750x536.jpeg 750w, https://www.heilpraxisnet.de/wp-content/uploads/2021/07/Krebs-Protein-1140x815.jpeg 1140w" sizes="(max-width: 120px) 100vw, 120px" /></div></a>
+</div>
+<div class="jeg_postblock_content">
+<h3 class="jeg_post_title">
+<a href="https://www.heilpraxisnet.de/naturheilpraxis/krebs-welche-rolle-spielt-die-tageszeit-bei-der-metastasierung-20220625561930/">Krebs: Welche Rolle spielt die Tageszeit bei der Metastasierung?</a>
+</h3>
+<div class="jeg_post_meta"><div class="jeg_meta_date"><a href="https://www.heilpraxisnet.de/naturheilpraxis/krebs-welche-rolle-spielt-die-tageszeit-bei-der-metastasierung-20220625561930/" ><i class="fa fa-clock-o"></i> 25. Juni 2022</a></div></div>
+</div>
+</article><article class="jeg_post jeg_pl_sm format-standard">
+<div class="jeg_thumb">
+<a href="https://www.heilpraxisnet.de/naturheilpraxis/post-covid-symptome-mit-veraenderter-darmflora-verbunden-20220625561937/"><div class="thumbnail-container  size-715 "><img width="120" height="86" src="https://www.heilpraxisnet.de/wp-content/uploads/2021/11/Darmmikrobiota-120x86.jpeg" class="attachment-jnews-120x86 size-jnews-120x86 wp-post-image" alt="Grafische Darstellung von Darmbakterien." srcset="https://www.heilpraxisnet.de/wp-content/uploads/2021/11/Darmmikrobiota-120x86.jpeg 120w, https://www.heilpraxisnet.de/wp-content/uploads/2021/11/Darmmikrobiota-350x250.jpeg 350w, https://www.heilpraxisnet.de/wp-content/uploads/2021/11/Darmmikrobiota-750x536.jpeg 750w, https://www.heilpraxisnet.de/wp-content/uploads/2021/11/Darmmikrobiota-1140x815.jpeg 1140w" sizes="(max-width: 120px) 100vw, 120px" /></div></a>
+</div>
+<div class="jeg_postblock_content">
+<h3 class="jeg_post_title">
+<a href="https://www.heilpraxisnet.de/naturheilpraxis/post-covid-symptome-mit-veraenderter-darmflora-verbunden-20220625561937/">Post-COVID-Symptome mit veränderter Darmflora verbunden</a>
+</h3>
+<div class="jeg_post_meta"><div class="jeg_meta_date"><a href="https://www.heilpraxisnet.de/naturheilpraxis/post-covid-symptome-mit-veraenderter-darmflora-verbunden-20220625561937/" ><i class="fa fa-clock-o"></i> 25. Juni 2022</a></div></div>
+</div>
+</article><article class="jeg_post jeg_pl_sm format-standard">
+<div class="jeg_thumb">
+<a href="https://www.heilpraxisnet.de/naturheilpraxis/rueckruf-bei-netto-eingelegte-gemuese-kann-glasscherben-enthalten-20220624561970/"><div class="thumbnail-container  size-715 "><img width="120" height="86" src="https://www.heilpraxisnet.de/wp-content/uploads/2022/03/Supermarkt-Handy-120x86.jpeg" class="attachment-jnews-120x86 size-jnews-120x86 wp-post-image" alt="Eine Frau im Supermarkt mit einem Smartphone in der Hand." srcset="https://www.heilpraxisnet.de/wp-content/uploads/2022/03/Supermarkt-Handy-120x86.jpeg 120w, https://www.heilpraxisnet.de/wp-content/uploads/2022/03/Supermarkt-Handy-350x250.jpeg 350w, https://www.heilpraxisnet.de/wp-content/uploads/2022/03/Supermarkt-Handy-750x536.jpeg 750w, https://www.heilpraxisnet.de/wp-content/uploads/2022/03/Supermarkt-Handy-1140x815.jpeg 1140w" sizes="(max-width: 120px) 100vw, 120px" /></div></a>
+</div>
+<div class="jeg_postblock_content">
+<h3 class="jeg_post_title">
+<a href="https://www.heilpraxisnet.de/naturheilpraxis/rueckruf-bei-netto-eingelegte-gemuese-kann-glasscherben-enthalten-20220624561970/">Rückruf bei Netto: Eingelegtes Gemüse kann Glasscherben enthalten</a>
+</h3>
+<div class="jeg_post_meta"><div class="jeg_meta_date"><a href="https://www.heilpraxisnet.de/naturheilpraxis/rueckruf-bei-netto-eingelegte-gemuese-kann-glasscherben-enthalten-20220624561970/" ><i class="fa fa-clock-o"></i> 24. Juni 2022</a></div></div>
+</div>
+</article><article class="jeg_post jeg_pl_sm format-standard">
+<div class="jeg_thumb">
+<a href="https://www.heilpraxisnet.de/naturheilpraxis/wie-alkohol-das-gehirn-veraendert-und-so-das-risiko-fuer-sucht-steigt-20220624561946/"><div class="thumbnail-container  size-715 "><img width="120" height="86" src="https://www.heilpraxisnet.de/wp-content/uploads/2020/04/Corona-Alkohol-120x86.jpeg" class="attachment-jnews-120x86 size-jnews-120x86 wp-post-image" alt="Frau sitzt mit einem Glas Weißwein im Sessel und rauft sich die Haare" srcset="https://www.heilpraxisnet.de/wp-content/uploads/2020/04/Corona-Alkohol-120x86.jpeg 120w, https://www.heilpraxisnet.de/wp-content/uploads/2020/04/Corona-Alkohol-350x250.jpeg 350w, https://www.heilpraxisnet.de/wp-content/uploads/2020/04/Corona-Alkohol-750x536.jpeg 750w, https://www.heilpraxisnet.de/wp-content/uploads/2020/04/Corona-Alkohol-1140x815.jpeg 1140w" sizes="(max-width: 120px) 100vw, 120px" /></div></a>
+</div>
+<div class="jeg_postblock_content">
+<h3 class="jeg_post_title">
+<a href="https://www.heilpraxisnet.de/naturheilpraxis/wie-alkohol-das-gehirn-veraendert-und-so-das-risiko-fuer-sucht-steigt-20220624561946/">Wie Alkohol das Gehirn verändert und so das Risiko für Sucht steigt</a>
+</h3>
+<div class="jeg_post_meta"><div class="jeg_meta_date"><a href="https://www.heilpraxisnet.de/naturheilpraxis/wie-alkohol-das-gehirn-veraendert-und-so-das-risiko-fuer-sucht-steigt-20220624561946/" ><i class="fa fa-clock-o"></i> 24. Juni 2022</a></div></div>
+</div>
+</article><article class="jeg_post jeg_pl_sm format-standard">
+<div class="jeg_thumb">
+<a href="https://www.heilpraxisnet.de/naturheilpraxis/thrombose-nach-impfung-ursache-entschluesselt-20220624561936/"><div class="thumbnail-container  size-715 "><img width="120" height="86" src="https://www.heilpraxisnet.de/wp-content/uploads/2022/05/impfnebenwirkungen-120x86.jpg" class="attachment-jnews-120x86 size-jnews-120x86 wp-post-image" alt="Spritze in den Oberarm" srcset="https://www.heilpraxisnet.de/wp-content/uploads/2022/05/impfnebenwirkungen-120x86.jpg 120w, https://www.heilpraxisnet.de/wp-content/uploads/2022/05/impfnebenwirkungen-350x250.jpg 350w, https://www.heilpraxisnet.de/wp-content/uploads/2022/05/impfnebenwirkungen-750x536.jpg 750w, https://www.heilpraxisnet.de/wp-content/uploads/2022/05/impfnebenwirkungen-1140x815.jpg 1140w" sizes="(max-width: 120px) 100vw, 120px" /></div></a>
+</div>
+<div class="jeg_postblock_content">
+<h3 class="jeg_post_title">
+<a href="https://www.heilpraxisnet.de/naturheilpraxis/thrombose-nach-impfung-ursache-entschluesselt-20220624561936/">Thrombose nach Impfung: Ursache entschlüsselt</a>
+</h3>
+<div class="jeg_post_meta"><div class="jeg_meta_date"><a href="https://www.heilpraxisnet.de/naturheilpraxis/thrombose-nach-impfung-ursache-entschluesselt-20220624561936/" ><i class="fa fa-clock-o"></i> 24. Juni 2022</a></div></div>
+</div>
+</article>
+</div>
+</div>
+<div class='module-overlay'>
+<div class='preloader_type preloader_dot'>
+<div class="module-preloader jeg_preloader dot">
+<span></span><span></span><span></span>
+</div>
+<div class="module-preloader jeg_preloader circle">
+<div class="jnews_preloader_circle_outer">
+<div class="jnews_preloader_circle_inner"></div>
+</div>
+</div>
+<div class="module-preloader jeg_preloader square">
+<div class="jeg_square">
+<div class="jeg_square_inner"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jeg_block_navigation">
+<div class='navigation_overlay'><div class='module-preloader jeg_preloader'><span></span><span></span><span></span></div></div>
+</div>
+<style scoped>.jnews_module_562022_1_62b80ff61f547 .jeg_block_heading_3 { background: #73bd5a; }.jnews_module_562022_1_62b80ff61f547 .jeg_block_heading_3 .jeg_block_title span, .jnews_module_562022_1_62b80ff61f547 .jeg_block_heading_3 .jeg_block_title i { color: #ffffff; }</style>
+<script>var jnews_module_562022_1_62b80ff61f547 = {"header_icon":"","first_title":"Jetzt News lesen","second_title":"","url":"","header_type":"heading_3","header_background":"#73bd5a","header_secondary_background":"","header_text_color":"#ffffff","header_line_color":"","header_accent_color":"","header_filter_category":"","header_filter_author":"","header_filter_tag":"","header_filter_text":"All","post_type":"post","content_type":"post","number_post":"6","post_offset":"5","unique_content":"unique1","include_post":"","included_only":false,"exclude_post":"","include_category":"361","exclude_category":"","include_author":"","include_tag":"","exclude_tag":"","category":"","koerper":"","thema-tax":"","sort_by":"latest","date_format":"default","date_format_custom":"Y\/m\/d","force_normal_image_load":"","pagination_mode":"disable","pagination_nextprev_showtext":"","pagination_number_post":"6","pagination_scroll_limit":"0","boxed":"","boxed_shadow":"","el_id":"","el_class":"","scheme":"normal","column_width":"auto","title_color":"","accent_color":"","alt_color":"","excerpt_color":"","css":"","download_category":"","download_tag":"","paged":1,"column_class":"jeg_col_1o3","class":"jnews_block_19"};</script>
+</div></div>    </div>
+</div>
+</div>
+<div class="trennerwrap clearfix"><img aria-hidden style="background-color:white" width="51" height="60" src="https://www.heilpraxisnet.de/wp-content/themes/heilpraxis-design/images/trenner-hpn.png" srcset="https://www.heilpraxisnet.de/wp-content/themes/heilpraxis-design/images/trenner-hpn.png, https://www.heilpraxisnet.de/wp-content/themes/heilpraxis-design/images/trenner-hpn@2x.png 2x" /><hr /></div>		<div class="jeg_ad jeg_article jnews_article_bottom_ads">
+<div class='ads-wrapper  '></div>		</div><div class='code-block code-block-7' style='margin: 8px 0; clear: both;'>
+<div class="OUTBRAIN" data-src="https://www.heilpraxisnet.de/naturheilpraxis/beifuss-allergie-grundlage-fuer-weltweit-ersten-impfstoff-geschaffen-20220626562022/" data-widget-id="AR_1"></div>
+<!-- Outbrain Desktop --></div>
+</div>
+</div>
+</div>
+</div>
+<div id="post-body-class" class="post-template-default single single-post postid-562022 single-format-standard wp-embed-responsive jeg_toggle_light jeg_single_tpl_2 jnews jsc_normal wpb-js-composer js-comp-ver-6.9.0 vc_responsive"></div>
+</div>
+<div class="post-ajax-overlay">
+<div class="preloader_type preloader_dot">
+<div class="newsfeed_preloader jeg_preloader dot">
+<span></span><span></span><span></span>
+</div>
+<div class="newsfeed_preloader jeg_preloader circle">
+<div class="jnews_preloader_circle_outer">
+<div class="jnews_preloader_circle_inner"></div>
+</div>
+</div>
+<div class="newsfeed_preloader jeg_preloader square">
+<div class="jeg_square"><div class="jeg_square_inner"></div></div>
+</div>
+</div>
+</div>
+</div>
+        <div class="footer-holder" id="footer" data-id="footer">
+<div class="jeg_footer jeg_footer_1 dark">
+<div class="jeg_footer_container jeg_container">
+<div class="jeg_footer_content">
+<div class="container">
+<div class="row">
+<div class="jeg_footer_primary clearfix">
+<div class="col-md-4 footer_column">
+<div class="footer_widget widget_jnews_about" id="jnews_about-2">        <div class="jeg_about ">
+<a class="footer_logo" href="https://www.heilpraxisnet.de/">
+<img class='lazyload'
+src="https://www.heilpraxisnet.de/wp-content/themes/jnews/assets/img/jeg-empty.png" data-src="https://www.heilpraxisnet.de/wp-content/uploads/2019/11/heilpraxis-footerlogo-1.png"  data-srcset="https://www.heilpraxisnet.de/wp-content/uploads/2019/11/heilpraxis-footerlogo-1.png 1x, https://www.heilpraxisnet.de/wp-content/uploads/2019/11/heilpraxis-footerlogo@2x-1.png 2x"                         alt="Heilpraxis" data-light-src="https://www.heilpraxisnet.de/wp-content/uploads/2019/11/heilpraxis-footerlogo-1.png"  data-light-srcset="https://www.heilpraxisnet.de/wp-content/uploads/2019/11/heilpraxis-footerlogo-1.png 1x, https://www.heilpraxisnet.de/wp-content/uploads/2019/11/heilpraxis-footerlogo@2x-1.png 2x"  data-dark-src="https://www.heilpraxisnet.de/wp-content/themes/jnews/assets/img/logo_darkmode.png"  data-dark-srcset="https://www.heilpraxisnet.de/wp-content/themes/jnews/assets/img/logo_darkmode.png 1x, https://www.heilpraxisnet.de/wp-content/themes/jnews/assets/img/logo_darkmode@2x.png 2x"                         data-pin-no-hover="true">
+</a>
+<p>Das Fachportal für Naturheilkunde und Gesundheit</p>
+</div>
+</div>                        </div>
+<div class="col-md-4 footer_column">
+</div>
+<div class="col-md-4 footer_column">
+<section class="widget widget_newsletter2go">
+<div class="nl2go-widget"><script id="62b80ff62261f">
+!function (e, t, n, c, r, a, i) {
+e.Newsletter2GoTrackingObject = r, e[r] = e[r] || function () {
+(e[r].q = e[r].q || []).push(arguments)
+}, e[r].l = 1 * new Date, a = t.createElement(n), i = t.getElementsByTagName(n)[0], a.async = 1, a.src = c, i.parentNode.insertBefore(a, i)
+}(window, document, "script", "https://static.newsletter2go.com/utils.js", "n2g");
+n2g("create", "8176ad0j-jphvl39j-577");
+n2g('subscribe:createForm', {
+"form": {
+"class": "hpnnewsletterform",
+"style": ""
+},
+"container": {
+"type": "div",
+"class": "hpnnewsletterbox",
+"style": "width: 100%;"
+},
+"row": {
+"type": "div",
+"class": "hpnnewsletterrow",
+"style": ""
+},
+"columnLeft": {
+"type": "div",
+"class": "",
+"style": "width: 100%; padding: 0; display: block;"
+},
+"columnRight": {
+"type": "div",
+"class": "",
+"style": " width: 100%; display: block;"
+},
+"checkbox": {
+"type": "input",
+"class": "",
+"style": ""
+},
+"separator": {
+"type": "br",
+"class": "hpnnewslettersep",
+"style": ""
+},
+"input": {
+"class": "",
+"style": "padding: 0px 5px; border-radius: 2px; border: none;color:#fffff;border-color:#ffffff;background-color:#f9f9f9;"
+},
+"dropdown": {
+"type": "select",
+"class": "",
+"style": "padding: 3px 5px; border-radius: 2px; border: 1px solid #d8dee4;"
+},
+"button": {
+"type": "button",
+"class": "",
+"id": "",
+"style": "background-color:#ffffff; border: none; border-radius: 4px; padding: 10px 20px;color:#4f5254; margin-top: 20px; cursor: pointer;"
+},
+"label": {
+"type": "label",
+"class": "",
+"style": "padding-left: 0; display: block; color:#ffffff; padding-bottom: 5px;"
+},
+"loader": {
+"type": "img",
+"src": "//www.newsletter2go.com/images/loader.svg",
+"class": "",
+"style": "margin: auto; display:block;"
+},
+"message": {
+"type": "h2",
+"class": "hpnnewsletternote",
+"id": "",
+"style": "text-align: center;"
+}
+},"62b80ff62261f");
+</script></div>
+</section>                        </div>
+</div>
+</div>
+<div class="jeg_footer_secondary clearfix">
+<!-- secondary footer right -->
+<div class="footer_right">
+<ul class="jeg_menu_footer"><li id="menu-item-458653" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-458653"><a href="https://www.heilpraxisnet.de/werben-sie-hier/">Werben Sie hier</a></li>
+<li id="menu-item-458092" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-458092"><a href="https://www.heilpraxisnet.de/impressum/">Impressum</a></li>
+<li id="menu-item-458100" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-privacy-policy menu-item-458100"><a href="https://www.heilpraxisnet.de/datenschutz/">Datenschutz</a></li>
+<li id="menu-item-512424" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-512424"><a href="https://www.heilpraxisnet.de/wir-ueber-uns/">Wir über uns</a></li>
+<li id="menu-item-559944" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-559944"><a href="/rezepte">Rezepte</a></li>
+</ul>
+</div>
+<!-- secondary footer left -->
+<div class="jeg_social_icon_block socials_widget nobg">
+<a href="https://www.facebook.com/Heilpraxis" target='_blank' rel='external noopener nofollow' class="jeg_facebook"><i class="fa fa-facebook"></i> </a><a href="https://twitter.com/heilpraxisnet" target='_blank' rel='external noopener nofollow' class="jeg_twitter"><i class="fa fa-twitter"></i> </a><a href="https://www.pinterest.de/redaktion1091/" target='_blank' rel='external noopener nofollow' class="jeg_pinterest"><i class="fa fa-pinterest"></i> </a><a href="https://www.youtube.com/channel/UCCk3Vawj0QbjIOnUYLTqeNg/" target='_blank' rel='external noopener nofollow' class="jeg_youtube"><i class="fa fa-youtube-play"></i> </a><a href="https://www.heilpraxisnet.de/feed/" target='_blank' rel='external noopener nofollow' class="jeg_rss"><i class="fa fa-rss"></i> </a>			</div>
+</div> <!-- secondary menu -->
+</div>
+</div>
+</div>
+</div><!-- /.footer -->
+</div>
+<div class="jscroll-to-top">
+<a href="#back-to-top" class="jscroll-to-top_link"><i class="fa fa-angle-up"></i></a>
+</div>
+</div>
+<!-- Mobile Navigation
+============================================= -->
+<div id="jeg_off_canvas" class="normal">
+<a href="#" class="jeg_menu_close"><i class="jegicon-cross"></i></a>
+<div class="jeg_bg_overlay"></div>
+<div class="jeg_mobile_wrapper">
+<div class="nav_wrap">
+<div class="item_main">
+<!-- Search Form -->
+<div class="jeg_aside_item jeg_search_wrapper jeg_search_no_expand square">
+<a href="#" class="jeg_search_toggle"><i class="fa fa-search"></i></a>
+<form action="https://www.heilpraxisnet.de/" method="get" class="jeg_search_form" target="_top">
+<input name="s" class="jeg_search_input" placeholder="Suche..." type="text" value="" autocomplete="off">
+<button aria-label="Search Button" type="submit" class="jeg_search_button btn"><i class="fa fa-search"></i></button>
+</form>
+<!-- jeg_search_hide with_result no_result -->
+<div class="jeg_search_result jeg_search_hide with_result">
+<div class="search-result-wrapper">
+</div>
+<div class="search-link search-noresult">
+Kein Ergebnis    </div>
+<div class="search-link search-all-button">
+<i class="fa fa-search"></i> Alle Ergebnisse anzeigen    </div>
+</div></div><div class="jeg_aside_item">
+<ul class="jeg_mobile_menu"><li id="menu-item-529633" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-529633"><a href="/symptome/">Symptome</a></li>
+<li id="menu-item-529634" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-529634"><a href="/krankheiten">Krankheiten</a></li>
+<li id="menu-item-529635" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-529635"><a href="/hausmittel">Hausmittel</a></li>
+<li id="menu-item-529636" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-529636"><a href="/naturheilkunde">Naturheilkunde</a></li>
+<li id="menu-item-529638" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-529638"><a href="/heilpflanzen">Heilpflanzen</a></li>
+<li id="menu-item-529637" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-529637"><a href="/ganzheitliche-medizin/">Ganzheitliche Medizin</a></li>
+<li id="menu-item-529641" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-529641"><a href="/naturheilpraxis">News</a></li>
+<li id="menu-item-529632" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-529632"><a href="https://www.heilpraxisnet.de/kontakt/">Kontakt</a></li>
+<li id="menu-item-529639" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-529639"><a href="https://verzeichnis.heilpraxisnet.de/">Therapeuten</a></li>
+<li id="menu-item-529640" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-529640"><a href="/themen">Themen</a></li>
+<li id="menu-item-529631" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-529631"><a href="https://www.heilpraxisnet.de/fachliche-aufsicht/">Fachliche Aufsicht</a></li>
+<li id="menu-item-559945" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-559945"><a href="/rezepte">Rezepte</a></li>
+</ul></div>    </div>
+<div class="item_bottom">
+<div class="jeg_aside_item socials_widget nobg">
+<a href="https://www.facebook.com/Heilpraxis" target='_blank' rel='external noopener nofollow' class="jeg_facebook"><i class="fa fa-facebook"></i> </a><a href="https://twitter.com/heilpraxisnet" target='_blank' rel='external noopener nofollow' class="jeg_twitter"><i class="fa fa-twitter"></i> </a><a href="https://www.pinterest.de/redaktion1091/" target='_blank' rel='external noopener nofollow' class="jeg_pinterest"><i class="fa fa-pinterest"></i> </a><a href="https://www.youtube.com/channel/UCCk3Vawj0QbjIOnUYLTqeNg/" target='_blank' rel='external noopener nofollow' class="jeg_youtube"><i class="fa fa-youtube-play"></i> </a><a href="https://www.heilpraxisnet.de/feed/" target='_blank' rel='external noopener nofollow' class="jeg_rss"><i class="fa fa-rss"></i> </a></div><div class="jeg_aside_item jeg_aside_copyright">
+<p>© 2019 <a href="https://www.heilpraxisnet.de/" title="Heilpraxisnet.de GbR">Heilpraxisnet.de GbR</a></p>
+</div>    </div>
+</div>    </div>
+</div>				<script type='text/javascript'><!--
+var seriesdropdown = document.getElementById("orgseries_dropdown");
+if (seriesdropdown) {
+function onSeriesChange() {
+if ( seriesdropdown.options[seriesdropdown.selectedIndex].value != ( 0 || -1 ) ) {
+location.href = "https://www.heilpraxisnet.de/series/"+seriesdropdown.options[seriesdropdown.selectedIndex].value;
+}
+}
+seriesdropdown.onchange = onSeriesChange;
+}
+--></script>
+<script type="text/javascript">var jfla = ["view_counter"]</script><div class="jeg_read_progress_wrapper"><div class="jeg_progress_container bottom"><span class="progress-bar"></span></div></div><script type='text/javascript' src='https://www.heilpraxisnet.de/wp-content/themes/heilpraxis-design/js/corona.js' id='corona-skript-js'></script>
+<script type='text/javascript' id='ppress-frontend-script-js-extra'>
+/* <![CDATA[ */
+var pp_ajax_form = {"ajaxurl":"https:\/\/www.heilpraxisnet.de\/wp-admin\/admin-ajax.php","confirm_delete":"Are you sure?","deleting_text":"Deleting...","deleting_error":"An error occurred. Please try again.","nonce":"8a975b6649","disable_ajax_form":"true"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.heilpraxisnet.de/wp-content/plugins/wp-user-avatar/assets/js/frontend.min.js' id='ppress-frontend-script-js'></script>
+<script type='text/javascript' src='https://www.heilpraxisnet.de/wp-includes/js/comment-reply.min.js' id='comment-reply-js'></script>
+<script type='text/javascript' src='https://www.heilpraxisnet.de/wp-includes/js/hoverIntent.min.js' id='hoverIntent-js'></script>
+<script type='text/javascript' src='https://www.heilpraxisnet.de/wp-includes/js/imagesloaded.min.js' id='imagesloaded-js'></script>
+<script type='text/javascript' id='jnews-frontend-js-extra'>
+/* <![CDATA[ */
+var jnewsoption = {"login_reload":"https:\/\/www.heilpraxisnet.de\/naturheilpraxis\/beifuss-allergie-grundlage-fuer-weltweit-ersten-impfstoff-geschaffen-20220626562022","popup_script":"disable","single_gallery":"","ismobile":"","isie":"","sidefeed_ajax":"","language":"de_DE","module_prefix":"jnews_module_ajax_","live_search":"","postid":"562022","isblog":"1","admin_bar":"0","follow_video":"","follow_position":"top_left","rtl":"0","gif":"","lang":{"invalid_recaptcha":"Invalid Recaptcha!","empty_username":"Please enter your username!","empty_email":"Please enter your email!","empty_password":"Please enter your password!"},"recaptcha":"0","site_slug":"\/","site_domain":"www.heilpraxisnet.de","zoom_button":"0"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.heilpraxisnet.de/wp-content/themes/jnews/assets/dist/frontend.min.js' id='jnews-frontend-js'></script>
+<!--[if lt IE 9]>
+<script type='text/javascript' src='https://www.heilpraxisnet.de/wp-content/themes/jnews/assets/js/html5shiv.min.js' id='html5shiv-js'></script>
+<![endif]-->
+<script type='text/javascript' id='heateor_sss_sharing_js-js-before'>
+function heateorSssLoadEvent(e) {var t=window.onload;if (typeof window.onload!="function") {window.onload=e}else{window.onload=function() {t();e()}}};	var heateorSssSharingAjaxUrl = 'https://www.heilpraxisnet.de/wp-admin/admin-ajax.php', heateorSssCloseIconPath = 'https://www.heilpraxisnet.de/wp-content/plugins/sassy-social-share/public/../images/close.png', heateorSssPluginIconPath = 'https://www.heilpraxisnet.de/wp-content/plugins/sassy-social-share/public/../images/logo.png', heateorSssHorizontalSharingCountEnable = 0, heateorSssVerticalSharingCountEnable = 0, heateorSssSharingOffset = -10; var heateorSssMobileStickySharingEnabled = 0;var heateorSssCopyLinkMessage = "Link copied.";var heateorSssUrlCountFetched = [], heateorSssSharesText = 'Shares', heateorSssShareText = 'Share';function heateorSssPopup(e) {window.open(e,"popUpWindow","height=400,width=600,left=400,top=100,resizable,scrollbars,toolbar=0,personalbar=0,menubar=no,location=no,directories=no,status")}
+</script>
+<script type='text/javascript' src='https://www.heilpraxisnet.de/wp-content/plugins/sassy-social-share/public/js/sassy-social-share-public.js' id='heateor_sss_sharing_js-js'></script>
+<script type='text/javascript' src='https://www.heilpraxisnet.de/wp-includes/js/wp-embed.min.js' id='wp-embed-js'></script>
+<div class="jeg_ad jnews_mobile_sticky_ads "></div><script type='application/ld+json'>{"@context":"http:\/\/schema.org","@type":"NewsArticle","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/www.heilpraxisnet.de\/naturheilpraxis\/beifuss-allergie-grundlage-fuer-weltweit-ersten-impfstoff-geschaffen-20220626562022\/"},"dateCreated":"2022-06-26 09:50:59","datePublished":"2022-06-26 09:50:59","dateModified":"2022-06-26 07:50:59","url":"https:\/\/www.heilpraxisnet.de\/naturheilpraxis\/beifuss-allergie-grundlage-fuer-weltweit-ersten-impfstoff-geschaffen-20220626562022\/","headline":"Beifu\u00df-Allergie: Grundlage f\u00fcr weltweit ersten Impfstoff geschaffen","name":"Beifu\u00df-Allergie: Grundlage f\u00fcr weltweit ersten Impfstoff geschaffen","articleBody":"<h2>Beifu\u00df-Allergie: Wesentlicher erster Schritt zur urs\u00e4chlichen Therapie<\/h2>\r\nFachleuten zufolge sind rund zehn Prozent der Menschen hierzulande von einer <strong>Beifu\u00df-Allergie<\/strong> betroffen. Durch den Kontakt mit den Pollen dieses Krauts werden bei ihnen typische <strong>Heuschnupfen-Beschwerden<\/strong> ausgel\u00f6st, die zu einer starken Beeintr\u00e4chtigung des Allgemeinbefindens und der Lebensqualit\u00e4t f\u00fchren k\u00f6nnen. Doch nun besteht Hoffnung: Forschende haben die <strong>Grundlage<\/strong> f\u00fcr einen <strong>Impfstoff<\/strong> geschaffen.\r\n\r\nEin Forschungsteam der Medizinischen Universit\u00e4t (MedUni) Wien hat zentrale Mechanismen der Allergie gegen die Pollen aus dem weit verbreiteten Unkraut Beifu\u00df entdeckt und damit gleichzeitig die Grundlage f\u00fcr die Entwicklung des weltweit ersten Impfstoffs geschaffen. Die neuen Erkenntnisse sind ein wesentlicher erster Schritt zur urs\u00e4chlichen Therapie und zur Pr\u00e4vention. Die Studie wurde in der Fachzeitschrift \u201e<a href=\"https:\/\/www.jacionline.org\/article\/S0091-6749(22)00701-1\/fulltext\" rel=\"noopener\" target=\"_blank\">Journal of Allergy and Clinical Immunology<\/a>\u201c ver\u00f6ffentlicht.\r\n\r\n<h2>\u00dcberschie\u00dfende Immunreaktion<\/h2>\r\nLaut einer aktuellen <a href=\"https:\/\/www.meduniwien.ac.at\/web\/ueber-uns\/news\/news-im-juni-2022\/beifuss-allergie-meduni-wien-studie-schafft-grundlage-fuer-impfstoff\/\" rel=\"noopener\" target=\"_blank\">Mitteilung<\/a> setzten die Wissenschaftlerinnen und Wissenschaftler in ihrer pr\u00e4klinischen Forschungsarbeit am Ausgangspunkt der Beifu\u00df-Allergie an.\r\n\r\nDabei entdeckten die Forschenden, wo und wie die Antik\u00f6rper vom Typ Immunglobulin-E (IgE) das Hauptallergen des Beifu\u00df (Art v 1) erkennen und die \u00fcberschie\u00dfende <strong>Immunreaktion<\/strong> in Gang bringen.\r\n\r\nGleichzeitig hat sich gezeigt, dass die Eiwei\u00dfbausteine des Beifu\u00df-Hauptallergens so beschaffen sind, dass sie durch <strong>Abwehrstoffe<\/strong> IgG (Immunglobulin-G) blockiert werden k\u00f6nnen.\r\n\r\nMit diesen Erkenntnissen schuf das Team um Maja Zabel und Winfried Pickl in Zusammenarbeit mit dem Team von Rudolf Valenta (alle vom Zentrum f\u00fcr Pathophysiologie, Infektiologie und Immunologie der MedUni Wien) die <strong>Grundlage<\/strong> f\u00fcr die Entwicklung eines Impfstoffs gegen die Beifu\u00df-Allergie.\r\n\r\n<h2>Krankmachende IgE-Antik\u00f6per<\/h2>\r\n<em>\u201eUnsere Studie zeigt, wie Bruchst\u00fccke des <strong>Hauptallergens<\/strong> von Beifu\u00df f\u00fcr die wirksame und sichere Therapie verwendet werden k\u00f6nnen\u201c<\/em>, sagt Studienleiter Winfried Pickl.\r\n\r\n<em>\u201eUnsere Beobachtungen der Wirkweise des Impfstoffs ergeben, dass eines der Enden des Beifu\u00df-Hauptallergens wichtige Bindungsstellen f\u00fcr die krankmachenden IgE-Antik\u00f6per von AllergikerInnen bereitstellt, die f\u00fcr eine <strong>neuartige Impfung<\/strong> genutzt werden k\u00f6nnen\u201c<\/em>, so der Forscher.\r\n\r\n<h2>Rund zehn Prozent der Bev\u00f6lkerung betroffen<\/h2>\r\nDer Gemeine Beifu\u00df ist auf der Nordhalbkugel weit verbreitet, wo die Pollen seiner Bl\u00fcten bei Allergikerinnen und Allergikern von Juli bis September <strong>Beschwerden<\/strong> bis hin zu Asthma verursachen.\r\n\r\nDen Angaben zufolge stehen den etwa zehn Prozent der Menschen in der Bev\u00f6lkerung, die gegen Beifu\u00df sensibilisiert sind, derzeit lediglich <strong>Behandlungsm\u00f6glichkeiten<\/strong> zur Linderung ihrer Symptome zur Verf\u00fcgung.\r\n\r\nDie aktuelle Studie ist ein international viel beachteter erster Schritt zur <strong>urs\u00e4chlichen Therapie<\/strong> und Pr\u00e4vention. <em>\u201eAls n\u00e4chstes werden wir unsere Forschungsergebnisse f\u00fcr die Herstellung eines synthetischen Impfstoffs verwenden, der im Rahmen einer klinischen Studie \u00fcberpr\u00fcft werden kann\u201c<\/em>, erl\u00e4utert Rudolf Valenta. (ad)","author":{"@type":"Person","name":"Alfred Domke","url":"https:\/\/www.heilpraxisnet.de\/profil\/alfred-domke\/","sameAs":["http:\/\/Alfred%20Domke"]},"articleSection":["News"],"image":{"@type":"ImageObject","url":"https:\/\/www.heilpraxisnet.de\/wp-content\/uploads\/2020\/07\/Ambrosia-Allergien-scaled.jpeg","width":2560,"height":1714},"publisher":{"@type":"Organization","name":"Heilpraxisnet.de GbR","url":"https:\/\/www.heilpraxisnet.de","logo":{"@type":"ImageObject","url":"https:\/\/www.heilpraxisnet.de\/wp-content\/uploads\/2019\/11\/heilpraxis-logo@2x.png"},"sameAs":["https:\/\/www.facebook.com\/Heilpraxis","https:\/\/twitter.com\/heilpraxisnet","https:\/\/www.pinterest.de\/redaktion1091\/","https:\/\/www.youtube.com\/channel\/UCCk3Vawj0QbjIOnUYLTqeNg\/","https:\/\/www.heilpraxisnet.de\/feed\/"]}}</script>
+<script type='application/ld+json'>{"@context":"http:\/\/schema.org","@type":"hentry","entry-title":"Beifu\u00df-Allergie: Grundlage f\u00fcr weltweit ersten Impfstoff geschaffen","published":"2022-06-26 09:50:59","updated":"2022-06-26 07:50:59"}</script>
+<script type='application/ld+json'>{"@context":"http:\/\/schema.org","@type":"MedicalWebPage","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/www.heilpraxisnet.de\/naturheilpraxis\/beifuss-allergie-grundlage-fuer-weltweit-ersten-impfstoff-geschaffen-20220626562022\/"},"inLanguage":"de-DE","dateModified":"2022-06-26 07:50:59","url":"https:\/\/www.heilpraxisnet.de\/naturheilpraxis\/beifuss-allergie-grundlage-fuer-weltweit-ersten-impfstoff-geschaffen-20220626562022\/","headline":"Beifu\u00df-Allergie: Grundlage f\u00fcr weltweit ersten Impfstoff geschaffen","name":"Beifu\u00df-Allergie: Grundlage f\u00fcr weltweit ersten Impfstoff geschaffen","text":"Beifu\u00df-Allergie: Wesentlicher erster Schritt zur urs\u00e4chlichen Therapie\r\nFachleuten zufolge sind rund zehn Prozent der Menschen hierzulande von einer Beifu\u00df-Allergie betroffen. Durch den Kontakt mit den Pollen dieses Krauts werden bei ihnen typische Heuschnupfen-Beschwerden ausgel\u00f6st, die zu einer starken Beeintr\u00e4chtigung des Allgemeinbefindens und der Lebensqualit\u00e4t f\u00fchren k\u00f6nnen. Doch nun besteht Hoffnung: Forschende haben die Grundlage f\u00fcr einen Impfstoff geschaffen.\r\n\r\nEin Forschungsteam der Medizinischen Universit\u00e4t (MedUni) Wien hat zentrale Mechanismen der Allergie gegen die Pollen aus dem weit verbreiteten Unkraut Beifu\u00df entdeckt und damit gleichzeitig die Grundlage f\u00fcr die Entwicklung des weltweit ersten Impfstoffs geschaffen. Die neuen Erkenntnisse sind ein wesentlicher erster Schritt zur urs\u00e4chlichen Therapie und zur Pr\u00e4vention. Die Studie wurde in der Fachzeitschrift \u201eJournal of Allergy and Clinical Immunology\u201c ver\u00f6ffentlicht.\r\n\r\n\u00dcberschie\u00dfende Immunreaktion\r\nLaut einer aktuellen Mitteilung setzten die Wissenschaftlerinnen und Wissenschaftler in ihrer pr\u00e4klinischen Forschungsarbeit am Ausgangspunkt der Beifu\u00df-Allergie an.\r\n\r\nDabei entdeckten die Forschenden, wo und wie die Antik\u00f6rper vom Typ Immunglobulin-E (IgE) das Hauptallergen des Beifu\u00df (Art v 1) erkennen und die \u00fcberschie\u00dfende Immunreaktion in Gang bringen.\r\n\r\nGleichzeitig hat sich gezeigt, dass die Eiwei\u00dfbausteine des Beifu\u00df-Hauptallergens so beschaffen sind, dass sie durch Abwehrstoffe IgG (Immunglobulin-G) blockiert werden k\u00f6nnen.\r\n\r\nMit diesen Erkenntnissen schuf das Team um Maja Zabel und Winfried Pickl in Zusammenarbeit mit dem Team von Rudolf Valenta (alle vom Zentrum f\u00fcr Pathophysiologie, Infektiologie und Immunologie der MedUni Wien) die Grundlage f\u00fcr die Entwicklung eines Impfstoffs gegen die Beifu\u00df-Allergie.\r\n\r\nKrankmachende IgE-Antik\u00f6per\r\n\u201eUnsere Studie zeigt, wie Bruchst\u00fccke des Hauptallergens von Beifu\u00df f\u00fcr die wirksame und sichere Therapie verwendet werden k\u00f6nnen\u201c, sagt Studienleiter Winfried Pickl.\r\n\r\n\u201eUnsere Beobachtungen der Wirkweise des Impfstoffs ergeben, dass eines der Enden des Beifu\u00df-Hauptallergens wichtige Bindungsstellen f\u00fcr die krankmachenden IgE-Antik\u00f6per von AllergikerInnen bereitstellt, die f\u00fcr eine neuartige Impfung genutzt werden k\u00f6nnen\u201c, so der Forscher.\r\n\r\nRund zehn Prozent der Bev\u00f6lkerung betroffen\r\nDer Gemeine Beifu\u00df ist auf der Nordhalbkugel weit verbreitet, wo die Pollen seiner Bl\u00fcten bei Allergikerinnen und Allergikern von Juli bis September Beschwerden bis hin zu Asthma verursachen.\r\n\r\nDen Angaben zufolge stehen den etwa zehn Prozent der Menschen in der Bev\u00f6lkerung, die gegen Beifu\u00df sensibilisiert sind, derzeit lediglich Behandlungsm\u00f6glichkeiten zur Linderung ihrer Symptome zur Verf\u00fcgung.\r\n\r\nDie aktuelle Studie ist ein international viel beachteter erster Schritt zur urs\u00e4chlichen Therapie und Pr\u00e4vention. \u201eAls n\u00e4chstes werden wir unsere Forschungsergebnisse f\u00fcr die Herstellung eines synthetischen Impfstoffs verwenden, der im Rahmen einer klinischen Studie \u00fcberpr\u00fcft werden kann\u201c, erl\u00e4utert Rudolf Valenta. (ad)","author":[{"@type":"Person","name":"Alfred Domke","url":"https:\/\/www.heilpraxisnet.de\/profil\/alfred-domke\/","jobTitle":"Redakteur f\u00fcr Gesundheits-News"}],"audience":{"@type":"Audience","url":"http:\/\/schema.org\/Patient"},"about":{"@type":"MedicalCondition","name":"Beifu\u00df-Allergie: Grundlage f\u00fcr weltweit ersten Impfstoff geschaffen"},"citation":[["Medizinische Universit\u00e4t Wien: Beifu\u00df-Allergie: MedUni-Wien-Studie schafft Grundlage f\u00fcr Impfstoff, (Abruf: 26.06.2022)","Maja Zabel, Milena Weber, Bernhard Kratzer, Cordula K\u00f6hler, Beatrice Jahn-Schmid, Gabriele Gadermaier, Pia Gattinger, Ur\u0161ka Bidovec-Stojkovi\u010d, Peter Koro\u0161ec, Ursula Smole, Gert Wurzinger, Kuan-Wei Chen, Carmen Bunu Panaitescu, Ludger Klimek, Isabel Pablos, Katarzyna Niespodziana, Alina Neunkirchner, Walter Keller, Rudolf Valenta & Winfried F. Pickl: Art v 1 IgE epitopes of patients and humanized mice are conformational; in: Journal of Allergy and Clinical Immunology, (ver\u00f6ffentlicht: 20.06.2022)"]]}</script>
+<script></script><script type="text/javascript">;!function(){"use strict";window.jnews=window.jnews||{},window.jnews.first_load=window.jnews.first_load||{},window.jnews.first_load=function(){var e=this,t=jnews.library,n="object"==typeof jnews&&"object"==typeof jnews.library;e.data=null,e.run_ajax=!0,e.run_loginregister=!0,e.clear=function(){e.run_ajax=!0,e.run_loginregister=!0,e.data=null},e.init=function(){n&&(t.globalBody.querySelectorAll(".jeg_popup_account").length&&jnews.loginregister&&e.run_loginregister&&(e.run_loginregister=!1,jnews.loginregister.init(),jnews.loginregister.hook_form()),jfla.length&&e.run_ajax&&(e.run_ajax=!1,e.do_ajax({action:"jnews_first_load_action",jnews_id:jnewsoption.postid,load_action:jfla})))},e.update_counter=function(){if(n){var o={total_view:t.globalBody.querySelectorAll(".jeg_share_stats .jeg_views_count .counts"),total_share:t.globalBody.querySelectorAll(".jeg_share_stats .jeg_share_count .counts"),total_comment:t.globalBody.querySelectorAll(".jeg_meta_comment a span")};t.forEach(Object.entries(e.data.counter),(function([e,n]){o[e].length&&t.forEach(o[e],(function(e,o){t.setText(e,n)}))}))}},e.do_ajax=function(o){if(n){var a=new XMLHttpRequest;a.onreadystatechange=function(){XMLHttpRequest.DONE===a.readyState&&200==a.status&&(e.data=JSON.parse(a.responseText),e.data.counter&&"object"==typeof e.data.counter&&e.update_counter())},a.open("POST",jnews_ajax_url,!0),a.setRequestHeader("Content-Type","application/x-www-form-urlencoded; charset=UTF-8"),a.send(t.httpBuildQuery(o))}}},window.jnews.first_load=new window.jnews.first_load,jnews.first_load.init()}();</script><img src="https://ssl-vg03.met.vgwort.de/na/69439067725644ba9f676c9cd069eb5a" width="1" height="1" alt="" style="display:none" />			<script>
+function trackPostId() {
+if (typeof ga === 'function') {
+ga('create', 'UA-7538264-5', 'auto');
+ga('set', 'dimension1', 'Post-Id' );
+ga('send', 'pageview', { 'dimension1': '562022' });
+} else {
+setTimeout(trackPostId,500);
+}
+}
+trackPostId();
+</script>
+</body>
+</html><!-- WP Fastest Cache file was created in 1.2982330322266 seconds, on 26-06-22 9:51:18 -->

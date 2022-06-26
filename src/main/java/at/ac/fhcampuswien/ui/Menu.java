@@ -4,9 +4,12 @@ import at.ac.fhcampuswien.Exception.NewsAPIException;
 import at.ac.fhcampuswien.controllers.AppController;
 import at.ac.fhcampuswien.enums.*;
 import at.ac.fhcampuswien.models.Article;
+import downloader.Downloader;
+import downloader.PararellDownloader;
+import downloader.SequentialDownloader;
 
-import java.io.IOException;
 import java.text.Normalizer;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 import java.util.regex.Pattern;
@@ -20,9 +23,10 @@ public class Menu {
     private Menu() {
     }
 
-    public static Menu getInstance(){
+    public static Menu getInstance() {
         return instance;
     }
+
     public void start() {
         String input;
         controller = AppController.getInstance();
@@ -47,16 +51,18 @@ public class Menu {
                 case "g" -> getSortedArticles(controller);
                 case "h" -> download(controller);
                 case "i" -> search(controller);
+                case "j" -> downloadURLs(controller);
                 case "y" -> getArticleCount(controller);
                 case "q" -> printExitMessage();
                 default -> printInvalidInputMessage();
             }
-        } catch(NewsAPIException ex) {
+        } catch (NewsAPIException ex) {
             System.err.println(System.lineSeparator() + ex.getMessage() + System.lineSeparator());
         } catch (Exception ex) {
             System.err.println("An error happened while executing your command!");
         }
     }
+
     //gefunden in Internet für gültige Dateinamen,gibt Dateinamen zurück anhand des Artikels Titels
     public static String getURLSlug(String phrase) {
         if (phrase == null || phrase.trim().length() == 0)
@@ -69,9 +75,15 @@ public class Menu {
         return slug.toLowerCase();
     }
 
+    private void downloadURLs(AppController controller) throws NewsAPIException {
+        controller.downloadURLs();
+    }
+
     private void download(AppController controller) throws NewsAPIException {
         List<Article> articleList = controller.getTopHeadlinesAustria();
-        if(articleList == null || articleList.isEmpty()) { throw new NewsAPIException("The request returned an empty or invalid article list!"); }
+        if (articleList == null || articleList.isEmpty()) {
+            throw new NewsAPIException("The request returned an empty or invalid article list!");
+        }
 
         Article articel = articleList.get(0);
         if (articel.getContent() == null) {
@@ -177,6 +189,7 @@ public class Menu {
                 g: Sort articles by content length
                 h: Download 1st article
                 i: Search
+                j: Download URLs
                 ___________________________________
                 y: Count articles
                 q: Quit program
