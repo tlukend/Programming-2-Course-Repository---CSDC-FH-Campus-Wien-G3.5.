@@ -11,7 +11,7 @@ import java.util.NoSuchElementException;
 
 //evtl eine Builder Class?
 
-public class Article implements Iterable<Article>{
+public class Article {
     private String author;
     private String title;
     private Source source;
@@ -92,22 +92,7 @@ public class Article implements Iterable<Article>{
         try {
             Files.writeString(filePath, content, StandardOpenOption.CREATE_NEW);
         } catch (IOException e) {
-            throw new NewsAPIException("Failed to save article to drive!", e);
+            throw new NewsAPIException("Failed to save article to drive! " + e.getMessage(), e);
         }
-    }
-
-    public Iterator<Article> iterator() {
-        return new Iterator<Article>() {
-            @Override
-            public boolean hasNext() {
-                return false;
-            }
-
-            @Override
-            public Article next() {
-                throw new NoSuchElementException();
-            }
-        };
-
     }
 }

@@ -75,10 +75,15 @@ public class Menu {
     }
 
     public static Article getNextIteratedArticle ( AppController controller) throws NewsAPIException {
-
-        Iterator<Article> it = getRandomArticle(controller).iterator();
-        return it.next();
-
+        Iterator<Article> it = controller.iterator();
+        if(it.hasNext()) {
+            Article nextArticle = it.next();
+            System.out.println(nextArticle);
+            return nextArticle;
+        } else {
+            System.out.println("No articles found!");
+            return null;
+        }
     }
 
 
@@ -211,6 +216,7 @@ public class Menu {
                 i: Download 1st article
                 j: Search
                 k: Download URLs
+                next: Get next iterated article
                 ___________________________________
                 y: Count articles
                 q: Quit program

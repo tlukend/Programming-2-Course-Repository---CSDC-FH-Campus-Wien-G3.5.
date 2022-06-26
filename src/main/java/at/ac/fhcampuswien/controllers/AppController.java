@@ -1,7 +1,7 @@
 package at.ac.fhcampuswien.controllers;
 
 import at.ac.fhcampuswien.Exception.NewsAPIException;
-import at.ac.fhcampuswien.api.Builder;
+import at.ac.fhcampuswien.api.RequestBuilder;
 import at.ac.fhcampuswien.api.NewsApi;
 import at.ac.fhcampuswien.enums.*;
 import at.ac.fhcampuswien.models.Article;
@@ -9,16 +9,17 @@ import at.ac.fhcampuswien.models.NewsResponse;
 import downloader.Downloader;
 import downloader.PararellDownloader;
 import downloader.SequentialDownloader;
+import okhttp3.Request;
 
 import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
-import java.util.Iterator;
 
 
-public class AppController {
+public class AppController implements Iterable<Article> {
     private List<Article> articles;
     private static final AppController instance = new AppController();
+    private ArticleIterator iterator;
 
     private AppController() {
     }
@@ -34,9 +35,6 @@ public class AppController {
     public List<Article> getArticles() {
         return articles;
     }
-
-
-
     /**
      * gets the size of last fetched articles
      *
@@ -55,11 +53,11 @@ public class AppController {
      * @return article list
      */
     public List<Article> getTopHeadlinesAustria() throws NewsAPIException {
-        Builder builder = new Builder("", Endpoint.TOP_HEADLINES)
-                .country(Country.at);
-        NewsApi api = new NewsApi(builder);
-
-        NewsResponse response = api.requestData();
+        Request request = new RequestBuilder("", Endpoint.TOP_HEADLINES)
+                .country(Country.at)
+                .build();
+        NewsApi api = NewsApi.getInstance();
+        NewsResponse response = api.requestData(request);
 
         if (response != null) {
             articles = response.getArticles();
@@ -70,14 +68,14 @@ public class AppController {
     }
 
     public List<Article> getSearchArticle(String q, Country country, Endpoint endpoint, SortBy sortby, Category category, Language language) throws NewsAPIException {
-        Builder builder = new Builder(q, endpoint)
+        Request request = new RequestBuilder(q, endpoint)
                 .country(country)
                 .sortBy(sortby)
                 .category(category)
-                .language(language);
-        NewsApi api = new NewsApi(builder);
-
-        NewsResponse response = api.requestData();
+                .language(language)
+                .build();
+        NewsApi api = NewsApi.getInstance();
+        NewsResponse response = api.requestData(request);
 
         if (response != null) {
             articles = response.getArticles();
@@ -94,9 +92,10 @@ public class AppController {
      * @return filtered list
      */
     public List<Article> getAllNewsBitcoin() throws NewsAPIException {
-        Builder builder = new Builder("bitcoin", Endpoint.EVERYTHING);
-        NewsApi api = new NewsApi(builder);
-        NewsResponse response = api.requestData();
+        Request request = new RequestBuilder("bitcoin", Endpoint.EVERYTHING)
+                .build();
+        NewsApi api = NewsApi.getInstance();
+        NewsResponse response = api.requestData(request);
 
         if (response != null) {
             articles = response.getArticles();
@@ -135,6 +134,12 @@ public class AppController {
     }
 
     public int getNewYorkTimesArticleCount() {
+        Iterator<Article> iterator = articles.iterator();
+        while(iterator.hasNext()) {
+            Article article = iterator.next();
+            article.setDescription("meow");
+        }
+
         if (articles == null) {
             return 0;
         } else {
@@ -188,6 +193,30 @@ public class AppController {
         return filtered;
     }
 
+    public Iterator<Article> iterator() {
+        if(iterator == null || !iterator.hasNext()) { iterator = new ArticleIterator(this); }
+        return iterator;
+    }
+
+    private class ArticleIterator implements Iterator<Article> {
+        private AppController controller;
+        private int position;
+
+        public ArticleIterator(AppController controller) {
+            this.controller = controller;
+            this.position = 0;
+        }
+
+        @Override
+        public boolean hasNext() {
+            return this.position + 1 < this.controller.articles.size();
+        }
+
+        @Override
+        public Article next() {
+            return this.controller.articles.get(this.position);
+        }
+    }
 
     public void downloadURLs() throws NewsAPIException {
         List<Article> articleList = getTopHeadlinesAustria();

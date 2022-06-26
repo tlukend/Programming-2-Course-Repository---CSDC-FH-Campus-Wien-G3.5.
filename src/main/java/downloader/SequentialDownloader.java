@@ -7,7 +7,6 @@ import java.util.List;
 
 // Class is needed for exercise 4 - ignore for exercise 3 solution
 public class SequentialDownloader extends Downloader {
-
     // returns number of downloaded article urls
     @Override
     public int process(List<String> urls) throws NewsAPIException{ //vererbete Methode und die muss man immer neu Ausführen

@@ -15,9 +15,6 @@ public class PararellDownloader extends Downloader {
     // returns number of downloaded article urls
     @Override
     public int process(List<String> urls) throws NewsAPIException {
-        // TODO implement download function using multiple threads
-        // Hint: use ExecutorService with Callables
-
         int count = 0;
         ExecutorService executorService = Executors.newFixedThreadPool(urls.size()); //erstellt ein pool von Threads
         List<Future<String>> futures = new ArrayList<>(); // in Futures wollen wir die Pools als Liste ablegen
@@ -42,7 +39,7 @@ public class PararellDownloader extends Downloader {
                     count++; //wenn es gut gelaufen ist, wird count immer hoch gezählt
                 }
             } catch (Exception ex) {
-
+                throw new NewsAPIException("Failed to get result!", ex);
             }
         }
 

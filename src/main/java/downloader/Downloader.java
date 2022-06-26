@@ -8,6 +8,8 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.List;
 
 // Class is needed for exercise 4 - ignore for exercise 3 solution
@@ -29,6 +31,11 @@ public abstract class Downloader {
 
             if (fileName.isEmpty()) {
                 fileName = url4download.getHost() + HTML_EXTENSION; // if no filename could be extracted use the URL host and .html extension
+            }
+
+            Path folder = Path.of(DIRECTORY_DOWNLOAD);
+            if(!Files.exists(folder)) {
+                Files.createDirectory(folder);
             }
 
             os = new FileOutputStream(DIRECTORY_DOWNLOAD + fileName);   // write to /download/<filename>
