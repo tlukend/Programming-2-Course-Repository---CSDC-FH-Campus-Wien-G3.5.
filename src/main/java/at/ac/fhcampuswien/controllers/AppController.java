@@ -1,11 +1,16 @@
 package at.ac.fhcampuswien.controllers;
+
 import at.ac.fhcampuswien.Exception.NewsAPIException;
+import at.ac.fhcampuswien.api.Builder;
 import at.ac.fhcampuswien.api.NewsApi;
 import at.ac.fhcampuswien.enums.*;
 import at.ac.fhcampuswien.models.Article;
 import at.ac.fhcampuswien.models.NewsResponse;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
+import java.util.Map;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
@@ -17,7 +22,7 @@ public class AppController {
     private AppController() {
     }
 
-    public static AppController getInstance(){
+    public static AppController getInstance() {
         return instance;
     }
 
@@ -47,7 +52,9 @@ public class AppController {
      * @return article list
      */
     public List<Article> getTopHeadlinesAustria() throws NewsAPIException {
-        NewsApi api = new NewsApi("", Country.at, Endpoint.TOP_HEADLINES);
+        Builder builder = new Builder("", Endpoint.TOP_HEADLINES)
+                .country(Country.at);
+        NewsApi api = new NewsApi(builder);
 
         NewsResponse response = api.requestData();
 
@@ -60,7 +67,12 @@ public class AppController {
     }
 
     public List<Article> getSearchArticle(String q, Country country, Endpoint endpoint, SortBy sortby, Category category, Language language) throws NewsAPIException {
-        NewsApi api = new NewsApi(q, country, endpoint, sortby, category, language);
+        Builder builder = new Builder(q, endpoint)
+                .country(country)
+                .sortBy(sortby)
+                .category(category)
+                .language(language);
+        NewsApi api = new NewsApi(builder);
 
         NewsResponse response = api.requestData();
 
@@ -79,8 +91,8 @@ public class AppController {
      * @return filtered list
      */
     public List<Article> getAllNewsBitcoin() throws NewsAPIException {
-        NewsApi api = new NewsApi("bitcoin", Endpoint.EVERYTHING);
-
+        Builder builder = new Builder("bitcoin", Endpoint.EVERYTHING);
+        NewsApi api = new NewsApi(builder);
         NewsResponse response = api.requestData();
 
         if (response != null) {

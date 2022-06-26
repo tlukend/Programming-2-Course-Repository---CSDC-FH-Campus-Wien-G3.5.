@@ -1,7 +1,6 @@
 package at.ac.fhcampuswien.api;
 
 import at.ac.fhcampuswien.Exception.NewsAPIException;
-import at.ac.fhcampuswien.enums.*;
 import at.ac.fhcampuswien.models.NewsResponse;
 import com.google.gson.Gson;
 import com.google.gson.JsonSyntaxException;
@@ -18,150 +17,50 @@ public class NewsApi {
     private static final String URL = "https://newsapi.org/v2/%s?q=%s&apiKey=%s";
     private static final String API_KEY = Dotenv.load().get("API_TOKEN");   // read token from .env file -> add .env to .gitignore!!!
     private final OkHttpClient client;
+    private final Builder builder;
 
-    private Endpoint endpoint;
-    private String q;
-    private String qInTitle;
-    private Country sourceCountry;
-    private Category sourceCategory;
-    private String domains;
-    private String excludeDomains;
-    private String from;
-    private String to;
-    private Language language;
-    private SortBy sortBy;
-    private String pageSize;
-    private String page;
-
-
-    public String getQ() {
-        return q;
-    }
-
-    public String getqInTitle() {
-        return qInTitle;
-    }
-
-    public Country getSourceCountry() {
-        return sourceCountry;
-    }
-
-    public Category getSourceCategory() {
-        return sourceCategory;
-    }
-
-    public String getDomains() {
-        return domains;
-    }
-
-    public String getExcludeDomains() {
-        return excludeDomains;
-    }
-
-    public String getFrom() {
-        return from;
-    }
-
-    public String getTo() {
-        return to;
-    }
-
-    public Language getLanguage() {
-        return language;
-    }
-
-    public SortBy getSortBy() {
-        return sortBy;
-    }
-
-    public String getPageSize() {
-        return pageSize;
-    }
-
-    public String getPage() {
-        return page;
-    }
-
-    public Endpoint getEndpoint() {
-        return endpoint;
-    }
-
-    public NewsApi(String q, Endpoint endpoint) {
+    public NewsApi(Builder builder) {
         this.client = new OkHttpClient();
-        this.q = q;
-        this.endpoint = endpoint;
-    }
-
-    public NewsApi(String q, Country country, Endpoint endpoint) {
-        this.client = new OkHttpClient();
-        this.q = q;
-        this.sourceCountry = country;
-        this.endpoint = endpoint;
-    }
-
-    public NewsApi(String q, Country country, Endpoint endpoint,SortBy sortby,Category category, Language language) {
-        this.client = new OkHttpClient();
-        this.q = q;
-        this.sourceCountry = country;
-        this.endpoint = endpoint;
-        this.sortBy=sortby;
-        this.sourceCategory=category;
-        this.language=language;
-    }
-
-
-    public NewsApi(String q, String qInTitle, Country sourceCountry, Category sourceCategory, String domains, String excludeDomains, String from, String to, Language language, SortBy sortBy, String pageSize, String page, Endpoint endpoint) {
-        this(q, endpoint);
-        this.qInTitle = qInTitle;
-        this.sourceCountry = sourceCountry;
-        this.sourceCategory = sourceCategory;
-        this.domains = domains;
-        this.excludeDomains = excludeDomains;
-        this.from = from;
-        this.to = to;
-        this.language = language;
-        this.sortBy = sortBy;
-        this.pageSize = pageSize;
-        this.page = page;
+        this.builder = builder;
     }
 
     private String buildUrl() {
-        String baseurl = String.format(URL, getEndpoint().getValue(), getQ(), API_KEY);
+        String baseurl = String.format(URL, builder.getEndpoint().getValue(), builder.getQ(), API_KEY);
 
         StringBuilder sb = new StringBuilder(baseurl);
 
-        if (getFrom() != null) {
-            sb.append(DELIMITER).append("from=").append(getFrom());
+        if (builder.getFrom() != null) {
+            sb.append(DELIMITER).append("from=").append(builder.getFrom());
         }
-        if (getTo() != null) {
-            sb.append(DELIMITER).append("to=").append(getTo());
+        if (builder.getTo() != null) {
+            sb.append(DELIMITER).append("to=").append(builder.getTo());
         }
-        if (getPage() != null) {
-            sb.append(DELIMITER).append("page=").append(getPage());
+        if (builder.getPage() != null) {
+            sb.append(DELIMITER).append("page=").append(builder.getPage());
         }
-        if (getPageSize() != null) {
-            sb.append(DELIMITER).append("pageSize=").append(getPageSize());
+        if (builder.getPageSize() != null) {
+            sb.append(DELIMITER).append("pageSize=").append(builder.getPageSize());
         }
-        if (getLanguage() != null) {
-            sb.append(DELIMITER).append("language=").append(getLanguage());
+        if (builder.getLanguage() != null) {
+            sb.append(DELIMITER).append("language=").append(builder.getLanguage());
         }
-        if (getSourceCountry() != null) {
-            sb.append(DELIMITER).append("country=").append(getSourceCountry());
+        if (builder.getSourceCountry() != null) {
+            sb.append(DELIMITER).append("country=").append(builder.getSourceCountry());
         }
-        if (getSourceCategory() != null) {
-            sb.append(DELIMITER).append("category=").append(getSourceCategory());
+        if (builder.getSourceCategory() != null) {
+            sb.append(DELIMITER).append("category=").append(builder.getSourceCategory());
         }
-        if (getDomains() != null) {
-            sb.append(DELIMITER).append("domains=").append(getDomains());
+        if (builder.getDomains() != null) {
+            sb.append(DELIMITER).append("domains=").append(builder.getDomains());
         }
-        if (getExcludeDomains() != null) {
-            sb.append(DELIMITER).append("excludeDomains=").append(getExcludeDomains());
+        if (builder.getExcludeDomains() != null) {
+            sb.append(DELIMITER).append("excludeDomains=").append(builder.getExcludeDomains());
         }
-        if (getqInTitle() != null) {
-            sb.append(DELIMITER).append("qInTitle=").append(getqInTitle());
+        if (builder.getqInTitle() != null) {
+            sb.append(DELIMITER).append("qInTitle=").append(builder.getqInTitle());
         }
-        if (getSortBy() != null) {
-            sb.append(DELIMITER).append("sortBy=").append(getSortBy().getValue());
+        if (builder.getSortBy() != null) {
+            sb.append(DELIMITER).append("sortBy=").append(builder.getSortBy().getValue());
         }
 
         return sb.toString();
