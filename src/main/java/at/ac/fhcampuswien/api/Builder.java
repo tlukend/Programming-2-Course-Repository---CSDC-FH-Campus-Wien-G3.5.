@@ -1,7 +1,8 @@
 package at.ac.fhcampuswien.api;
 
 import at.ac.fhcampuswien.enums.*;
-
+//Die Klasse stellt eine Schnittstelle, zwischen Parametern und NEWS API bereit,
+// Parameter die wir in News API benötigen wird in Builder gespeichert
 public  class Builder {
     private Endpoint endpoint;
     private String q;

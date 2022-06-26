@@ -19,7 +19,7 @@ public class NewsApi {
     private final OkHttpClient client;
     private final Builder builder;
 
-    public NewsApi(Builder builder) {
+    public NewsApi(Builder builder) { // es werden keine Parameter außer Builder  Objekt benötigt
         this.client = new OkHttpClient();
         this.builder = builder;
     }

@@ -195,24 +195,24 @@ public class AppController {
             throw new NewsAPIException("The request returned an empty or invalid article list!");
         }
 
-        List<String> urls = new ArrayList<>();
-        for(Article article: articleList) {
-            urls.add(article.getUrl());
-        }
+        List<String> urls = articleList.stream().map(Article::getUrl).collect(Collectors.toList());
+        // Article urls werden mit Hilfe von Streams extrahiert
+
 
         System.out.println("Downloading files...");
         long startSeq = System.currentTimeMillis();
         Downloader seqDowloader = new SequentialDownloader();
         int countSeq = seqDowloader.process(urls);
         long stopSeq = System.currentTimeMillis();
-        System.out.println("Articales: "+countSeq+" files. Download duration: " + (stopSeq - startSeq) + " ms");
+        System.out.println("Sequentieldownloader Articales: "+countSeq+" files. Download duration: " + (stopSeq - startSeq) + " ms");
+        // Sequ Downloader wird aufgerufen und Verarbeitet
 
         long startPara = System.currentTimeMillis();
         Downloader paraDowloader = new PararellDownloader();
         long countPara = paraDowloader.process(urls);
         long stopPara= System.currentTimeMillis();
-        System.out.println("Articales: "+countPara+" files. Download duration: " + (stopPara - startPara) + " ms");
-
+        System.out.println("Paralleldownloader Articales: "+countPara+" files. Download duration: " + (stopPara - startPara) + " ms");
+//     wird der Paralleldownloader aufgerufen und verarbeitet
     }
 }
 
