@@ -233,14 +233,15 @@ public class AppController implements Iterable<Article> {
         Downloader seqDowloader = new SequentialDownloader();
         int countSeq = seqDowloader.process(urls);
         long stopSeq = System.currentTimeMillis();
-        System.out.println("Sequentieldownloader Articales: "+countSeq+" files. Download duration: " + (stopSeq - startSeq) + " ms");
+        System.out.println("Sequentialdownloader Articles: "+countSeq+" files. Download duration: " + (stopSeq - startSeq) + " ms");
         // Sequ Downloader wird aufgerufen und Verarbeitet
 
         long startPara = System.currentTimeMillis();
         Downloader paraDowloader = new PararellDownloader();
         long countPara = paraDowloader.process(urls);
         long stopPara= System.currentTimeMillis();
-        System.out.println("Paralleldownloader Articales: "+countPara+" files. Download duration: " + (stopPara - startPara) + " ms");
+
+        System.out.println("Paralleldownloader Articles: "+countPara+" files. Download duration: " + (stopPara - startPara) + " ms");
 //     wird der Paralleldownloader aufgerufen und verarbeitet
     }
 }
