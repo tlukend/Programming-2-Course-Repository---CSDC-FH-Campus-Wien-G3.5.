@@ -9,9 +9,7 @@ import downloader.PararellDownloader;
 import downloader.SequentialDownloader;
 
 import java.text.Normalizer;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 import java.util.regex.Pattern;
 
 public class Menu {
@@ -41,6 +39,7 @@ public class Menu {
 
     private void handleInput(String input) {
         try {
+
             switch (input) {
                 case "a" -> getTopHeadlinesAustria(controller);
                 case "b" -> getAllNewsBitcoin(controller);
@@ -49,11 +48,14 @@ public class Menu {
                 case "e" -> getNewYorkTimesArticleCount(controller);
                 case "f" -> getArticlesUnder15(controller);
                 case "g" -> getSortedArticles(controller);
-                case "h" -> download(controller);
-                case "i" -> search(controller);
-                case "j" -> downloadURLs(controller);
+                case "h" -> { getRandomArticle(controller);
+                    System.out.println("Type \"next\" for the next article");}
+                case "i" -> download(controller);
+                case "j" -> search(controller);
+                case "k" -> downloadURLs(controller);
                 case "y" -> getArticleCount(controller);
                 case "q" -> printExitMessage();
+                case "next" -> getNextIteratedArticle(controller);
                 default -> printInvalidInputMessage();
             }
         } catch (NewsAPIException ex) {
@@ -62,6 +64,23 @@ public class Menu {
             System.err.println("An error happened while executing your command!");
         }
     }
+
+    public static Article getRandomArticle (AppController controller) throws NewsAPIException {
+        List<Article> headlinesAustria = controller.getTopHeadlinesAustria();
+
+        Random random = new Random();
+        Article a = headlinesAustria.get(random.nextInt(headlinesAustria.size()));
+        System.out.println(a);
+        return a;
+    }
+
+    public static Article getNextIteratedArticle ( AppController controller) throws NewsAPIException {
+
+        Iterator<Article> it = getRandomArticle(controller).iterator();
+        return it.next();
+
+    }
+
 
     //gefunden in Internet für gültige Dateinamen,gibt Dateinamen zurück anhand des Artikels Titels
     public static String getURLSlug(String phrase) {
@@ -187,9 +206,11 @@ public class Menu {
                 e: Count articles from NY Times
                 f: Get articles with short title
                 g: Sort articles by content length
-                h: Download 1st article
-                i: Search
-                j: Download URLs
+                h: Get a random article from Top Headlines
+                ___________________________________
+                i: Download 1st article
+                j: Search
+                k: Download URLs
                 ___________________________________
                 y: Count articles
                 q: Quit program

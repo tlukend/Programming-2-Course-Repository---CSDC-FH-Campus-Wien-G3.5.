@@ -6,9 +6,12 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.Files;
 import java.nio.file.StandardOpenOption;
+import java.util.Iterator;
+import java.util.NoSuchElementException;
 
+//evtl eine Builder Class?
 
-public class Article {
+public class Article implements Iterable<Article>{
     private String author;
     private String title;
     private Source source;
@@ -91,5 +94,20 @@ public class Article {
         } catch (IOException e) {
             throw new NewsAPIException("Failed to save article to drive!", e);
         }
+    }
+
+    public Iterator<Article> iterator() {
+        return new Iterator<Article>() {
+            @Override
+            public boolean hasNext() {
+                return false;
+            }
+
+            @Override
+            public Article next() {
+                throw new NoSuchElementException();
+            }
+        };
+
     }
 }

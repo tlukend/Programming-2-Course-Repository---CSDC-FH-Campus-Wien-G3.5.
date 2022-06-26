@@ -10,12 +10,10 @@ import downloader.Downloader;
 import downloader.PararellDownloader;
 import downloader.SequentialDownloader;
 
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
+import java.util.Iterator;
 
 
 public class AppController {
@@ -36,6 +34,8 @@ public class AppController {
     public List<Article> getArticles() {
         return articles;
     }
+
+
 
     /**
      * gets the size of last fetched articles
